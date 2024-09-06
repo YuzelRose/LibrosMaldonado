@@ -1,0 +1,102 @@
+.div__reg_log_wrapper {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.button__ini_reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    z-index: -1;
+    display: none;
+    background: var(--nav-gradiant);
+    color: #fff;
+}
+
+.div__reg_log {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.div__reg_log > button {
+    cursor: pointer;
+    border: solid var(--background-blue) 0.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+.button__ini {
+    background-color: var(--background-blue);
+    color: #fff;
+}
+.button__ini:hover {
+    background-color: var(--primary-blue);
+    border: solid white 0.2em;
+    color: #fff;
+}
+.button__ini:active {
+    background-color: var(--secondary-blue);
+    border: solid var(--secondary-blue) 0.2em;
+    color: #fff;
+}
+.button__reg {
+    color: var(--secondary-blue);
+}
+.button__reg:hover {
+    background-color: var(--primary-blue);
+    border: solid white 0.2em;
+    color: #fff;
+}
+.button__reg:active {
+    background-color: var(--secondary-blue);
+    border: solid var(--secondary-blue) 0.2em;
+    color: #fff;
+}
+.div__reg_log > div {
+    height: 50%;
+    width: 95%;
+    background-color: var(--primary-blue);
+}
+
+@media (max-width: 1400px) {
+    .div__reg_log_wrapper{
+        width: 100%;
+    }
+    .div__reg_log {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .div__reg_log > button  {
+        cursor: pointer;
+        font-size: 0.7rem;
+        border: solid var(--background-blue) 0.2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-radius: 0.5em;
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0.5em;
+        -ms-border-radius: 0.5em;
+        -o-border-radius: 0.5em;
+    }
+    .button__ini_reg {
+        z-index: 1;
+        display: block;
+    }
+    .button__ini {
+        z-index: -1;
+        display: none;
+    }
+    .button__reg {
+        z-index: -1;
+        display: none;        
+    }
+}

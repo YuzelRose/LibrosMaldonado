@@ -1,0 +1,95 @@
+footer {
+    border-top: solid var(--primary-red) 0.15em;
+    width: 100%;
+    background: var(--header-gradiant);
+    color: white;
+}
+footer > h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0.5em;
+}
+.section__side_networks{
+    display: flex;
+    justify-content: space-evenly; 
+    padding: 0;
+    margin: 0; 
+    padding-bottom: 1em;
+    border-bottom: solid var(--primary-red) 0.15em;
+}
+.network__icon {
+    display: flex;
+    justify-content: center;
+    background: var(--light-gray-blue);
+    width: 20%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.section__side_networks > div {
+    align-items: center;
+    justify-content: center; 
+}
+#whatsapp__btn {
+    background-color: green;
+}
+#whatsapp__btn:hover {
+    background-color: darkgreen;
+}
+#whatsapp__btn:active {
+    background-color: green;
+}
+.section__info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid var(--primary-red) 0.13em;
+    padding-bottom: 1em;
+}
+.section_bottom {
+    width: 100%;
+}
+.section_bottom > h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: var(--background-grey);
+    background: var(--graiant-last);
+}
+.section_bottom > p {
+    margin: 0;
+    padding: 0.3em;
+    text-align: center;
+    color: var(--background-grey);
+    background-color: var(--primary-blue);
+}
+@media (max-width: 1200px) {
+    .div__contact {
+        display: flex;
+    }
+    .network__icon {
+        width: 30%;
+        padding: 0;
+        margin: 0; 
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+}
+@media (max-width: 700px) {
+    .section__info {
+        justify-content: start;
+        padding: 0;
+        padding-bottom: 1em;
+        margin: 0;
+    }
+}

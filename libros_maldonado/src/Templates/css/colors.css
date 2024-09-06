@@ -1,0 +1,23 @@
+:root {
+    --argen: #e4e4e4;
+    --purple: #1c1c45;
+    --orange: #8B5E00;
+    --light-orange: #D4A017;
+    --lightish-red: #f41d89;
+    --primary-red: #ad0a0b;
+    --primary-blue: #042479;
+    --secondary-blue: #0459af;
+    --background-blue: #5784ad;
+    --light-gray-blue: #44556f;
+    --product-back: #6E738C;
+    --product-front: #808C9F;
+    --background-grey: #bbc3ce;
+    --light-gray: #d3dce5;
+    --header-gradiant: linear-gradient(#042479, #045aaf);
+    --nav-gradiant: linear-gradient(#045aaf, #5784ad);
+    --background-gradiant: radial-gradient(ellipse 70% 70%, hwb(209 34% 32%),#d3dce5);
+    --graiant-right-left: linear-gradient(to bottom left, #bbc3ce, #44556f);
+    --graiant-left-right: linear-gradient(to bottom right, #bbc3ce, #44556f);
+    --graiant-last: linear-gradient(#045aaf, #042479);
+    --button-background: rgba(0, 0, 0, 0.2);
+}

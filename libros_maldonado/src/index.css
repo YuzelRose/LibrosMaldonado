@@ -1,0 +1,91 @@
+@import './Templates/css/colors.css';
+
+body {
+  font-family: 'Andale Mono, monospace, Courier New, Courier, FreeMono';
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header_spacer {
+  height: 78px;
+}
+@media (max-width: 1600px) {
+  .header_spacer {
+    height: 142px;
+  }
+}
+@media (max-width: 600px) {
+  .header_spacer {
+    height: 92px;
+  }
+}
+main {
+  background-blend-mode: multiply;
+  background-color: var(--semi-white);
+  border-bottom: solid var(--primary-red) 0.15em;
+}
+.link {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+.dark_link {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: black;
+  text-decoration: none;
+}
+.link_low {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: var(--light-gray);
+  text-decoration: underline;
+}
+
+.link_low:hover {
+  color: white;
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+.highlight:hover {
+  border: solid 0.12em white;
+  box-sizing: border-box;
+}
+.light_up_flash {
+  background: var(--light-gray-blue);
+  border-top: solid var(--light-gray-blue) 0.15em;
+  border-right: solid var(--light-gray-blue) 0.15em;
+}
+.light_up_flash:hover {
+  background: var(--graiant-right-left);
+  border-top: solid var(--background-grey) 0.15em;
+  border-right: solid var(--background-grey) 0.15em;
+}
+.light_up_flash:active {
+  background: none; 
+  background-color: var(--background-grey);
+  border-color: var(--background-grey);
+}
+.light_up {
+  background: var(--light-gray-blue);
+  border-top: solid var(--light-gray-blue) 0.15em;
+  border-right: solid var(--light-gray-blue) 0.15em;
+}
+.light_up:hover {
+  background: var(--graiant-right-left);
+  border-top: solid var(--background-grey) 0.15em;
+  border-right: solid var(--background-grey) 0.15em;
+}
+@media (max-width: 600px) {
+  html {
+      font-size: 0.6rem;
+  }
+}
