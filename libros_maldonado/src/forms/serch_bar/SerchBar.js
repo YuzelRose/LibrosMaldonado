@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/serch_bar.css';
-import glass from '../../svg/glass.svg';
+import glass from '../../img/svg/glass.svg';
 
 export default function SerchBar() {
     const [inputValue, setInputValue] = useState('');

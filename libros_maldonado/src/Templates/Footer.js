@@ -1,8 +1,8 @@
 import React from 'react'
 import './css/footer.css'
-import instagram from '../svg/intagram.svg';
-import whatsapp from '../svg/whatsapp.svg';
-import facebook from '../svg/facebook.svg';
+import instagram from '../img/svg/intagram.svg';
+import whatsapp from '../img/svg/whatsapp.svg';
+import facebook from '../img/svg/facebook.svg';
 import { MailRegister } from '../forms';
 import { Link } from 'react-router-dom';
 

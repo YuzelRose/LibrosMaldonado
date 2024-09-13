@@ -15,11 +15,10 @@ export default function HomePage(){
                     <h2>Nuestra seleccion</h2>
                 </div>
                 <Selection/>
-                <button>Ver mas</button>
             </article>
             <article class="article_selection" id="selection_article">
                 <div>
-                    <h2>Sección de descuentos</h2>
+                    <h2>Libros en descuento</h2>
                 </div>
                 <Selection/>
                 <button>Ver mas</button>
