@@ -8,14 +8,12 @@ import { Op, Sequelize  } from 'sequelize';
 export const getAllBooks = async (req, res) => {
     try {
         const books = await LibroModels.findAll({
-            limit: 5
         })
         res.json(books)
     } catch(error) {
         res.json( {message: error.message} )
     }
 }
-
 export const serchBooks = async (req, res) => {
     try {
         const Nombre = req.params.Nombre;

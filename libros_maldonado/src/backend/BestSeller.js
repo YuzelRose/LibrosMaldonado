@@ -23,11 +23,9 @@ const CompShowBestBooks = () => {
             const res = await axios.get(URI);
             const fetchedBooks = res.data;
 
-            // Filtrar libros con ventas mayores a 0 y ordenar de mayor a menor ventas
             const booksWithSales = fetchedBooks
-                .filter(book => book.Ventas > 0)  // Filtrar los libros con ventas mayores a 0
-                .sort((a, b) => b.Ventas - a.Ventas); // Ordenar por ventas de mayor a menor
-
+                .filter(book => book.Ventas > 0)  
+                .sort((a, b) => b.Ventas - a.Ventas); 
             const hasSells = booksWithSales.length > 0;
             setHasSells(hasSells);
             setBooks(booksWithSales);

@@ -2,10 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const URI = 'http://localhost:5000/LibrosMaldonado/Register';
+const URI = 'http://localhost:5000/LibrosMaldonado/Login/';
 
 const LoginForm = ({ setUSer }) => {
     const navigate = useNavigate();
+    const [log, setlog] = useState([]);
 
     const [mail, setMail] = useState("");
     const [mailError, setMailError] = useState(false);
@@ -27,8 +28,8 @@ const LoginForm = ({ setUSer }) => {
         setMailError(false);
         setPassError(false);
 
-        setUSer([mail])
-        navigate('/');
+        handleLog()
+        
     };
 
     const handleMailChange = (e) => {
@@ -42,6 +43,28 @@ const LoginForm = ({ setUSer }) => {
         setPass(e.target.value);
         if (e.target.value !== "") {
             setPassError(false);
+        }
+    };
+
+    const handleLog  = async () => {
+        try {
+            const response = await axios.get(`${URI}${mail}`);
+            if (response.data.length > 0) {
+                const user = response.data[0];
+                if (user.Contrasena === pass) {
+                    setError('')
+                    setUSer([mail])
+                    navigate('/');
+                } else {
+                    setlog([]);
+                    setError('Usuario no encontrado')
+                }
+            } else {
+                setlog([]);
+                setError('Usuario no encontrado')
+            }
+        } catch (error) {
+            console.error("Error creating user:", error);
         }
     };
 
@@ -65,7 +88,7 @@ const LoginForm = ({ setUSer }) => {
             />
             {passError && <sup>Error en el campo</sup>}
             <button id='log_btn' type="submit">Iniciar sesión</button>
-            {error && <p className='error'>Campos erroneos</p>}
+            {error && <p className='error'>{error}</p>}
         </form>
     )
 }
