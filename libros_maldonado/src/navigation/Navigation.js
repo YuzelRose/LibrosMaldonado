@@ -14,16 +14,16 @@ export default function Navigation(){
         <section className='section__nav_wrapper'>
             <nav className='nav__Header'>
                 <div className='highlight' onClick={redirectHome}>
-                    <Link class="link" to='/'>Inicio</Link>
+                    <Link className="link" to='/'>Inicio</Link>
                 </div>
-                <div class="highlight" onClick={redirectProductWall}>
-                    <Link class="link" to='/ProductWall'>Libros</Link>
+                <div className="highlight" onClick={redirectProductWall}>
+                    <Link className="link" to='/ProductWall'>Libros</Link>
                 </div>
-                <div class="highlight" onClick={redirectProductWall}>
-                    <Link class="link" to='/ProductWall'>Autores</Link>
+                <div className="highlight" onClick={redirectProductWall}>
+                    <Link className="link" to='/ProductWall'>Autores</Link>
                 </div>
-                <div class="highlight" onClick={redirectProductWall}>
-                    <Link class="link" to='/ProductWall'>Promociones</Link>
+                <div className="highlight" onClick={redirectProductWall}>
+                    <Link className="link" to='/ProductWall'>Promociones</Link>
                 </div>
             </nav>
         </section>

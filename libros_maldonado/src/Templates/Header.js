@@ -7,11 +7,10 @@ import { LogOptions, RegisterLogButton } from './user_options'
 import { SerchBar } from '../forms';
 import { TopNav, Navigation } from '../navigation';
 
-export default function Header() {
+export default function Header({ user, setUSer }) {
     const navigate = useNavigate();
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [headerVisible, setHeaderVisible] = useState(true);
-    const[Logged, setLogged] = useState(false);
 
     const navigateLogoClick = () => {
         navigate('/');
@@ -34,8 +33,6 @@ export default function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     });
-
-    
 
     return (
         <header className={`header ${headerVisible ? 'header--visible' : 'header--hidden'}`}>
@@ -60,7 +57,11 @@ export default function Header() {
                     <SerchBar />
                 </div>
                 <div className='div__log'>
-                    {Logged ? <RegisterLogButton /> : <LogOptions />}
+                    {
+                        user.length > 0 
+                        ? <LogOptions user={user} setUSer={setUSer}/>
+                        : <RegisterLogButton /> 
+                    }
                 </div>
                 <div className='div__nav'>
                     <Navigation />

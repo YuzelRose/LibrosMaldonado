@@ -1,0 +1,87 @@
+#main__reg_log {
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12em;
+}
+
+.form__reg_log {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    width: 25em;
+    padding: 1.5em;
+    background: var(--graiant-right-left);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.form__reg_log > h1 {
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+}
+.form__reg_log > p {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+.form__reg_log > input[type='text'], input[type='password'], input[type='email'] {
+    font-size: 1em;
+    margin-bottom: 0;
+    padding: 0.2em;
+}
+.form__reg_log > button {
+    cursor: pointer;
+    align-self: center;
+    background-color: white;
+    color: var(--background-blue);
+    border: solid var(--background-blue) 0.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 50%;
+    font-size: 1em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+.form__reg_log > button:hover {
+    background-color: var(--primary-blue);
+    border-color: white;
+    color: white;
+}
+.form__reg_log > button:active {
+    background-color: white;
+    border-color: var(--background-blue);
+    color: var(--background-blue);
+}
+input[type='checkbox'] {
+    cursor: pointer;
+}
+sup {
+    color: var(--primary-red);
+
+}
+.form__reg_log > sup {
+    width: 100%;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+.error {
+    align-self: center;
+    color: var(--primary-red);
+}
+#log_btn {
+    margin-top: 1em;
+}
+@media (max-width: 1600px){
+    main {
+        padding-top: 10em;
+    }
+}

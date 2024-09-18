@@ -1,13 +1,11 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
 import {ProductObj} from '../objects'
 
-const URI = 'http://localhost:5000/LibrosMaldonado/'
-
+const URI = 'http://localhost:5000/LibrosMaldonado/Wall';
 
 const CompShowBooks = () => {
-    const [book, setBook] = useState([])
+    const [books, setBook] = useState([])
     useEffect( ()=>{
         getAllBooks()
     },[])
@@ -30,9 +28,25 @@ const CompShowBooks = () => {
         }
     }
     return(
-        <ProductObj
-            
-        />
+        <section className={books.length > 0 ? 'product' : 'no_product'}>
+        {books.length > 0 ? (
+            books.map((book) => (
+                <ProductObj
+                    key={book.IDLibro}
+                    imageLink={book.imageLink}
+                    price={book.Costo}
+                    descount={book.Descuento}
+                    name={book.Nombre}
+                    fullInfo={book.Sinopsis}
+                    Writers=''
+                    productId={book.IDLibro}
+                    alt={book.Nombre}
+                />
+            ))
+        ) : (
+            <p>No books available</p>
+        )}
+    </section>
     )
 }
 export default  CompShowBooks

@@ -1,35 +1,19 @@
 import React from 'react'
 import './css/home_page.css'
-import { ImageSwipe, Selection } from '../objects'
+import { ImageSwipe } from '../objects'
+import { CompShowDesBooks, CompShowAutors, CompShowBestBooks } from '../backend'
 
 export default function HomePage(){
     return(
-        <main>
+        <main id='main_home_page'>
             <ImageSwipe
-                id=''
+                id='mainImSwp'
                 urlImg=''
                 alt=''
             />
-            <article class="article_selection" id="selection_article">
-                <div>
-                    <h2>Nuestra seleccion</h2>
-                </div>
-                <Selection/>
-            </article>
-            <article class="article_selection" id="selection_article">
-                <div>
-                    <h2>Libros en descuento</h2>
-                </div>
-                <Selection/>
-                <button>Ver mas</button>
-            </article>
-            <article class="article_selection" id="selection_article">
-                <div>
-                    <h2>Nuestros autores</h2>
-                </div>
-                <Selection/>
-                <button>Ver mas</button>
-            </article>
+            <CompShowAutors/>        
+            <CompShowBestBooks/>
+            <CompShowDesBooks/>
         </main>
     )
 }

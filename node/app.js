@@ -22,7 +22,6 @@ app.use('/LibrosMaldonado', mysqlRoutes);
     res.end('hola mundo');
 });*/
 
-// Configuración básica del servidor
 app.listen(5000, () => {
     console.log("Server Running");
 });

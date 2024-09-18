@@ -15,11 +15,11 @@ header {
 }
 
 .header--hidden {
-    transform: translateY(-250%);
-    -webkit-transform: translateY(-250%);
-    -moz-transform: translateY(-250%);
-    -ms-transform: translateY(-250%);
-    -o-transform: translateY(-250%);
+    transform: translateY(-270%);
+    -webkit-transform: translateY(-270%);
+    -moz-transform: translateY(-270%);
+    -ms-transform: translateY(-270%);
+    -o-transform: translateY(-270%);
 }
 
 .header--visible {

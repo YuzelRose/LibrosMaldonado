@@ -1,11 +1,14 @@
-import LibroModels from "../models/MysqlModels.js";
+import LibroModels from "../models/BookModel.js";
+import AutorModels from "../models/AutorModel.js";
 import { Op, Sequelize  } from 'sequelize';
 
 //import QuestionModesl from "";
 
 export const getAllBooks = async (req, res) => {
     try {
-        const books = await LibroModels.findAll()
+        const books = await LibroModels.findAll({
+            limit: 5
+        })
         res.json(books)
     } catch(error) {
         res.json( {message: error.message} )
@@ -25,6 +28,54 @@ export const serchBooks = async (req, res) => {
         res.json(searchResults);
     } catch (error) {
         res.json({ message: error.message });
+    }
+}
+export const getDescountBooks = async (req, res) => {
+    try {
+        const searchResults = await LibroModels.findAll({
+            where: {
+                Descuento: {
+                    [Op.gt]: 0
+                }
+            },
+            order: [['Descuento', 'DESC']], 
+            limit: 5
+        });
+        res.json(searchResults);
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+}
+export const getBestSellerBooks = async (req, res) => {
+    try {
+        const searchResults = await LibroModels.findAll({
+            where: {
+                Ventas: { 
+                    [Op.gt]: 0 
+                }
+            },
+            order: [['Ventas', 'DESC']], 
+            limit: 5
+        });        
+        if (searchResults.length > 0) {
+            res.json(searchResults);
+        } else {
+            res.json({ message: "No se encontraron libros con ventas" });
+        }
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: error.message });
+    }
+};
+export const getAutors = async (req, res) => {
+    try {
+        const books = await AutorModels.findAll({
+            limit: 8
+        })
+        res.json(books)
+    } catch(error) {
+        res.json( {message: error.message} )
     }
 }
 /*No esta en funcionamiento todavia crea preguntas para la empresa

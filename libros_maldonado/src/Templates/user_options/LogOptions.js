@@ -1,22 +1,37 @@
 import { useNavigate } from 'react-router-dom'
 import React from 'react'
 import './css/log_options.css'
+import cart from '../../img/svg/cart.svg'
+import favlist from '../../img/svg/favlist.svg'
 
-export default function LogOptions() {
+export default function LogOptions({user, setUSer}) {
     const navigate = useNavigate();
-    const redirectLogin = () => {
-        navigate('/Login');
+    const redirectFavList = () => {
+        navigate('/FavList');
     };
-    const redirectRegister = () => {
-        navigate('/Register');
+    const redirectShopCart = () => {
+        navigate('/ShopCart');
     };
+    const handleLogOut = () => {
+        alert('Sesión cerrada.');
+        setUSer([])
+    }
     return(
-        <div class="div__reg_log_wrapper">
-            <div class="div__reg_log">
-                <button onClick={redirectLogin} class="button__ini_reg">Acceder</button>
-                <button onClick={redirectRegister} class="button__reg">Registrarse</button>
-                <button onClick={redirectLogin} class="button__ini">Iniciar sesión</button>
+        <section class="section__log_options">
+            <div id='favlist' className='svg_center'>
+                <img src={favlist} title="Lista de favoritos" />
             </div>
-        </div>
+            <div id='cart' className='svg_center'>
+                <img src={cart} title="Carro de compras" />
+            </div>
+            <section className='drop_list'>
+                <button className='options_btn logout_btn'>Opciones</button>
+                <ul className='drop_down_opc'> 
+                    <li id='li_cart' onClick={redirectShopCart}>Carro de compras</li>
+                    <li id='li_favlist' onClick={redirectFavList}>Lista de favoritos</li>
+                    <li onClick={handleLogOut}>Cerrar sesión</li>
+                </ul>
+            </section>
+        </section>
     )
 }

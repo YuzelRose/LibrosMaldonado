@@ -1,0 +1,44 @@
+.autor_wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+.autor {
+    cursor: pointer;
+    width: 6em;
+    height: 6em;
+    overflow: hidden;
+    border: solid #555 0.1em;
+    border-radius: 99em;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    -ms-border-radius: 99em;
+    -o-border-radius: 99em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.autor:hover {
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.5em);
+    -webkit-transform: translateY(-0.5em);
+    -moz-transform: translateY(-0.5em);
+    -ms-transform: translateY(-0.5em);
+    -o-transform: translateY(-0.5em);
+}
+.autor_icon > p {
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+.autor_icon > p:hover {
+    text-decoration: underline;
+}
+.autor_icon > p:active {
+    text-decoration: none;
+}
+.autor_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
