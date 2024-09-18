@@ -12,6 +12,9 @@ export default function LogOptions({user, setUSer}) {
     const redirectShopCart = () => {
         navigate('/ShopCart');
     };
+    const redirectUserInfo = () => {
+        navigate('/UserInfo');
+    };
     const handleLogOut = () => {
         alert('Sesión cerrada.');
         setUSer([])
@@ -27,6 +30,7 @@ export default function LogOptions({user, setUSer}) {
             <section className='drop_list'>
                 <button className='options_btn logout_btn'>Opciones</button>
                 <ul className='drop_down_opc'> 
+                    <li onClick={redirectUserInfo}>Perfil</li>
                     <li id='li_cart' onClick={redirectShopCart}>Carro de compras</li>
                     <li id='li_favlist' onClick={redirectFavList}>Lista de favoritos</li>
                     <li onClick={handleLogOut}>Cerrar sesión</li>

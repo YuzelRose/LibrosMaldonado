@@ -1,7 +1,7 @@
 import mysql from '../database/MysqlConex.js';
 import { DataTypes } from 'sequelize';
 
-const UserModel = mysql.define('Libro', { 
+const UserModels = mysql.define('Usuario', { 
     IDUsuario: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -21,15 +21,15 @@ const UserModel = mysql.define('Libro', {
     },
     Telefono: {
         type: DataTypes.STRING(13),
-        allowNull: false
+        allowNull: true
     },
     Direccion: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     }
 }, {
-    tableName: 'Libro', 
+    tableName: 'Usuario', 
     timestamps: false 
 });
 
-export default UserModel;
+export default UserModels;

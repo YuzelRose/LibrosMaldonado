@@ -1,5 +1,5 @@
 export { default as HomePage } from './HomePage';
-export { default as Login } from './Login';
+export { default as Login } from './LogIn';
 export { default as FavList } from './FavList';
 export { default as ProductWall } from './ProductWall';
 export { default as ProductSell } from './ProductSell';

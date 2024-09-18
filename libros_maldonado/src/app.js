@@ -9,19 +9,19 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Header user={user} setUSer={setUSer} />
+      <Header user={user} setUSer={setUSer} /> /*listo*/
       <Routes>
-        <Route path='/' element={<HomePage />} exact />
+        <Route path='/' element={<HomePage />} exact /> /*listo*/
         <Route path='/Writer' element={<Autor />} exact />
-        <Route path='/FavList' element={<FavList />} exact />
-        <Route path='/Login' element={<Login setUSer={setUSer} />} exact />
-        <Route path='/Wall' element={<ProductWall />} exact />
+        <Route path='/FavList' element={<FavList />} exact /> 
+        <Route path='/Login' element={<Login setUSer={setUSer} />} exact /> /*listo*/
+        <Route path='/Wall' element={<ProductWall />} exact /> 
         <Route path='/ProductSell' element={<ProductSell />} exact />
-        <Route path='/Register' element={<Register setUSer={setUSer} />} exact />
+        <Route path='/Register' element={<Register setUSer={setUSer} />} exact /> /*listo*/
         <Route path='/ShopCart' element={<ShopCart />} exact />
         <Route path='/UserInfo' element={<UserInfo />} exact />
       </Routes>
-      <Footer />
+      <Footer /> /*listo*/
     </BrowserRouter>
   );
 }

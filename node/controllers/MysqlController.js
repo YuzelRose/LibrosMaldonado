@@ -1,5 +1,6 @@
 import LibroModels from "../models/BookModel.js";
 import AutorModels from "../models/AutorModel.js";
+import UserModels from "../models/UserModel.js"
 import { Op, Sequelize  } from 'sequelize';
 
 //import QuestionModesl from "";
@@ -119,10 +120,11 @@ export const dropUser = async (req, res) => {
         res.json( {message: error.message} )
     }
 }
+*/
 //Crea suarios
 export const createUser = async (req, res) => {
     try {
-        await UsuarioModels.create(req.body)
+        await UserModels.create(req.body)
         res.json({
             "message":"Su pregunta a sido eviada"
         })
@@ -130,4 +132,21 @@ export const createUser = async (req, res) => {
         res.json( {message: error.message} )
     }
 }
-*/
+export const logUser = async (req, res) => {
+    try {
+        const Correo = req.params.Correo;
+
+        const searchResults = await UserModels.findAll({
+            where: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('Correo')),
+                {
+                    [Op.like]: `%${Correo.toLowerCase()}%`
+                }
+            )
+        });
+
+        res.json(searchResults);
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+}
