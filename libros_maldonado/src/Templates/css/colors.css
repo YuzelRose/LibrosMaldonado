@@ -15,7 +15,7 @@
     --light-gray: #d3dce5;
     --header-gradiant: linear-gradient(#042479, #045aaf);
     --nav-gradiant: linear-gradient(#045aaf, #5784ad);
-    --background-gradiant: radial-gradient(ellipse 70% 70%, hwb(209 34% 32%),#d3dce5);
+    --background-gradiant: radial-gradient(ellipse 70% 70%, #5783ad,#d3dce5);
     --graiant-right-left: linear-gradient(to bottom left, #bbc3ce, #44556f);
     --graiant-left-right: linear-gradient(to bottom right, #bbc3ce, #44556f);
     --graiant-last: linear-gradient(#045aaf, #042479);

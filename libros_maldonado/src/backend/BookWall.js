@@ -32,7 +32,6 @@ const CompShowDesBooks = () => {
                     descount={book.Descuento}
                     name={book.Nombre}
                     fullInfo={book.Sinopsis}
-                    Writers=''
                     productId={book.IDLibro}
                     alt={book.Nombre}
                 />

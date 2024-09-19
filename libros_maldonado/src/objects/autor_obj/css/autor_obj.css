@@ -6,6 +6,7 @@
     margin: 0;
 }
 .autor {
+    background-color: var(--argen);
     cursor: pointer;
     width: 6em;
     height: 6em;
@@ -18,7 +19,20 @@
     -o-border-radius: 99em;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.autor:hover {
+.autor_icon > p {
+    color: black;
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: 2.5em;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--argen);
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border: solid 0.1em;
+}
+.autor_icon:hover .autor {
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
     transform: translateY(-0.5em);
     -webkit-transform: translateY(-0.5em);
@@ -26,12 +40,7 @@
     -ms-transform: translateY(-0.5em);
     -o-transform: translateY(-0.5em);
 }
-.autor_icon > p {
-    color: black;
-    text-align: center;
-    cursor: pointer;
-}
-.autor_icon > p:hover {
+.autor_icon:hover p {
     text-decoration: underline;
 }
 .autor_icon > p:active {

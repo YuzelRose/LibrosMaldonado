@@ -64,7 +64,7 @@ const LoginForm = ({ setUSer }) => {
                 setError('Usuario no encontrado')
             }
         } catch (error) {
-            console.error("Error creating user:", error);
+            console.error("Error logeando:", error);
         }
     };
 

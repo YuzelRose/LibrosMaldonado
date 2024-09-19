@@ -16,7 +16,7 @@ export default function App() {
         <Route path='/FavList' element={<FavList />} exact /> 
         <Route path='/Login' element={<Login setUSer={setUSer} />} exact /> 
         <Route path='/ProductWall' element={<ProductWall />} exact /> 
-        <Route path='/ProductSell' element={<ProductSell />} exact />
+        <Route path='/ProductSell/:id' element={<ProductSell />} exact />
         <Route path='/Register' element={<Register setUSer={setUSer} />} exact /> 
         <Route path='/ShopCart' element={<ShopCart />} exact />
         <Route path='/UserInfo' element={<UserInfo />} exact />

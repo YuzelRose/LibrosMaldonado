@@ -3,8 +3,6 @@ import AutorModels from "../models/AutorModel.js";
 import UserModels from "../models/UserModel.js"
 import { Op, Sequelize  } from 'sequelize';
 
-//import QuestionModesl from "";
-
 export const getAllBooks = async (req, res) => {
     try {
         const books = await LibroModels.findAll({
@@ -21,6 +19,21 @@ export const serchBooks = async (req, res) => {
             where: {
                 [Op.and]: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('Nombre')), {
                     [Op.like]: `%${Nombre.toLowerCase()}%`
+                })
+            }
+        });
+        res.json(searchResults);
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+}
+export const getProduct = async (req, res) => {
+    try {
+        const IDLibro = req.params.IDLibro;
+        const searchResults = await LibroModels.findAll({
+            where: {
+                [Op.and]: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('IDLibro')), {
+                    [Op.like]: `%${IDLibro.toLowerCase()}%`
                 })
             }
         });
@@ -72,6 +85,14 @@ export const getAutors = async (req, res) => {
         const books = await AutorModels.findAll({
             limit: 8
         })
+        res.json(books)
+    } catch(error) {
+        res.json( {message: error.message} )
+    }
+}
+export const getAllAutors = async (req, res) => {
+    try {
+        const books = await AutorModels.findAll()
         res.json(books)
     } catch(error) {
         res.json( {message: error.message} )
