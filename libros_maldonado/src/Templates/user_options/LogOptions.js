@@ -22,10 +22,10 @@ export default function LogOptions({user, setUSer}) {
     return(
         <section class="section__log_options">
             <div id='favlist' className='svg_center'>
-                <img src={favlist} title="Lista de favoritos" />
+                <img src={favlist} title="Lista de favoritos" onClick={redirectFavList} />
             </div>
             <div id='cart' className='svg_center'>
-                <img src={cart} title="Carro de compras" />
+                <img src={cart} title="Carro de compras" onClick={redirectShopCart} />
             </div>
             <section className='drop_list'>
                 <button className='options_btn logout_btn'>Opciones</button>

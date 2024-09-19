@@ -9,6 +9,28 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
         return descount > 0;
     };
 
+    const addToCart = (item) => {
+        // Recuperar el XML del localStorage
+        const userSessionXML = localStorage.getItem('userSession');
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(userSessionXML, "text/xml");
+        // Crear un nuevo elemento para el artículo del carrito
+        const newCartItem = xmlDoc.createElement("Item");
+        newCartItem.textContent = item;
+    
+        // Agregar el nuevo artículo al carrito
+        const cartElement = xmlDoc.getElementsByTagName("Cart")[0];
+        cartElement.appendChild(newCartItem);
+    
+        // Serializar el XML actualizado de nuevo a string
+        const serializer = new XMLSerializer();
+        const updatedXML = serializer.serializeToString(xmlDoc);
+    
+        // Guardar el XML actualizado en localStorage
+        localStorage.setItem('userSession', updatedXML);
+        alert('Artículo agregado al carrito con éxito.');
+    };
+
     return(
         <section className="product_obj">
             <figure>
@@ -32,7 +54,7 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
                 )}
                 <p>{fullInfo}</p>
                 <Link className="link" id="prod_link" to={`/ProductSell/${productId}`}> Ver producto </Link>
-                <button>Añadir +</button>
+                <button className='product_obj_to_cart' onClick={() => addToCart(productId)}>Al carrito</button>
             </section>
 
         </section>

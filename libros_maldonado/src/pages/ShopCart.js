@@ -1,11 +1,13 @@
 import React from 'react'
-//import './RegisterUSR.css'
+import CompShopCart from '../backend/ShopCart.js'
+import fond from '../img/fond/loginfondo.png';
+import './css/shop_cart.css'
 
-function ShopCart(){
+
+export default function ShopCart({setUSer}) {
     return(
-        <div>
-
-        </div>
+        <main id='main_shop_cart' style={{ backgroundImage: `url(${fond})` }}>
+            <CompShopCart/>
+        </main>
     )
 }
-export default ShopCart

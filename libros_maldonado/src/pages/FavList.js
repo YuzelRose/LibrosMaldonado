@@ -1,11 +1,11 @@
 import React from 'react'
+import fond from '../img/fond/loginfondo.png';
 //import './RegisterUSR.css'
 
-function FavList(){
+export default function FavList({setUSer}) {
     return(
-        <div>
+        <main style={{ backgroundImage: `url(${fond})` }}>
 
-        </div>
+        </main>
     )
 }
-export default FavList

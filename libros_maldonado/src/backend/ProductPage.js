@@ -35,6 +35,7 @@ const CompProductPage = ({ id }) => {
             product.map((product) => (
                 <PordSellObj
                     key={product.IDLibro}
+                    id={product.IDLibro}
                     Name={product.Nombre}
                     Autor={"autor"} 
                     Costo={product.Costo}

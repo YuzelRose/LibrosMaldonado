@@ -114,7 +114,10 @@
 #prod_link:active {
     color: white;
 }
-
+.product_obj_to_cart:hover {
+    cursor: pointer;
+    color: var(--primary-red);
+}
 @media (min-width: 768px) {
     .product_obj {
         width: 14em;

@@ -42,6 +42,22 @@ export const getProduct = async (req, res) => {
         res.json({ message: error.message });
     }
 }
+export const getProductCart = async (req, res) => {
+    try {
+        const ids = req.query.ids.split(','); 
+        const searchResults = await LibroModels.findAll({
+            where: {
+                IDLibro: {
+                    [Op.in]: ids.map(id => parseInt(id)) 
+                }
+            }
+        });
+        res.json(searchResults);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
 export const getDescountBooks = async (req, res) => {
     try {
         const searchResults = await LibroModels.findAll({

@@ -53,6 +53,9 @@ const LoginForm = ({ setUSer }) => {
                 const user = response.data[0];
                 if (user.Contrasena === pass) {
                     setError('')
+                    //XML
+                    const userXML = generateXML(user)
+                    localStorage.setItem('userSession', userXML);
                     setUSer([mail])
                     navigate('/');
                 } else {
@@ -66,6 +69,19 @@ const LoginForm = ({ setUSer }) => {
         } catch (error) {
             console.error("Error logeando:", error);
         }
+    };
+
+    const generateXML = (user) => {
+        return `
+        <UserSession>
+            <User>
+                <Email>${user.Correo}</Email>
+            </User>;
+            <Cart>
+            </Cart>
+            <FavList>
+            <FavList>
+        </UserSession>`;
     };
 
     return(

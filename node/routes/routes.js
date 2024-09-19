@@ -1,10 +1,10 @@
 import express from 'express'
-import { getAllAutors ,getAllBooks, serchBooks, getDescountBooks, getAutors, getBestSellerBooks, createUser, logUser, getProduct } from '../controllers/MysqlController.js'
+import { getAllAutors ,getAllBooks, serchBooks, getDescountBooks, getAutors, getBestSellerBooks, createUser, logUser, getProduct, getProductCart } from '../controllers/MysqlController.js'
 const router = express.Router()
-
 router.get('/Wall', getAllBooks)
 router.get('/Wall/:Nombre', serchBooks)
 router.get('/Product/:IDLibro', getProduct)
+router.get('/Cart', getProductCart);
 router.get('/Bdes', getDescountBooks)
 router.get('/Autor', getAutors)
 router.get('/WallAutor', getAllAutors)
