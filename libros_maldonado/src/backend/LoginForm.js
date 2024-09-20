@@ -76,13 +76,14 @@ const LoginForm = ({ setUSer }) => {
         <UserSession>
             <User>
                 <Email>${user.Correo}</Email>
-            </User>;
+            </User>
             <Cart>
             </Cart>
             <FavList>
-            <FavList>
+            </FavList>
         </UserSession>`;
     };
+    
 
     return(
         <form className="form__reg_log" onSubmit={handleSubmit}>

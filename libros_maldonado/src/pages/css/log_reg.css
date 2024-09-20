@@ -79,6 +79,29 @@ sup {
 #log_btn {
     margin-top: 1em;
 }
+#main__reg_log > nav {
+    padding: 2em;
+}
+.hcange_form_btn {
+    color: white;
+    background: var(--header-gradiant);
+    border: solid 0.2em var(--primary-blue);
+    padding: 0.5em;
+    width: 10em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.hcange_form_btn:hover {
+    border: solid 0.2em var(--primary-red);
+    
+}
+.hcange_form_btn:active {
+    border: solid 0.2em transparent;
+    
+}
 @media (max-width: 1600px){
     main {
         padding-top: 10em;

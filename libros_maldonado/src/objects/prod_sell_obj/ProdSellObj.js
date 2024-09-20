@@ -31,13 +31,34 @@ export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, ImgURL}) 
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(userSessionXML, "text/xml");
     
-        // Crear un nuevo elemento para el artículo del carrito
-        const newCartItem = xmlDoc.createElement("Item");
-        newCartItem.textContent = item;
-    
-        // Agregar el nuevo artículo al carrito
+        // Buscar si el producto ya está en el carrito
         const cartElement = xmlDoc.getElementsByTagName("Cart")[0];
-        cartElement.appendChild(newCartItem);
+        let existingItem = null;
+        const items = cartElement.getElementsByTagName("Item");
+    
+        // Buscar el item en el carrito
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].getAttribute("id") === item.id) {
+                existingItem = items[i];
+                break;
+            }
+        }
+    
+        if (existingItem) {
+            // Si el producto ya está en el carrito, incrementar la cantidad
+            let currentQuantity = parseInt(existingItem.getElementsByTagName("Cantidad")[0].textContent);
+            existingItem.getElementsByTagName("Cantidad")[0].textContent = currentQuantity + 1;
+        } else {
+            // Crear un nuevo elemento para el artículo del carrito
+            const newCartItem = xmlDoc.createElement("Item");
+            newCartItem.setAttribute("id", item.id); // Agregar atributo id
+    
+            const cantidad = xmlDoc.createElement("Cantidad");
+            cantidad.textContent = 1; // Iniciar la cantidad en 1
+    
+            newCartItem.appendChild(cantidad);
+            cartElement.appendChild(newCartItem);
+        }
     
         // Serializar el XML actualizado de nuevo a string
         const serializer = new XMLSerializer();
@@ -45,6 +66,7 @@ export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, ImgURL}) 
     
         // Guardar el XML actualizado en localStorage
         localStorage.setItem('userSession', updatedXML);
+    
         alert('Artículo agregado al carrito con éxito.');
     };
 

@@ -9,27 +9,31 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
         return descount > 0;
     };
 
-    const addToCart = (item) => {
-        // Recuperar el XML del localStorage
+    const addToCart = (item) => { 
         const userSessionXML = localStorage.getItem('userSession');
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(userSessionXML, "text/xml");
-        // Crear un nuevo elemento para el artículo del carrito
+        
         const newCartItem = xmlDoc.createElement("Item");
-        newCartItem.textContent = item;
+        newCartItem.setAttribute("Id", item); 
+        const itemIdElement = xmlDoc.createElement("ID");
+        itemIdElement.textContent = item; 
+        const quantityElement = xmlDoc.createElement("Cantidad");
+        quantityElement.textContent = 1; 
+        
+        newCartItem.appendChild(itemIdElement);
+        newCartItem.appendChild(quantityElement);
     
-        // Agregar el nuevo artículo al carrito
         const cartElement = xmlDoc.getElementsByTagName("Cart")[0];
         cartElement.appendChild(newCartItem);
     
-        // Serializar el XML actualizado de nuevo a string
         const serializer = new XMLSerializer();
         const updatedXML = serializer.serializeToString(xmlDoc);
-    
-        // Guardar el XML actualizado en localStorage
         localStorage.setItem('userSession', updatedXML);
         alert('Artículo agregado al carrito con éxito.');
+        console.log(localStorage.getItem('userSession'));
     };
+    
 
     return(
         <section className="product_obj">
@@ -56,7 +60,6 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
                 <Link className="link" id="prod_link" to={`/ProductSell/${productId}`}> Ver producto </Link>
                 <button className='product_obj_to_cart' onClick={() => addToCart(productId)}>Al carrito</button>
             </section>
-
         </section>
     )
 }

@@ -18,7 +18,14 @@ export default function LogOptions({user, setUSer}) {
     const handleLogOut = () => {
         alert('Sesión cerrada.');
         setUSer([])
+        eliminateXML()
+        navigate('/')
     }
+
+    const eliminateXML = () => {
+        localStorage.removeItem('userSession');
+    }
+
     return(
         <section class="section__log_options">
             <div id='favlist' className='svg_center'>

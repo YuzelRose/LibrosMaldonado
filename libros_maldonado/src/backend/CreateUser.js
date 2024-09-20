@@ -44,6 +44,7 @@ const CompCreateUser = ({ setUSer }) => {
         setPassError(false);
         if (keepSession) {
             create();
+            generateXML(mail)
             setUSer([mail])
             navigate('/');
         } else {
@@ -72,6 +73,19 @@ const CompCreateUser = ({ setUSer }) => {
             setPassError(false);
 
         }
+    };
+
+    const generateXML = (user) => {
+        return `
+        <UserSession>
+            <User>
+                <Email>${user.Correo}</Email>
+            </User>
+            <Cart>
+            </Cart>
+            <FavList>
+            </FavList>
+        </UserSession>`;
     };
 
     return(

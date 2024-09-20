@@ -7,6 +7,7 @@
 }
 .list_section {
     width: 100%;
+    min-height: 25em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +28,7 @@
     background-color: var(--argen);
     border: solid 0.2em var(--primary-red);
     padding: 2em;
+    width: 25em;
     list-style-type: none;
     border-radius: 1em;
     -webkit-border-radius: 1em;
@@ -51,7 +53,7 @@
     font-size: 1.2em;
 }
 .list_link:hover {
-    color: white;
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 .list_link:active {
@@ -67,10 +69,66 @@
     margin: 0;
 }
 .list_opc_drop:hover {
-    color: white;
+    color: var(--primary-red);
     text-decoration: underline;
 }
 .list_opc_drop:active {
     color: black;
     text-decoration: none;
+}
+.list_pay_opc > h2 {
+    color: black;
+    text-align: start;
+}
+.list_pay_opc > button {
+    cursor: pointer;
+    background-color: var(--background-blue);
+    color: white;
+    border: solid 0.2em var(--background-blue);
+    padding: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.list_pay_opc > button:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    border: solid 0.2em white;
+}
+.list_pay_opc > button:active {
+    background-color: var(--background-blue);
+    color: white;
+    border: solid 0.2em var(--background-blue);
+}
+.black_span {
+    color: black;
+}
+.list_cant_btn {
+    cursor: pointer;
+    color: white;
+    background-color: var(--background-blue);
+    border: solid 0.2em var(--background-blue);
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.list_cant_btn:hover {
+    background-color: var(--primary-blue);
+    border: solid 0.2em var(--primary-blue);
+}
+.list_cant_btn:active {
+    background-color: var(--primary-blue);
+    border: solid 0.2em var(--argen);
+}
+.list_cant_dis {
+    padding-left: 1em;
+    padding-right: 1em;
 }

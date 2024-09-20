@@ -47,7 +47,7 @@
 }
 .options_btn:hover + .drop_down_opc,
 .drop_list:hover .drop_down_opc {
-    max-height: 7em;
+    max-height: 10em;
 }
 .drop_down_opc {
     position: absolute;
