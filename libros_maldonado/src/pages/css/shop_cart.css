@@ -46,7 +46,8 @@
     margin-bottom: 0;
 }
 .list_price {
-    margin-top: 0;
+    font-size: 1.2em;
+    margin-top: 0.5em;
     margin-top: 0;
 }
 .list_link {
@@ -62,7 +63,8 @@
 }
 .list_opc {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    font-size: 1.2em;
 }
 .list_opc_drop {
     cursor: pointer;
@@ -131,4 +133,27 @@
 .list_cant_dis {
     padding-left: 1em;
     padding-right: 1em;
+}
+.final_cost {
+    text-align: center;
+}
+#main_fav_list {
+    width: 100%;
+    padding-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.list_opc_add {
+    cursor: pointer;
+    margin: 0;
+}
+.list_opc_add:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+.list_opc_add:active {
+    color: black;
+    text-decoration: none;
 }

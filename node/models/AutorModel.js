@@ -1,23 +1,19 @@
-import mysql from '../database/MysqlConex.js';
-import { DataTypes } from 'sequelize';
+import mongoose from 'mongoose';
 
-const AutorModels = mysql.define('Autor', { 
-    IDAutor: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+const AutorModels = new mongoose.Schema({
+    _id: {
+        type: Number,
+        required: true,
     },
     Nombre: {
-        type: DataTypes.STRING(40), 
-        allowNull: false
+        type: String,
+        required: true,
     },
     Resumen: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    }
-}, {
-    tableName: 'Autor', 
-    timestamps: false 
-});
+        type: String,
+        required: true,
+    },
+}, { collection: 'autor' });
 
-export default AutorModels;
+const Autor = mongoose.model('Autor', AutorModels);
+export default Autor;

@@ -1,39 +1,18 @@
 import React from 'react'
 import './css/product_obj.css'
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../backend/utils/XMLUtils';
+import { useAuth } from '../../backend/utils/AuthContext'; 
 
-export default function ProductObj({imageLink,price,descount,name,fullInfo,productId,alt}){
+
+export default function ProductObj({imageLink,price,descount,name,fullInfo,productId,alt}) {
+    const {isLogged} = useAuth()
+
     const newPrice = price - (price * descount / 100);
 
     const checkDiscount = (descount) => {
         return descount > 0;
-    };
-
-    const addToCart = (item) => { 
-        const userSessionXML = localStorage.getItem('userSession');
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(userSessionXML, "text/xml");
-        
-        const newCartItem = xmlDoc.createElement("Item");
-        newCartItem.setAttribute("Id", item); 
-        const itemIdElement = xmlDoc.createElement("ID");
-        itemIdElement.textContent = item; 
-        const quantityElement = xmlDoc.createElement("Cantidad");
-        quantityElement.textContent = 1; 
-        
-        newCartItem.appendChild(itemIdElement);
-        newCartItem.appendChild(quantityElement);
-    
-        const cartElement = xmlDoc.getElementsByTagName("Cart")[0];
-        cartElement.appendChild(newCartItem);
-    
-        const serializer = new XMLSerializer();
-        const updatedXML = serializer.serializeToString(xmlDoc);
-        localStorage.setItem('userSession', updatedXML);
-        alert('Artículo agregado al carrito con éxito.');
-        console.log(localStorage.getItem('userSession'));
-    };
-    
+    };    
 
     return(
         <section className="product_obj">
@@ -58,7 +37,10 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
                 )}
                 <p>{fullInfo}</p>
                 <Link className="link" id="prod_link" to={`/ProductSell/${productId}`}> Ver producto </Link>
-                <button className='product_obj_to_cart' onClick={() => addToCart(productId)}>Al carrito</button>
+                {isLogged ? (
+                    <button className='product_obj_to_cart' onClick={() => addToCart(productId)}>Al carrito</button>
+                ) : null
+                }
             </section>
         </section>
     )

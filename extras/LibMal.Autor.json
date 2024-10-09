@@ -1,0 +1,65 @@
+[{
+  "_id": 1,
+  "Nombre": "Jonathan S. Berek",
+  "Resumen": "Jonathan S. Berek es un reconocido ginecólogo y oncólogo especializado en la salud de la mujer. Es conocido por su trabajo en la investigación y tratamiento de cáncer ginecológico, y ha sido editor del famoso libro 'Berek y Novak Ginecología'."
+},
+{
+  "_id": 2,
+  "Nombre": "Aureliano Mira Cavalcanti de Souza",
+  "Resumen": "Aureliano Mira Cavalcanti de Souza es un médico especializado en oncología, reconocido por su trabajo en el tratamiento de cánceres que afectan el sistema digestivo y el retroperitoneo."
+},
+{
+  "_id": 3,
+  "Nombre": "Mauro Monteiro Correia",
+  "Resumen": "Mauro Monteiro Correia es coautor de varios textos médicos centrados en oncología, especialmente en relación con el sistema digestivo y el tórax."
+},
+{
+  "_id": 4,
+  "Nombre": "Luiz Leite Luna",
+  "Resumen": "Luiz Leite Luna es especialista en endoscopia digestiva, con énfasis en el tratamiento de hemorragias digestivas. Ha escrito varios textos sobre el tema."
+},
+{
+  "_id": 5,
+  "Nombre": "Cleber Vargas",
+  "Resumen": "Cleber Vargas es un especialista en endoscopia digestiva, colaborador en textos sobre el manejo de hemorragias digestivas y otras patologías del sistema digestivo."
+},
+{
+  "_id": 6,
+  "Nombre": "Alexander Pelosi",
+  "Resumen": "Alexander Pelosi es un especialista en medicina digestiva, coautor en temas de endoscopia digestiva y su aplicación en el tratamiento de hemorragias."
+},
+{
+  "_id": 7,
+  "Nombre": "J.C. Morín",
+  "Resumen": "J.C. Morín es un experto en citología y patología ginecológica, autor de diversos textos sobre la materia y elementos de colposcopia."
+},
+{
+  "_id": 8,
+  "Nombre": "J. Ord i Majá",
+  "Resumen": "J. Ord i Majá es un especialista en patología ginecológica y citología, coautor en trabajos sobre autonomía patológica y colposcopia clínica."
+},
+{
+  "_id": 9,
+  "Nombre": "Thomas A. Zdeblick",
+  "Resumen": "Thomas A. Zdeblick es un reconocido cirujano ortopédico especializado en la columna vertebral. Ha trabajado en el desarrollo de técnicas de cirugía y tratamiento de patologías espinales."
+},
+{
+  "_id": 10,
+  "Nombre": "J. Albert",
+  "Resumen": "J. Albert es un experto en cirugía de la columna vertebral y colaborador en investigaciones y textos médicos sobre el tratamiento y cuidado de la columna."
+},
+{
+  "_id": 11,
+  "Nombre": "Rosemarie Forsther",
+  "Resumen": "Rosemarie Forsther es una radióloga experta en el uso de resonancia magnética y tomografía computarizada, especialmente enfocada en la pelvis femenina."
+},
+{
+  "_id": 12,
+  "Nombre": "Teresa Margarita Cunha",
+  "Resumen": "Teresa Margarita Cunha es especialista en radiología ginecológica, con trabajos publicados sobre el uso de la imagenología en el diagnóstico de patologías de la pelvis femenina."
+},
+{
+  "_id": 13,
+  "Nombre": "Bernd Hamm",
+  "Resumen": "Bernd Hamm es un radiólogo reconocido internacionalmente, especializado en el diagnóstico por imágenes de diversas patologías, incluyendo aquellas que afectan la pelvis femenina."
+}]

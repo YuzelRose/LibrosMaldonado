@@ -1,11 +1,11 @@
 import React  from 'react';
 import './css/log_reg.css';
 import fond from '../img/fond/loginfondo.png';
-import LoginForm from '../backend/LoginForm.js'
+import {FormLogin} from '../backend'
 import { useNavigate } from 'react-router-dom'
 
 
-export default function Login({ setUSer }) {
+export default function Login() {
     const navigate = useNavigate();
 
     const changeForm = () => {
@@ -14,7 +14,7 @@ export default function Login({ setUSer }) {
 
     return (
         <main id='main__reg_log' style={{ backgroundImage: `url(${fond})` }}>
-            <LoginForm setUSer={setUSer}/>
+            <FormLogin />
 
             <nav>
                 <button onClick={changeForm} className='hcange_form_btn'>Registro</button>

@@ -41,6 +41,7 @@
     min-width: 13em;
     height: auto;
     margin: 0.5em;
+    display: flex;
 }
 .product_image > h2,  .product_info > h2,.product_info > p,.product_info > h3 {
     color: black;
@@ -49,7 +50,10 @@
     margin-top: 0.5em;
 }
 .product_image > img {
-    height: 10em;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
 }
 span {
     font-weight: bolder;

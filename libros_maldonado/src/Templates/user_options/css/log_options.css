@@ -80,6 +80,13 @@
 #li_cart{
     display: none;
 }
+#li_user {
+    font-size: small;
+    cursor: default;
+}
+#li_user:hover {
+    text-decoration: none;
+}
 @media (max-width: 1024px) {
     #favlist {
         display: none;
@@ -94,5 +101,11 @@
     }
     #li_cart{
         display: block;
+    }
+}
+@media (max-width: 600px) {
+    #li_user {
+        font-size: 0.8em;
+        cursor: default;
     }
 }

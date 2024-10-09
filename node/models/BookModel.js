@@ -1,43 +1,44 @@
-import mysql from '../database/MysqlConex.js';
-import { DataTypes } from 'sequelize';
+import mongoose from 'mongoose';
 
-const LibroModels = mysql.define('Libro', { 
-    IDLibro: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+const LibroModels = new mongoose.Schema({
+    _id: {
+        type: String,
+        required: true,
     },
     Nombre: {
-        type: DataTypes.STRING(40), 
-        allowNull: false
+        type: String,
+        required: true,
     },
     Sinopsis: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: String,
+        required: true,
     },
     Descuento: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: Number,
+        default: 0, 
     },
     Costo: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: Number,
+        required: true,
     },
     Existencias: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: Number,
+        required: true,
     },
     Ventas: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: Number,
+        default: 0, 
     },
     URLImagen: {
-        type: DataTypes.STRING(40), 
-        allowNull: false
-    }
-}, {
-    tableName: 'Libro', 
-    timestamps: false 
-});
+        type: String,
+        default: 'n/d', 
+    },
+    Autores: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Autor',
+        required: true,
+    }],
+}, { collection: 'libro' });
 
-export default LibroModels;
+const Libro = mongoose.model('Libro', LibroModels);
+export default Libro;

@@ -55,7 +55,7 @@
 .sale_wall_wrapper {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
     gap: 1em;
     padding: 0;
     margin: 0 ; 
@@ -67,6 +67,7 @@
 }
 .serch_btn {
     margin-top: 1em;
+    text-align: center;
 }
 @media (max-width: 600px) {
     #product_wall > aside {

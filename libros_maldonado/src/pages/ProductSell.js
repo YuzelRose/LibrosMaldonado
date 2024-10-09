@@ -1,9 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'; 
-import CompProductPage from '../backend/ProductPage.js';
 import './css/product_sell.css'
 import fond from '../img/fond/loginfondo.png';
-import CompShowDesBooks from '../backend/BookWall.js';
+import {CompBookWall, CompProductPage} from '../backend';
 
  
 export default function ProductSell(){
@@ -15,7 +14,7 @@ export default function ProductSell(){
                 <div>
                     <h2>Otros libros</h2>
                 </div>
-                <CompShowDesBooks/>
+                <CompBookWall/>
             </section>
         </main>
     )

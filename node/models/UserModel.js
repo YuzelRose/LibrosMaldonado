@@ -1,35 +1,31 @@
-import mysql from '../database/MysqlConex.js';
-import { DataTypes } from 'sequelize';
+import mongoose from 'mongoose';
 
-const UserModels = mysql.define('Usuario', { 
-    IDUsuario: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
+const UsuarioModels = new mongoose.Schema({
     Nombre: {
-        type: DataTypes.STRING(40), 
-        allowNull: false
+        type: String,
+        required: true,
     },
     Correo: {
-        type: DataTypes.STRING(50),
-        allowNull: false
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
     },
     Contrasena: {
-        type: DataTypes.STRING(50),
-        allowNull: false
+        type: String,
+        required: true,
     },
     Telefono: {
-        type: DataTypes.STRING(13),
-        allowNull: true
+        type: String,
+        required: true,
+        default: 'no dado', 
     },
     Direccion: {
-        type: DataTypes.TEXT,
-        allowNull: true
-    }
-}, {
-    tableName: 'Usuario', 
-    timestamps: false 
-});
+        type: String,
+        required: true,
+        default: 'no dada', 
+    },
+}, { collection: 'usuario' });
 
-export default UserModels;
+const Usuario = mongoose.model('Usuario', UsuarioModels);
+export default Usuario;

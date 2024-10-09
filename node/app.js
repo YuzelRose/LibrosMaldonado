@@ -1,27 +1,21 @@
 import express from 'express';
 import cors from 'cors';
-import mysql from './database/MysqlConex.js'; 
-import mysqlRoutes from './routes/routes.js'; 
+import './database/MongoConex.js'; 
+import AutorRoutes from './routes/AutorRoutes.js';
+import UserRoutes from './routes/UserRoutes.js';
+import BookRoutes from './routes/BookRoutes.js';
 
 const app = express();
+const URL = '/LibMal';
 
 app.use(cors());
 app.use(express.json());
-app.use('/LibrosMaldonado', mysqlRoutes);
 
-(async () => {
-    try {
-        await mysql.authenticate(); 
-        console.log('MySQL ready');
-    } catch (error) {
-        console.error(`MySQL falló con resultado: ${error}`); 
-    }
-})();
+app.use(`${URL}/Autores`, AutorRoutes);
+app.use(`${URL}/Usuarios`, UserRoutes);
+app.use(`${URL}/Libros`, BookRoutes);
 
-/*app.get('/', (req, res) => {
-    res.end('hola mundo');
-});*/
 
 app.listen(5000, () => {
-    console.log("Server Running");
+    console.log("Servidor en ejecución");
 });

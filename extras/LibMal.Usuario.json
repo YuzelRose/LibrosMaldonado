@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "6705f3ae4bcaa2067f4a2a0b"
+  },
+  "Nombre": "userEjemplo",
+  "Correo": "ejemplo@ejemplo.com",
+  "Contrasena": "EjemploHash",
+  "Telefono": "+523333333333",
+  "Direccion": "CP. 33333 Col. Ejemplo, Calle ejemplo Numero Ejemplo"
+}]

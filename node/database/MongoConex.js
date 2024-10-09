@@ -1,7 +1,19 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/LibMal');
-const DB = mongoose.connection
-DB.on('connected',() => {console.log('Conexion correcta a mongodb')})
-DB.on('error',() => {console.log('Conexion fallida a mongodb')})
+import mongoose from 'mongoose';
 
-module.exports = mongoose
+const URI = 'mongodb://localhost:27017/LibMal';
+
+mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => {
+    console.log('base de datos ejecutando');
+})
+.catch(err => {
+    console.error('Error de conexión a base de datos:', err);
+});
+
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log('Conexión a la base de datos establecida');
+});

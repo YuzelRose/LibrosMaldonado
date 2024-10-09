@@ -1,11 +1,12 @@
 import React from 'react'
 import fond from '../img/fond/loginfondo.png';
-//import './RegisterUSR.css'
+import './css/shop_cart.css'
+import { CompFavList } from '../backend';
 
-export default function FavList({setUSer}) {
+export default function FavList() {
     return(
-        <main style={{ backgroundImage: `url(${fond})` }}>
-
+        <main id='main_fav_list' style={{ backgroundImage: `url(${fond})` }}>
+            <CompFavList/>
         </main>
     )
 }

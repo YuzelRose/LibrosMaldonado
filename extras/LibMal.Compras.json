@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "6705f1ec4bcaa2067f4a2a07"
+  },
+  "IDUser": 0,
+  "IDLibro": [
+    0,
+    0
+  ],
+  "Costos": [
+    0,
+    0
+  ],
+  "Direccion": "EjemploHash",
+  "total": 0
+}]

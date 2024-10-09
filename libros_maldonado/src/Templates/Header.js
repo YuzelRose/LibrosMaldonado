@@ -6,8 +6,10 @@ import { LogOptions, RegisterLogButton } from './user_options'
 
 import { SerchBar } from '../forms';
 import { TopNav, Navigation } from '../navigation';
+import { useAuth } from '../backend/utils/AuthContext';
 
-export default function Header({ user, setUSer }) {
+export default function Header() {
+    const {isLogged} = useAuth()
     const navigate = useNavigate();
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [headerVisible, setHeaderVisible] = useState(true);
@@ -58,8 +60,8 @@ export default function Header({ user, setUSer }) {
                 </div>
                 <div className='div__log'>
                     {
-                        user.length > 0 
-                        ? <LogOptions user={user} setUSer={setUSer}/>
+                        isLogged 
+                        ? <LogOptions />
                         : <RegisterLogButton /> 
                     }
                 </div>
