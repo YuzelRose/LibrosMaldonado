@@ -5,7 +5,7 @@ import { removeFromCart } from '../utils/XMLUtils';
 
 const CompShopCart = () => {
     const [cartItems, setCartItems] = useState([]);
-    const URI = 'http://localhost:5000/LibrosMaldonado/Cart';
+    const URI = 'http://localhost:5000/LibMal/Libros/XML';
     const [finalCost, setFinalCost] = useState(0);
     const [quantities, setQuantities] = useState({}); 
     const [fetched, setFetched] = useState(true)
@@ -34,6 +34,7 @@ const CompShopCart = () => {
     useEffect(() => {
         const fetchCartItems = async () => {
             const userSessionXML = localStorage.getItem('userSession');
+            console.log('Contenido de userSessionXML:', userSessionXML);
             if (userSessionXML) {
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(userSessionXML, 'text/xml');

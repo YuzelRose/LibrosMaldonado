@@ -3,19 +3,18 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { removeFromFavorites, addToCart } from '../utils/XMLUtils';
 
-
 const CompFavList = () => {
     const [favItems, setFavItems] = useState([]); 
     const URI = 'http://localhost:5000/LibMal/Libros/XML';
-
-    const [fetched, setFetched] = useState(true);
 
     const getProduct = useCallback(async (cartIds) => {
         try {
             const idsQuery = cartIds.join(',');
             const res = await axios.get(`${URI}?ids=${idsQuery}`);
-            if (res.data.length > 0) {
+            if (res.data && res.data.length > 0) {
                 setFavItems(res.data); 
+            } else {
+                console.warn('No se encontraron libros para los IDs dados.');
             }
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -40,20 +39,13 @@ const CompFavList = () => {
                 console.log('IDs de la lista de favoritos:', favIds); 
 
                 if (favIds.length > 0) {
-                    try {
-                        await getProduct(favIds); 
-                    } catch (error) {
-                        console.error('Error fetching favorite items:', error);
-                    }
+                    await getProduct(favIds); 
                 }
             }
         }
 
-        if (fetched) {
-            setFetched(false);
-            fetchFavItems();
-        }
-    }, [fetched, getProduct]);
+        fetchFavItems();
+    }, [getProduct]);
 
     const remove = (itemId) => {
         removeFromFavorites(itemId);
@@ -67,18 +59,16 @@ const CompFavList = () => {
             </div>
             <ul>
                 {favItems.length > 0 ? (
-                    <>
-                        {favItems.map(book => (
-                            <li key={book.IDLibro}>
-                                <Link to={`/ProductSell/${book.IDLibro}`} className='dark_link list_link list_name'>{book.Nombre || 'Nombre no disponible'}</Link> 
-                                <p className='list_price'><span className='black_span'>Precio:</span> ${book.Costo || 'N/A'}</p>
-                                <div className='list_opc'>
-                                    <p className='list_opc_add' onClick={() => addToCart(book.IDLibro)}>Al carrito</p>
-                                    <p onClick={() => remove(book.IDLibro)} className='list_opc_drop'>Eliminar</p>
-                                </div>
-                            </li>
-                        ))}
-                    </>
+                    favItems.map(book => (
+                        <li key={book.IDLibro}>
+                            <Link to={`/ProductSell/${book.IDLibro}`} className='dark_link list_link list_name'>{book.Nombre || 'Nombre no disponible'}</Link> 
+                            <p className='list_price'><span className='black_span'>Precio:</span> ${book.Costo || 'N/A'}</p>
+                            <div className='list_opc'>
+                                <p className='list_opc_add' onClick={() => addToCart(book.IDLibro)}>Al carrito</p>
+                                <p onClick={() => remove(book.IDLibro)} className='list_opc_drop'>Eliminar</p>
+                            </div>
+                        </li>
+                    ))
                 ) : (
                     <li>La lista está vacía.</li>
                 )}

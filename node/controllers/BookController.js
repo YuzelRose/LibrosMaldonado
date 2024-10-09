@@ -9,11 +9,19 @@ export const getProductXML = async (req, res) => {
                 $in: ids.map(id => Types.ObjectId(id)) // Convertir a ObjectId para MongoDB
             }
         });
+
+        // Verificar si hay resultados
+        if (searchResults.length === 0) {
+            return res.status(404).json({ message: 'No se encontraron libros.' });
+        }
+
         res.json(searchResults);
     } catch (error) {
+        console.error('Error en la consulta:', error);
         res.status(500).json({ message: error.message });
     }
 }
+
 export const getAllBooks = async (req, res) => {
     try {
         const libros = await Libro.find({

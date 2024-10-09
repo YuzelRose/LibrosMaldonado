@@ -4,17 +4,31 @@ import { ProductObj } from '../../objects';
 
 const URI = 'http://localhost:5000/LibMal/Libros/';
 
-const CompBookWall = () => {
+const CompBookWall = ({ query }) => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        getAllBooks();
-    }, []);
+        // Verifica si hay una consulta
+        if (query) {
+            searchBooks(query);
+        } else {
+            getAllBooks();
+        }
+    }, [query]); // Dependiendo de la consulta
 
     const getAllBooks = async () => {
         try {
-            const res = await axios.get(URI)
-            setBooks(res.data)
+            const res = await axios.get(URI);
+            setBooks(res.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    const searchBooks = async (query) => {
+        try {
+            const res = await axios.get(`${URI}search${query}`);
+            setBooks(res.data);
         } catch (error) {
             console.error('Error:', error);
         }

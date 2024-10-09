@@ -35,9 +35,9 @@ const CompShowAutors = () => {
                 <section className='autor_wall'>
                     {autors.slice(0, 8).map((autor) => (
                         <AutorObj
-                            key={autor.IDAutor}
+                            key={autor._id}
                             name={autor.Nombre}
-                            imgURL={autor.IDAutor}
+                            imgURL={autor.URLImage}
                         />
                     ))}
                 </section>

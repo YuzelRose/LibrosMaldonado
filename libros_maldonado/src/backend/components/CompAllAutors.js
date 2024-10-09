@@ -28,7 +28,7 @@ const CompAllAutors = () => {
                         <AutorObj
                             key={autor._id}
                             name={autor.Nombre}
-                            imgURL={autor._id}
+                            imgURL={autor.URLImage}
                         />
                     ))}
                 </section>

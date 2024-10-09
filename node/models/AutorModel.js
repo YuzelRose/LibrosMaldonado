@@ -13,6 +13,11 @@ const AutorModels = new mongoose.Schema({
         type: String,
         required: true,
     },
+    URLImage: {
+        type: String,
+        required: true,
+        default: "Default"
+    }
 }, { collection: 'autor' });
 
 const Autor = mongoose.model('Autor', AutorModels);

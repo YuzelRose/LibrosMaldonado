@@ -68,6 +68,7 @@ export const updateUser = async (req, res) => {
             const salt = await bcrypt.genSalt(10);
             user.Contrasena = await bcrypt.hash(Pass, salt);
         }
+        if (Nombre) user.Nombre = Nombre;
         if (Mail) user.Correo = Mail;
         if (Tel) user.Telefono = Tel;
         if (Direc)  user.Direccion = Direc;
