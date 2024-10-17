@@ -1,7 +1,7 @@
 import React from 'react'
-import './css/product_obj.css'
+import './product_obj.css'
 import { Link } from 'react-router-dom';
-import { addToCart } from '../../backend/utils/XMLUtils';
+import { addToCart } from '../../backend/utils/JsonUtils';
 import { useAuth } from '../../backend/utils/AuthContext'; 
 
 

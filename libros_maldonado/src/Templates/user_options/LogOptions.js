@@ -4,6 +4,7 @@ import './css/log_options.css'
 import cart from '../../img/svg/cart.svg'
 import favlist from '../../img/svg/favlist.svg'
 import { useAuth } from '../../backend/utils/AuthContext'
+import { deleteJSON } from '../../backend/utils/JsonUtils'
 
 export default function LogOptions() {
     const {setAuthUser,setIsLogged, authUser} = useAuth()
@@ -21,15 +22,12 @@ export default function LogOptions() {
         e.preventDefault()
         setIsLogged(false)
         setAuthUser(null)
-        eliminateXML()
+        deleteJSON()
         alert('Sesión cerrada.')
         navigate('/')
     }
-    const eliminateXML = () => {
-        localStorage.removeItem('userSession');
-    }
     return(
-        <section class="section__log_options">
+        <section className="section__log_options">
             <div id='favlist' className='svg_center'>
                 <img src={favlist} alt='Favoritos' title="Lista de favoritos" onClick={redirectFavList} />
             </div>

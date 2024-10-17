@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../utils/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const URI = 'http://localhost:5000/LibMal/Usuarios/create';
 
 const FormCreateUser = () => {
-    const {authUser,isLogged,setAuthUser,setIsLogged} = useAuth()
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
@@ -21,7 +19,9 @@ const FormCreateUser = () => {
     const [agree, setAgree] = useState(false);
     const [agreeError, setAgreeError] = useState(false);
 
-
+    const changeForm = () => {
+        navigate('/Login')
+    }
 
     const create = async () => {
         try {
@@ -91,36 +91,39 @@ const FormCreateUser = () => {
     };
 
     return(
-        <form className='form__reg_log' onSubmit={handleSubmit}>
-            <h1>Registro</h1>
-            <p>Nombre:</p>
-            <input
-                type="text"
-                value={name}
-                onChange={handleNameChange}
-                onBlur={() => { if (name === "") setNameError(true); }}
-            />
-            {nameError && <sup>Error en el campo</sup>}
-            <p>Correo:</p>
-            <input
-                type="email"
-                value={mail}
-                onChange={handleMailChange}
-                onBlur={() => { if (mail === "") setMailError(true); }}
-            />
-            {mailError && <sup>Error en el campo</sup>}
-            <p>Contraseña:</p>
-            <input
-                type="password"
-                value={pass}
-                onChange={handlePassChange}
-                onBlur={() => { if (pass === "") setPassError(true); }}
-            />
-            {passError && <sup>Error en el campo</sup>}
-            <p><input type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Acepto los terminos de servicio</p>
-            {agreeError && <sup>Debe aceptar los terminos y condiciones</sup>}
-            <button className="create_btn" type="submit" value="Enviar">Registrarse</button>
-        </form>
+        <section className="section__reg_log">
+            <form className='form__reg_log' onSubmit={handleSubmit}>
+                <h1>Registro</h1>
+                <p>Nombre:</p>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={handleNameChange}
+                    onBlur={() => { if (name === "") setNameError(true); }}
+                />
+                {nameError && <sup>Error en el campo</sup>}
+                <p>Correo:</p>
+                <input
+                    type="email"
+                    value={mail}
+                    onChange={handleMailChange}
+                    onBlur={() => { if (mail === "") setMailError(true); }}
+                />
+                {mailError && <sup>Error en el campo</sup>}
+                <p>Contraseña:</p>
+                <input
+                    type="password"
+                    value={pass}
+                    onChange={handlePassChange}
+                    onBlur={() => { if (pass === "") setPassError(true); }}
+                />
+                {passError && <sup>Error en el campo</sup>}
+                <p><input type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Acepto los <Link to={''} className="check_link">terminos de servicio</Link></p>
+                {agreeError && <sup>Debe aceptar los terminos y condiciones</sup>}
+                <button className="create_btn" type="submit" value="Enviar">Registrarse</button>
+            </form>
+            <p>¿Ya tiene cuenta? <button onClick={changeForm} className='hcange_form_btn'>Iniciar sesion</button></p>
+        </section>
     )
 }
 

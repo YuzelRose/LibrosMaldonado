@@ -1,12 +1,22 @@
 @import './Templates/css/colors.css';
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Andale Mono, monospace, Courier New, Courier, FreeMono';
   margin: 0;
   padding: 0;
   width: 100%;
 }
+pre {
+  font-family: 'Andale Mono, monospace, Courier New, Courier, FreeMono';
+  text-align: start;
+  white-space: pre-wrap; 
+  word-wrap: break-word;
+}
 main {
+  flex: 1;
+  min-height: 70vh;
   background-blend-mode: multiply;
   background-color: var(--semi-white);
   border-bottom: solid var(--primary-red) 0.15em;
@@ -21,6 +31,7 @@ main {
   text-decoration: none;
 }
 .dark_link {
+  width: fit-content;
   cursor: pointer;
   padding: 0;
   margin: 0;

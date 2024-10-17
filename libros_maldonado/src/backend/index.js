@@ -9,6 +9,8 @@ export { default as CompProductPage } from './components/CompProductPage.js'
 export { default as CompAllAutors } from './components/CompAllAutors.js'
 export { default as CompShowBooks } from './components/CompShowBooks.js'
 export { default as CompBookWall } from './components/CompBookWall.js'
+export { default as CompAutor } from './components/CompAutor.js'
+export { default as AutorBooks } from './components/AutorBooks.js'
 
 
 export { default as FormCreateUser } from './form/FormCreateUser.js'

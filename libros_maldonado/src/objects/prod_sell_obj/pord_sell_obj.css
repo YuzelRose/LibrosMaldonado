@@ -1,0 +1,233 @@
+#product {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    background: var(--argen);
+    display: flex;
+    align-self: center;
+    overflow: hidden;
+    width: 70%;
+    border: var(--primary-red) solid 0.2em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.product_image {
+    text-align: center;
+    width: 25%;
+    overflow: hidden;
+    min-width: 13em;
+    height: auto;
+    margin: 0.5em;
+    display: flex;
+}
+.product_image > img {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+}
+#product_info {
+    margin-top: 2.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 45%;
+}
+#product_info > p {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.2em;
+}
+#div_iner_sinopsis {
+    overflow: hidden;
+}
+#iner_sinopsis {
+    font-size: 1.2em
+}
+#product_opc_panel {
+    width: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 0.2em solid var(--primary-red);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+#product_opc_panel > p > span {
+    color: black;
+}
+#product_info > section {
+    flex: 1;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-left: var(--primary-red) solid 0.2em;
+    border-top: var(--primary-red) solid 0.2em;
+    border-top-left-radius: 1em;
+}
+#product_info > section > p {
+    margin: 0;
+    overflow: hidden;
+}
+.product_btn {
+    width: 90%;
+    cursor: pointer;
+    color: white;
+    background-color: var(--background-blue);
+    border: none;
+    font-size: large;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin: 0.2em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.product_btn:hover {
+    background-color: var(--primary-blue);
+    text-decoration: underline;
+}
+#see_true {
+    text-align: center;
+    align-self: center;
+    color: black;
+    background: var(--argen);
+    border: var(--primary-red) solid 0.2em;
+}
+#see_true > p {
+    text-align: start;
+    margin: 1em;
+}
+#see_true > h1 > sup {
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+#see_true > h1 > sup:hover {
+    color: var(--primary-red);
+}
+#see_true > h1 > sup:active {
+    color: var(--primary-blue);
+}
+#seeless {
+    cursor: pointer;
+}
+.see {
+    width: 70%;
+    margin-top: 2em;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+}
+.see > pre {
+    font-size: 1.2em;
+    padding: 1em; 
+}
+#see_false {
+    text-align: center;
+    align-self: center;
+    overflow: hidden;
+    color: white;
+    background: var(--header-gradiant);
+    border: var(--primary-red) solid 0.2em;
+}
+
+#see_false > h3 {
+    cursor: pointer;
+    width: 100%;
+    margin: 0.5em;
+}
+
+#price {
+    font-size: 1.5em;
+}
+
+#see_false > h3:active {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.title {
+    color: var(--primary-blue);
+    font-size: 2em;
+    cursor: pointer;
+}
+.title > sup {
+    font-size: 0.6em;
+    color: var(--primary-blue);
+}
+.title > sup:hover {
+    color: var(--primary-red);
+}
+.title > sup:active {
+    color: var(--primary-blue);
+}
+.secondary {
+    font-size: 1.5em;
+}
+.linkToautor:hover {
+    text-decoration: underline;
+}
+.textstart {
+    padding-left: 0.5em;
+    text-align: start;
+}
+@media (max-width: 1024px) {
+    #product {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .product_btn {
+        font-size: 1em;
+    }
+    #product_info {
+        margin-top: 1em;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+    .secondary {
+        font-size: 1em;
+    }
+    #product {
+        width: 95%;
+    }
+    #iner_sinopsis {
+        font-size: 0.9em;
+    }
+    .product_btn {
+        margin: 0.1em;
+    }
+}
+@media (max-width: 600px) {
+    .product_btn {
+        margin: 0.1em;
+    }
+    .product_btn > img {
+        height: 1.3em;
+        width: auto;
+    }
+    #product_info > h2 {
+        font-size: 1.4em;
+    }
+}
+@media (max-width: 375px) {
+    .product_btn {
+        font-size: 1em;
+        margin: 0.1em;
+    }
+    .list_cant_btn {
+        font-size: 0.9em;
+    }
+}

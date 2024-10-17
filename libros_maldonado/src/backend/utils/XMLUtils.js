@@ -1,11 +1,10 @@
 export const generateXML = () => {
     return `
-    <UserSession>
-        <Cart>
-        </Cart>
-        <FavList>
-        </FavList>
-    </UserSession>`;
+    cart: [
+    ],
+    list: [
+    ]
+    `;
 }
 
 export const addToCart = (item) => { 
@@ -109,3 +108,21 @@ export const eliminateXML = (setUSer) => {
     localStorage.removeItem('userSession');
     alert('Sesión cerrada.');
 }
+
+export const saveAndPay = () => {
+    const userSessionXML = localStorage.getItem('userSession');
+
+    if (!userSessionXML) {
+        alert('No hay XML para descargar.');
+        return;
+    }
+    const blob = new Blob([userSessionXML], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'userSession.xml'; 
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+};

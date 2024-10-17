@@ -36,7 +36,7 @@ const CompProductPage = ({ id }) => {
             key={product._id}
             id={product._id}
             Name={product.Nombre}
-            Autor={product.Autor || "Autor desconocido"} 
+            Autor={product.Autores || "Autor desconocido"} 
             Costo={product.Costo}
             Sinopsis={product.Sinopsis} 
             ImgURL={product.URLImagen}

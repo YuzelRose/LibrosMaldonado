@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/image_swipe.css'
+import './image_swipe.css'
 
 export default function ImageSwipe({id, urlImg, alt}){
     return(

@@ -1,26 +1,4 @@
 import Libro from '../models/BookModel.js'
-import { Types } from 'mongoose';
-
-export const getProductXML = async (req, res) => {
-    try {
-        const ids = req.query.ids.split(','); // Obtener los IDs de la consulta
-        const searchResults = await Libro.find({
-            _id: { 
-                $in: ids.map(id => Types.ObjectId(id)) // Convertir a ObjectId para MongoDB
-            }
-        });
-
-        // Verificar si hay resultados
-        if (searchResults.length === 0) {
-            return res.status(404).json({ message: 'No se encontraron libros.' });
-        }
-
-        res.json(searchResults);
-    } catch (error) {
-        console.error('Error en la consulta:', error);
-        res.status(500).json({ message: error.message });
-    }
-}
 
 export const getAllBooks = async (req, res) => {
     try {
@@ -88,6 +66,23 @@ export const getBookById = async (req, res) => {
         const libro = await Libro.findById(req.params.id); 
         if (!libro) return res.status(404).json({ message: 'Libro no encontrado' });
         res.json(libro); 
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const getAutorBooks = async (req, res) => {
+    try {
+        const { Name } = req.params;
+        const decodedName = decodeURIComponent(Name); 
+        const autores = await Libro.find({
+            Autores: { $in: [decodedName] }
+        });
+
+        if (autores.length === 0) {
+            return res.status(404).json({ message: 'No se encontraron Libros' });
+        }
+        res.json(autores);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

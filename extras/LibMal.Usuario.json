@@ -7,4 +7,15 @@
   "Contrasena": "EjemploHash",
   "Telefono": "+523333333333",
   "Direccion": "CP. 33333 Col. Ejemplo, Calle ejemplo Numero Ejemplo"
+},
+{
+  "_id": {
+    "$oid": "6706392de9d08a3833426f12"
+  },
+  "Nombre": "Javier Espinosa",
+  "Correo": "zelinkmd@outlook.com",
+  "Contrasena": "$2b$10$YRKBRySBmadlJ1KTG4O4reyhS0izk2xga7yRGDNNSmo8r.gSTmn1G",
+  "Telefono": "no dado",
+  "Direccion": "no dada",
+  "__v": 0
 }]

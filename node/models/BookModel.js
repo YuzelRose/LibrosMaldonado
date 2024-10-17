@@ -34,8 +34,7 @@ const LibroModels = new mongoose.Schema({
         default: 'n/d', 
     },
     Autores: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Autor',
+        type: String,
         required: true,
     }],
 }, { collection: 'libro' });

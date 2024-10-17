@@ -5,26 +5,50 @@
     align-items: center;
     padding-top: 12em;
 }
-.form__reg_log {
-    display: flex;
-    flex-direction: column;
-    border: solid black;
-    width: 25em;
+.check_link {
+    color: black;
+    text-decoration: none;
+}
+.check_link:hover {
+    color: var(--primary-red);
+    text-decoration: underline;
+}
+input[type=checkbox] {
+    padding: 2em;
+    margin-right: 1em;
+    transform: scale(1.6);
+    -webkit-transform: scale(1.6);
+    -moz-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    -o-transform: scale(1.6);
+}
+.section__reg_log {
+    font-size: 1.3em;
     padding: 1.5em;
-    background: var(--graiant-right-left);
+    width: 25em;
+    border: solid var(--primary-red);
+    background-color: var(--argen);
     border-radius: 1em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
 }
+.section__reg_log > p {
+    font-size: 1.2em;
+}
+.form__reg_log {
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
 .form__reg_log > h1 {
     text-align: center;
     margin-bottom: 0;
-    color: white;
+    padding-bottom: 0.5em;
+    border-bottom: solid var(--primary-red);
 }
 .form__reg_log > p {
-    color: white;
     font-size: 1.5em;
     margin-bottom: 0.5em;
 }

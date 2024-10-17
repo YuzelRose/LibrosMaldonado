@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { generateXML } from "../utils/XMLUtils";
+import { Link, useNavigate } from "react-router-dom";
+import { initData } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
 const URI = 'http://localhost:5000/LibMal/Usuarios/login';
@@ -10,6 +10,9 @@ const FormLogin = () => {
     const { setAuthUser, setIsLogged } = useAuth();
     const navigate = useNavigate();
 
+    const [agree, setAgree] = useState(false);
+
+
     const [mail, setMail] = useState("");
     const [mailError, setMailError] = useState(false);
 
@@ -17,6 +20,14 @@ const FormLogin = () => {
     const [passError, setPassError] = useState(false);
 
     const [error, setError] = useState("");
+
+    const handleCheckboxChange = (e) => {
+        setAgree(e.target.checked); 
+    };
+
+    const changeForm = () => {
+        navigate('/Register')
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -53,10 +64,9 @@ const FormLogin = () => {
             
             const user = response.data;
             
-            const userXML = generateXML(user);
-            localStorage.setItem('userSession', userXML);
+            localStorage.setItem('userSession', initData());
 
-            setAuthUser(mail);
+            setAuthUser(user.Correo);
             setIsLogged(true);
             navigate('/');
         } catch (error) {
@@ -74,27 +84,32 @@ const FormLogin = () => {
     };
 
     return (
-        <form className="form__reg_log" onSubmit={handleSubmit}>
-            <h1>Inicio de sesión</h1>
-            <p>Correo:</p>
-            <input
-                type="email"
-                value={mail}
-                onChange={handleMailChange}
-                onBlur={() => { if (mail === "") setMailError(true); }}
-            />
-            {mailError && <sup>Error en el campo</sup>}
-            <p>Contraseña:</p>
-            <input
-                type="password"
-                value={pass}
-                onChange={handlePassChange}
-                onBlur={() => { if (pass === "") setPassError(true); }}
-            />
-            {passError && <sup>Error en el campo</sup>}
-            <button id='log_btn' type="submit">Iniciar sesión</button>
-            {error && <p className='error'>{error}</p>}
-        </form>
+        <section className="section__reg_log">
+            <form className="form__reg_log" onSubmit={handleSubmit}>
+                <h1>Inicio de sesión</h1>
+                <p>Correo:</p>
+                <input
+                    type="email"
+                    value={mail}
+                    onChange={handleMailChange}
+                    onBlur={() => { if (mail === "") setMailError(true); }}
+                />
+                {mailError && <sup>Error en el campo</sup>}
+                <p>Contraseña:</p>
+                <input
+                    type="password"
+                    value={pass}
+                    onChange={handlePassChange}
+                    onBlur={() => { if (pass === "") setPassError(true); }}
+                />
+                {passError && <sup>Error en el campo</sup>}
+                <p><input type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Mantner sesion iniciada</p>
+
+                <button id='log_btn' type="submit">Iniciar sesión</button>
+                {error && <p className='error'>{error}</p>}
+            </form>
+            <p>¿No tiene cuenta? <button onClick={changeForm} className='hcange_form_btn'>Registrarse</button></p>
+        </section>
     );
 };
 

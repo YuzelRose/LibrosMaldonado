@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/autor_obj.css'
+import './autor_obj.css'
 import { useNavigate } from 'react-router-dom';
 import def from '../../img/svg/defaultmark.svg'; 
 
