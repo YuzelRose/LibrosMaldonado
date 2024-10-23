@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './css/header.css';
+import { Link } from 'react-router-dom';
 import LogoSvg from './logo/LogoSvg';
 import { LogOptions, RegisterLogButton } from './user_options'
-
 import { SerchBar } from '../forms';
-import { TopNav, Navigation } from '../navigation';
+import { Navigation } from '../navigation';
 import { useAuth } from '../backend/utils/AuthContext';
+import './css/header.css';
 
 export default function Header() {
     const {isLogged} = useAuth()
-    const navigate = useNavigate();
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [headerVisible, setHeaderVisible] = useState(true);
-
-    const navigateLogoClick = () => {
-        navigate('/');
-    };
 
     const handleScroll = () => {
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -37,38 +31,37 @@ export default function Header() {
     });
 
     return (
-        <header className={`header ${headerVisible ? 'header--visible' : 'header--hidden'}`}>
-            <section id='div__top'>
-                <div className='logo__place' id='upper__logo' onClick={navigateLogoClick}>
+        <header className={`${headerVisible ? 'header_visible' : 'header_hidden'}`}>
+            <section id='top_header'>
+                <figure id='top_logo'>
                     <LogoSvg />
+                </figure>
+                <div id='top_opc'>
+                    <p>
+                        <Link className='link' to={'/'} title='Inicio'>Libros Maldonado</Link> a su servicio desde 1968
+                    </p>
+                    <nav id='top_nav'>
+                        <a href="#contact_info" className="link underline">Contactos</a>
+                        <Link to='/Faq' className="link underline">Faqs</Link>
+                    </nav>
                 </div>
-                <section>
-                    <TopNav />
-                </section>
-                <p>A su servicio desde 1968</p>
             </section>
-            <div className='div__header'>
-                <div className='div__logo'>
-                    <div className='logo__place' id='down__logo' onClick={navigateLogoClick}>
-                        <LogoSvg />
-                    </div>
-                </div>
-                <div className='div__left'></div>
-                <div className='div__right'></div>
-                <div className='div__serch'>
+            <section id='bottom_header'>
+                <figure id='logo'/>
+                <section id='serch_bar'>
                     <SerchBar />
-                </div>
-                <div className='div__log'>
+                </section>
+                <section id='log_opc'>
                     {
                         isLogged 
                         ? <LogOptions />
                         : <RegisterLogButton /> 
                     }
-                </div>
-                <div className='div__nav'>
+                </section>
+                <nav id='bottom_nav'>
                     <Navigation />
-                </div>
-            </div>
+                </nav>
+            </section>
         </header>
     );
 }

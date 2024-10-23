@@ -1,32 +1,28 @@
 #main_shop_cart {
     width: 100%;
-    padding-top: 10em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;text-align: center;
-}
-.list_section {
-    width: 100%;
-    min-height: 25em;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-.list_section > div {
-    width: 80%;
-    background: var(--header-gradiant);
-    border: solid 0.2em var(--primary-red);
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    border-radius: 5em;
-    -webkit-border-radius: 5em;
-    -moz-border-radius: 5em;
-    -ms-border-radius: 5em;
-    -o-border-radius: 5em;
+#main_fav_list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-.list_section > ul {
+.item_list {
+    color: black;
     background-color: var(--argen);
     border: solid 0.2em var(--primary-red);
+    font-size: 1.2rem;
     padding: 2em;
     width: 25em;
     list-style-type: none;
@@ -37,16 +33,20 @@
     -o-border-radius: 1em;
 
 }
-.list_section > ul > li {
+.item_list > li {
     border-bottom: solid 0.1em var(--primary-red);
-    padding: 0.5em;
+    padding: 0.1em;
+}
+.item_list > li > h1 {
+    margin: 0;
+    margin-bottom: 0.5em;
 }
 .list_name {
     margin-bottom: 0;
     margin-bottom: 0;
 }
 .list_price {
-    font-size: 1.2em;
+    font-size: 1.5rem;
     margin-top: 0.5em;
     margin-top: 0;
 }
@@ -64,7 +64,7 @@
 .list_opc {
     display: flex;
     justify-content: space-evenly;
-    font-size: 1.2em;
+    font-size: 1.5rem;
 }
 .list_opc_drop {
     cursor: pointer;
@@ -78,30 +78,35 @@
     color: black;
     text-decoration: none;
 }
-.list_pay_opc > h2 {
+#list_pay_opc > h2 {
     color: black;
     text-align: start;
 }
-.list_pay_opc > button {
+#list_pay_opc > p {
+    color: black;
+    font-size: 1.5rem;
+}
+#button_pay {
     cursor: pointer;
     background-color: var(--background-blue);
     color: white;
     border: solid 0.2em var(--background-blue);
-    padding: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    width: 5em;
+    font-size: 1.3rem;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
     border-radius: 1em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
 }
-.list_pay_opc > button:hover {
+#button_pay:hover {
     background-color: var(--primary-blue);
     color: white;
     border: solid 0.2em white;
 }
-.list_pay_opc > button:active {
+#button_pay:active {
     background-color: var(--background-blue);
     color: white;
     border: solid 0.2em var(--background-blue);
@@ -134,15 +139,8 @@
     padding-left: 1em;
     padding-right: 1em;
 }
-.final_cost {
-    text-align: center;
-}
-#main_fav_list {
-    width: 100%;
-    padding-top: 10em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#final_cost {
+    color: black;
     text-align: center;
 }
 .list_opc_add {

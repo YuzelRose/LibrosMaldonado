@@ -28,7 +28,7 @@ const CompShowAutors = () => {
 
     return (
         autors.length > 0 ? (
-            <article className='autor_selection'>
+            <article id='autor_selection'>
                 <div className='section_name'>
                     <h2>Autores</h2>
                 </div>
@@ -41,7 +41,6 @@ const CompShowAutors = () => {
                         />
                     ))}
                 </section>
-                <button className='more_btn' onClick={seeMore}>Ver todos</button>
             </article>
         ) : null
     );

@@ -6,7 +6,7 @@ import {FormLogin} from '../backend'
 export default function Login() {
 
     return (
-        <main id='main__reg_log' style={{ backgroundImage: `url(${fond})` }}>
+        <main id='main_reg_log' style={{ backgroundImage: `url(${fond})` }}>
             <FormLogin />
         </main>
     );

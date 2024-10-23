@@ -22,17 +22,15 @@ const CompAllAutors = () => {
 
     return (
         autors.length > 0 ? (
-            <article className='autor_selection'>
-                <section className='autor_wall'>
-                    {autors.map((autor) => (
-                        <AutorObj
-                            key={autor._id}
-                            name={autor.Nombre}
-                            imgURL={autor.URLImage}
-                        />
-                    ))}
-                </section>
-            </article>
+            <section className='autor_wall all_autors'>
+                {autors.map((autor) => (
+                    <AutorObj
+                        key={autor._id}
+                        name={autor.Nombre}
+                        imgURL={autor.URLImage}
+                    />
+                ))}
+            </section>
         ) : null
     );
     

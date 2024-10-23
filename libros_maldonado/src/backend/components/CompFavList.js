@@ -36,27 +36,23 @@ const CompFavList = () => {
     }, [change]);
     
     return (
-        <section className='list_section'> 
-            <div>
-                <h2>Lista de Favoritos</h2>
-            </div>
-            <ul>
-                {favItems.length > 0 ? (
-                    favItems.map(book => (
-                        <li key={book._id}>
-                            <Link to={`/ProductSell/${book._id}`} className='dark_link list_link list_name'>{book.Nombre || 'Nombre no disponible'}</Link> 
-                            <p className='list_price'><span className='black_span'>Precio:</span> ${book.Costo || 'N/A'}</p>
-                            <div className='list_opc'>
-                                <p className='list_opc_add' onClick={() => addToCart(book._id)}>Al carrito</p>
-                                <p onClick={() => handleChange(book._id)} className='list_opc_drop'>Eliminar</p>
-                            </div>
-                        </li>
-                    ))
-                ) : (
-                    <li>La lista está vacía.</li>
-                )}
-            </ul>
-        </section>
+        <ul className='item_list'>
+            <li><h1>Carrito de Compras</h1></li>
+            {favItems.length > 0 ? (
+                favItems.map(book => (
+                    <li key={book._id}>
+                        <Link to={`/ProductSell/${book._id}`} className='dark_link list_link list_name'>{book.Nombre || 'Nombre no disponible'}</Link> 
+                        <p className='list_price'><span className='black_span'>Precio:</span> ${book.Costo || 'N/A'}</p>
+                        <div className='list_opc'>
+                            <p className='list_opc_add' onClick={() => addToCart(book._id)}>Al carrito</p>
+                            <p onClick={() => handleChange(book._id)} className='list_opc_drop'>Eliminar</p>
+                        </div>
+                    </li>
+                ))
+            ) : (
+                <li>La lista está vacía.</li>
+            )}
+        </ul>
     );
 };
 

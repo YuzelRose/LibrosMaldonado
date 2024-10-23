@@ -13,9 +13,9 @@ export default function HomePage(){
                 urlImg=''
                 alt=''
             />
-            <CompShowAutors/>        
-            <CompShowBestBooks/>
-            <CompShowDesBooks/>
+            <CompShowAutors />        
+            <CompShowBestBooks />
+            <CompShowDesBooks />
         </main>
     )
 }

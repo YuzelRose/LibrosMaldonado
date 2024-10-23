@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { initData } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
+
 const URI = 'http://localhost:5000/LibMal/Usuarios/login';
 
 const FormLogin = () => {
@@ -84,8 +85,8 @@ const FormLogin = () => {
     };
 
     return (
-        <section className="section__reg_log">
-            <form className="form__reg_log" onSubmit={handleSubmit}>
+        <section className="section_reg_log">
+            <form className="form_reg_log" onSubmit={handleSubmit}>
                 <h1>Inicio de sesión</h1>
                 <p>Correo:</p>
                 <input
@@ -103,12 +104,14 @@ const FormLogin = () => {
                     onBlur={() => { if (pass === "") setPassError(true); }}
                 />
                 {passError && <sup>Error en el campo</sup>}
-                <p><input type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Mantner sesion iniciada</p>
-
-                <button id='log_btn' type="submit">Iniciar sesión</button>
+                <p className='check_opc'>
+                    <input className="checkbox" type="checkbox" checked={agree} onChange={handleCheckboxChange}/>
+                    Mantner sesion iniciada <sup><Link className="blue_link" to={'/faq'}>Terminos</Link></sup>
+                </p>
+                <button className='sub_button' id='log_btn' type="submit">Iniciar sesión </button>
                 {error && <p className='error'>{error}</p>}
             </form>
-            <p>¿No tiene cuenta? <button onClick={changeForm} className='hcange_form_btn'>Registrarse</button></p>
+            <p>¿No tiene cuenta? <Link className='blue_link' to={'/Register'}>Registrarse</Link></p>
         </section>
     );
 };

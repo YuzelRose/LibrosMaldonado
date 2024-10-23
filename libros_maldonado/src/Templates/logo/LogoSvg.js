@@ -1,95 +1,68 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 //<!-- Created with Inkscape (http://www.inkscape.org/) -->
 export default function LogoSvg(props) {
+  const navigate = useNavigate();
+
+  const navigateLogoClick = () => {
+    navigate('/');
+  };
+
   return (
-    <svg
+    <svg 
+      onClick={navigateLogoClick}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"
-      width={45.682}
-      height={60.664}
+      width={45}
+      height={60}
       viewBox="0 0 12.087 16.051"
       id='logo'
       {...props}
     >
     <defs>
-      <linearGradient id="b">
-        <stop
-          offset={0}
-          style={{
-            stopColor: "#ad0a0b",
-            stopOpacity: 1,
-          }}
+        <linearGradient id="b">
+          <stop offset={0} style={{ stopColor: "#ad0a0b", stopOpacity: 1 }} />
+          <stop offset={1} style={{ stopColor: "#0459af", stopOpacity: 1 }} />
+        </linearGradient>
+        <linearGradient id="a">
+          <stop offset={0} style={{ stopColor: "#0459af", stopOpacity: 1 }} />
+          <stop offset={1} style={{ stopColor: "#ad0a0b", stopOpacity: 1 }} />
+        </linearGradient>
+        <linearGradient id="c">
+          <stop offset={0} style={{ stopColor: "#042479", stopOpacity: 1 }} />
+          <stop offset={1} style={{ stopColor: "#ad0a0b", stopOpacity: 1 }} />
+        </linearGradient>
+        <linearGradient
+          href="#a"
+          id="d"
+          x1={-0.006}
+          x2={9.519}
+          y1={10.771}
+          y2={10.771}
+          gradientUnits="userSpaceOnUse"
         />
-        <stop
-          offset={1}
-          style={{
-            stopColor: "#0459af",
-            stopOpacity: 1,
-          }}
+        <linearGradient
+          href="#b"
+          id="e"
+          x1={4.701}
+          x2={4.701}
+          y1={0.066}
+          y2={18.974}
+          gradientTransform="matrix(1.27697 0 0 .71813 -1.414 .233)"
+          gradientUnits="userSpaceOnUse"
         />
-      </linearGradient>
-      <linearGradient id="a">
-        <stop
-          offset={0}
-          style={{
-            stopColor: "#0459af",
-            stopOpacity: 1,
-          }}
+        <linearGradient
+          href="#c"
+          id="f"
+          x1={112.713}
+          x2={111.654}
+          y1={77.523}
+          y2={251.619}
+          gradientUnits="userSpaceOnUse"
         />
-        <stop
-          offset={1}
-          style={{
-            stopColor: "#ad0a0b",
-            stopOpacity: 1,
-          }}
-        />
-      </linearGradient>
-      <linearGradient id="c">
-        <stop
-          offset={0}
-          style={{
-            stopColor: "#042479",
-            stopOpacity: 1,
-          }}
-        />
-        <stop
-          offset={1}
-          style={{
-            stopColor: "#ad0a0b",
-            stopOpacity: 1,
-          }}
-        />
-      </linearGradient>
-      <linearGradient
-        xlinkHref="#a"
-        id="d"
-        x1={-0.006}
-        x2={9.519}
-        y1={10.771}
-        y2={10.771}
-        gradientUnits="userSpaceOnUse"
-      />
-      <linearGradient
-        xlinkHref="#b"
-        id="e"
-        x1={4.701}
-        x2={4.701}
-        y1={0.066}
-        y2={18.974}
-        gradientTransform="matrix(1.27697 0 0 .71813 -1.414 .233)"
-        gradientUnits="userSpaceOnUse"
-      />
-      <linearGradient
-        xlinkHref="#c"
-        id="f"
-        x1={112.713}
-        x2={111.654}
-        y1={77.523}
-        y2={251.619}
-        gradientUnits="userSpaceOnUse"
-      />
-    </defs>
+      </defs>
     <g
       style={{
         strokeWidth: 0.982792,

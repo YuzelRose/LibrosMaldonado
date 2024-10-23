@@ -11,13 +11,11 @@ export default function RegisterLogButton() {
         navigate('/Register');
     };
     return(
-        <div className="div__reg_log_wrapper">
-            <div className="div__reg_log">
-                <button onClick={redirectLogin} className="button__ini_reg">Acceder</button>
-                <button onClick={redirectRegister} className="button__reg">Registrarse</button>
-                <button onClick={redirectLogin} className="button__ini">Iniciar sesión</button>
-            </div>
-        </div>
+        <>
+            <button onClick={redirectLogin} id="button__ini_reg">Acceder</button>
+            <button onClick={redirectRegister} id="button__reg">Registrarse</button>
+            <button onClick={redirectLogin} id="button__ini">Iniciar sesión</button>
+        </>
     )
 }
 

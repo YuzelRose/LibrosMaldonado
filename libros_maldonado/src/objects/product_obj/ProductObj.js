@@ -1,18 +1,19 @@
 import React from 'react'
 import './product_obj.css'
-import { Link } from 'react-router-dom';
-import { addToCart } from '../../backend/utils/JsonUtils';
-import { useAuth } from '../../backend/utils/AuthContext'; 
-
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductObj({imageLink,price,descount,name,fullInfo,productId,alt}) {
-    const {isLogged} = useAuth()
+    const navigate = useNavigate()
 
     const newPrice = price - (price * descount / 100);
 
     const checkDiscount = (descount) => {
         return descount > 0;
     };    
+
+    const toProductPage = (productId) => {
+        navigate(`/ProductSell/${productId}`);
+    }
 
     return(
         <section className="product_obj">
@@ -27,8 +28,7 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
                 )}
                 <p to={`/ProductSell/${productId}`}>{name}</p>
             </figcaption>
-
-            <section className="full_info">
+            <section className="full_info" onClick={() => toProductPage(productId)}>
                 <p>{name}</p>
                 {checkDiscount(descount) ? (
                     <p>${newPrice}<sup>-{descount}%</sup></p>
@@ -36,11 +36,6 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
                     <p>${price}</p>
                 )}
                 <p>{fullInfo}</p>
-                <Link className="link" id="prod_link" to={`/ProductSell/${productId}`}> Ver producto </Link>
-                {isLogged ? (
-                    <button className='product_obj_to_cart' onClick={() => addToCart(productId)}>Al carrito</button>
-                ) : null
-                }
             </section>
         </section>
     )

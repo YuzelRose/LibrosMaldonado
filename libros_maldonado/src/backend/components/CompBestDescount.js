@@ -52,7 +52,6 @@ const CompShowDesBooks = () => {
                         />
                     ))}
                 </section>
-                <button className='more_btn' onClick={seeMore}>Ver todos</button>
             </article>
         ) : null
     );

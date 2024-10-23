@@ -1,28 +1,20 @@
-.section__nav_wrapper {
-    width: 100%;
-    height: 100%;
-}
-.nav__Header {
-    padding-inline-start: 0;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 100%;
-}
-.nav__Header > div {
+.nav_opc {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 90%;
 }
+.nav_opc > p {
+    margin: 0;
+}
 
 @media (max-width: 1600px) {
-    .nav__Header > div {
+    .nav_opc {
         height: 100%;
         width: 100%;
-    }
-    .section__nav_wrapper {
         background: var(--nav-gradiant);
+
     }
 }

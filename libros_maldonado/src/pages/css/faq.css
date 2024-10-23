@@ -1,0 +1,65 @@
+#main_faq {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.contents {
+    width: 60%;
+    margin: 1em;
+    background-color: var(--argen);
+    border: solid var(--primary-red);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+.article_title {
+    display: flex;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    justify-content: space-between;
+}
+.remarc {
+    font-weight: bold;
+}
+
+.article_text {
+    border-top: solid var(--primary-red);
+    font-size: 1.2em;
+    padding: 1em; 
+}
+.display_info {
+    cursor: pointer;
+}
+.display_info:hover {
+    text-decoration: underline;
+}
+.display_info:active {
+    color: white;
+}
+.close {
+    cursor: pointer;
+    border-top: solid var(--primary-red);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.close:hover {
+    text-decoration: underline;
+}
+.close:active {
+    color: white;
+}
+.to_point {
+    color: var(--primary-blue);
+    
+}

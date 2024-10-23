@@ -6,7 +6,7 @@ import  {FormCreateUser}  from '../backend'
 export default function Register(){
    
     return(
-        <main id='main__reg_log' style={{ backgroundImage: `url(${fond})` }}>
+        <main id='main_reg_log' style={{ backgroundImage: `url(${fond})` }}>
             <FormCreateUser />
         </main>
     )

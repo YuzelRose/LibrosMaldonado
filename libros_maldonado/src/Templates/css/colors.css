@@ -14,6 +14,7 @@
     --background-grey: #bbc3ce;
     --light-gray: #d3dce5;
     --header-gradiant: linear-gradient(#042479, #045aaf);
+    --log-gradiant: linear-gradient(#ad0a0b,#042479);
     --nav-gradiant: linear-gradient(#045aaf, #5784ad);
     --background-gradiant: radial-gradient(ellipse 70% 70%, #5783ad,#d3dce5);
     --graiant-right-left: linear-gradient(to bottom left, #bbc3ce, #44556f);

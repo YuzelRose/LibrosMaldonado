@@ -19,10 +19,6 @@ const FormCreateUser = () => {
     const [agree, setAgree] = useState(false);
     const [agreeError, setAgreeError] = useState(false);
 
-    const changeForm = () => {
-        navigate('/Login')
-    }
-
     const create = async () => {
         try {
             const response = await axios.post(URI, { Name: name, Mail: mail, Pass: pass });
@@ -91,8 +87,8 @@ const FormCreateUser = () => {
     };
 
     return(
-        <section className="section__reg_log">
-            <form className='form__reg_log' onSubmit={handleSubmit}>
+        <section className='section_reg_log'>
+            <form className='form_reg_log' onSubmit={handleSubmit}>
                 <h1>Registro</h1>
                 <p>Nombre:</p>
                 <input
@@ -118,11 +114,13 @@ const FormCreateUser = () => {
                     onBlur={() => { if (pass === "") setPassError(true); }}
                 />
                 {passError && <sup>Error en el campo</sup>}
-                <p><input type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Acepto los <Link to={''} className="check_link">terminos de servicio</Link></p>
+                <p className='check_opc'>
+                    <input className="checkbox" type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Acepto los <Link to={'/Faq'} className="blue_link">terminos de servicio</Link>
+                </p>
                 {agreeError && <sup>Debe aceptar los terminos y condiciones</sup>}
-                <button className="create_btn" type="submit" value="Enviar">Registrarse</button>
+                <button className='sub_button' id="create_btn" type="submit" value="Enviar">Registrarse</button>
             </form>
-            <p>¿Ya tiene cuenta? <button onClick={changeForm} className='hcange_form_btn'>Iniciar sesion</button></p>
+            <p>¿Ya tiene cuenta? <Link className='blue_link' to={'/Login'}>Iniciar sesion</Link></p>
         </section>
     )
 }

@@ -12,7 +12,7 @@ const FormAutorFilter = () => {
         <form className='form_filter' onSubmit={handleSearch}>
             <p>Nombre:</p>
             <input className='text_filter' type='text' placeholder='Nombre'/>
-            <input className='logout_btn serch_btn' type='submit' value='Buscar'/>
+            <input className='serch_btn' type='submit' value='Buscar'/>
         </form>
     );
 };

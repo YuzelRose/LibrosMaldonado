@@ -1,32 +1,30 @@
 #product_wall {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.section_wall {
     display: flex;
     justify-content: space-around;
-    padding-top: 10em;
-    padding-bottom: 2em;
+    width: 75%;
 }
-.section__wall {
-    display: flex;
-    justify-content: space-around;
-    width: 85%;
-}
-#product_wall > aside > div {
-    display: flex;
-    margin-top: 1em;
-}
-#product_wall > aside > div > h2 {
+.aside_filter > h2 {
     margin: 0;
 }
-#product_wall > aside {
+.aside_filter {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--header-gradiant);
     color: white;
-    width: 13em;
-    margin-top: 3em;
-    margin-left: 1em;
-    height: 26em;
+    width: 10em;
+    height: fit-content;
+    font-size: 1.3rem;
+    margin-top: 6em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     border-radius: 1em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
@@ -49,6 +47,7 @@
     align-self: self-start;
 }
 .text_filter {
+    font-size: 1.1rem;
     padding: 0.1em;
     width: 85%;
 }
@@ -66,17 +65,45 @@
     align-self: center;
 }
 .serch_btn {
+    cursor: pointer;
+    width: 5em;
+    font-size: 1.3rem;
+    color: var(--background-blue);
+    border: solid var(--background-blue) 0.1em;
     margin-top: 1em;
-    text-align: center;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
 }
-@media (max-width: 600px) {
-    #product_wall > aside {
-        margin-top: 7em;
-        width: 14em;
-        height: 31em;
+.serch_btn:hover {
+    background-color: var(--primary-blue);
+    border-color: white;
+    color: white;
+}
+.serch_btn:active {
+    background-color: white;
+    border-color: var(--background-blue);
+    color: var(--background-blue);
+}
+.all_autors {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 1600px) {
+    .aside_filter {
+        margin-top: 2em;
     }
-    .logout_btn {
-        font-size: 0.9rem;
+}
+@media (max-width: 1024px) {
+    .aside_filter {
+        margin-top: 2em;
     }
-    
 }

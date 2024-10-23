@@ -6,21 +6,21 @@ import facebook from '../img/svg/facebook.svg';
 import { MailRegister } from '../forms';
 import { Link } from 'react-router-dom';
 
-export default function Footer(){
+export default function Footer() {
     return(
         <footer>
             <h2>Siguenos en nuestras redes:</h2>
             <section className='section__side_networks'>
-                <div className='light_up_flash network__icon'>
+                <figure className='light_up_flash network__icon'>
                     <img src={instagram} alt="Buscar"/>
-                </div>
-                <div className='light_up_flash network__icon' onClick={() => window.location.href = 
+                </figure>
+                <figure className='light_up_flash network__icon' onClick={() => window.location.href = 
                 'https://www.facebook.com/profile.php?id=100063913577531'}>
                     <img src={facebook} alt="Buscar"/>
-                </div>
+                </figure>
             </section>
             <h2>¿No encuentra lo que busca?</h2>
-            <section className='section__info' id='mail_whastapp_contact'>
+            <section className='section__info' id='contact_info'>
                 <MailRegister
                     Img={whatsapp}
                     id='whatsapp__btn'

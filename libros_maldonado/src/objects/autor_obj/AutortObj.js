@@ -7,7 +7,7 @@ export default function AutorObj({name, imgURL}){
     const navigate = useNavigate();
 
     const toWriterPage = () => {
-        navigate('/Writer');
+        navigate(`/AutorInfo/${name}`);
     };
 
     return(
