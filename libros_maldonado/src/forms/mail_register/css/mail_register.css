@@ -1,8 +1,7 @@
 .section__contact {
     justify-self: center;
     background-color: var(--light-gray-blue);
-    border-top: solid var(--light-gray-blue) 0.15em;
-    border-right: solid var(--light-gray-blue) 0.15em;
+    border: solid white 0.2em;
     width: 50%;
     padding: 0.7em;
     border-radius: 1em;
@@ -11,30 +10,17 @@
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
 }
-.section__contact > div {
+.section__contact > section {
     display: flex;
 }
 .section__contact > p {
     text-align: center;
 }
-@media (max-width: 700px) {
-    .section__contact {
-        margin: 0em;
-        border-top-left-radius: 0em;
-        border-bottom-left-radius: 0em;
-        border-bottom: none;
-        border-left: none;
-
-    }
-    .section__contact {
-        width: fit-content;
-    }
-}
-.div__contact {
+#Mail_help {
     display: flex;
     width: 100%;
 }
-.div__contact > input {
+#Mail_help > input {
     border-right: none;
     width: 100%;
     padding-left: 1em;
@@ -57,7 +43,18 @@
     background-color: var(--orange);
 }
 @media (max-width: 700px){
-    .div__contact > input {
+    #Mail_help > input {
         font-size: 1.5em;
+    }
+    .section__contact {
+        margin: 0em;
+        border-top-left-radius: 0em;
+        border-bottom-left-radius: 0em;
+        border-bottom: none;
+        border-left: none;
+
+    }
+    .section__contact {
+        width: fit-content;
     }
 }

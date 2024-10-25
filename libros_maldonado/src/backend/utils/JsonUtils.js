@@ -1,7 +1,4 @@
-// localStorageCRUD.js
-
-const LOCAL_STORAGE_KEY = 'LibMal'; // Cambia esto según tu necesidad
-
+const LOCAL_STORAGE_KEY = 'LibMal';
 const generateJSON = () => {
     return `
     {

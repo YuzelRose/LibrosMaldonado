@@ -12,22 +12,22 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <Header /> {/*100%*/}
+        <Header />
         <Routes>
-          <Route path='/' element={<HomePage />} exact /> {/*90% falta un componente*/}
-          <Route path='/Login' element={<Login />} exact /> {/*100%*/}
-          <Route path='/Register' element={<Register />} exact /> {/*100%*/}
-          <Route path='/ShopCart' element={<ShopCart />} exact /> {/*100%*/}
-          <Route path='/FavList' element={<FavList />} exact /> {/*100%*/}
-          <Route path='/ProductWall' element={<ProductWall />} exact /> {/*100%*/} 
-          <Route path='/ProductWall/:data' element={<ProductWall />} exact /> {/*50% funcionalidad del filtro*/} 
-          <Route path='/ProductSell/:id' element={<ProductSell />} exact /> {/*100%*/}
-          <Route path='/AutorInfo/:Name' element={<Autor />} exact /> {/*100%*/}
-          <Route path='/UserInfo' element={<UserInfo />} exact /> {/*0%*/}
-          <Route path='/Faq' element={<Faq />} exact /> {/*70% Falta rellenar metodos de entrega*/}
-          <Route path='/Faq/:sect' element={<Faq />} exact /> {/*100%*/}
+          <Route path='/' element={<HomePage />} exact /> 
+          <Route path='/Login' element={<Login />} exact /> 
+          <Route path='/Register' element={<Register />} exact /> 
+          <Route path='/ShopCart' element={<ShopCart />} exact /> 
+          <Route path='/FavList' element={<FavList />} exact /> 
+          <Route path='/ProductWall' element={<ProductWall />} exact /> 
+          <Route path='/ProductWall/:data' element={<ProductWall />} exact /> 
+          <Route path='/ProductSell/:id' element={<ProductSell />} exact /> 
+          <Route path='/AutorInfo/:Name' element={<Autor />} exact /> 
+          <Route path='/UserInfo' element={<UserInfo />} exact /> 
+          <Route path='/Faq' element={<Faq />} exact /> 
+          <Route path='/Faq/:sect' element={<Faq />} exact /> 
         </Routes>
-        <Footer /> {/*80% haz que el register mail funcione*/}
+        <Footer /> 
       </BrowserRouter>
     </AuthProvider>
     
@@ -42,4 +42,10 @@ faltan:
   UserInfo 0%
   Faq 70% Falta rellenar metodos de entrega
   Footer 80% haz que el register mail funcione
+
+servicios:
+  Filtro de libros/escritores
+  Cambio de datos del usuario
+  sistema de venta + costos en descuento
+  sistema de comunicacion con el usuario
 */

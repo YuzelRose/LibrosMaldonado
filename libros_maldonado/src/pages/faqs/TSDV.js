@@ -79,7 +79,7 @@ export default function TSDV({setShow}) {
             <p className='remarc'>11. Contacto</p>
             <p>Si tienes preguntas o inquietudes sobre esta Política de Privacidad, contáctanos a:</p>
             <ul>
-                <li>[Correo de la empresa]</li>
+                <li>librosmaldonado68@gmail.com</li>
                 <li>[Teléfono de contacto]</li>
                 <li>[Dirección física de la empresa]</li>
             </ul>

@@ -1,16 +1,14 @@
 import React from 'react'
 import './css/mail_register.css'
 import { ImgButton } from '../'
+import { FormMailHelp } from '../../backend'
 
 export default function MailRegister({ Img, id, url, imgDesc }) {
     return (
-        <section className="section__contact light_up">
+        <section className="section__contact">
             <h2>Contáctenos:</h2>
-            <div>
-                <div className="div__contact">
-                    <input type="email" placeholder="example@gmail.com" />
-                    <button className="btn__mail">Unirse</button>
-                </div>
+            <section>
+                <FormMailHelp />
                 <div>
                     <ImgButton 
                         id={id}
@@ -19,8 +17,8 @@ export default function MailRegister({ Img, id, url, imgDesc }) {
                         URL={url}
                     />
                 </div>
-            </div>
-            <p>Al unirse acepta recibir correos publicitarios de nuestra parte</p>
+            </section>
+            <p>Al introducir su correo aqui le enviaremos un correo desde: <span className='remarc'>librosmaldonado68@gmail.com</span></p>
         </section>
     )
 }

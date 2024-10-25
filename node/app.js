@@ -11,10 +11,13 @@ const URL = '/LibMal';
 app.use(cors());
 app.use(express.json());
 
+app.post('/email',(req, res)=>{
+
+})
+
 app.use(`${URL}/Autores`, AutorRoutes);
 app.use(`${URL}/Usuarios`, UserRoutes);
 app.use(`${URL}/Libros`, BookRoutes);
-
 
 app.listen(5000, () => {
     console.log("Servidor en ejecución");
