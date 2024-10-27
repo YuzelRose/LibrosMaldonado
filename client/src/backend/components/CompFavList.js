@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { getListItemIds, addToCart } from '../utils/JsonUtils';
 
-const URI_START = process.env.REACT_APP_BACK_URL || 'http://localhost:5000'
+const URI_START = process.env.REACT_APP_BACK_URL || 'http://3.130.27.77:5000'
 const URI = `${URI_START}/LibMal/Libros`;
 
 const CompFavList = () => {
