@@ -1,0 +1,46 @@
+.section_image_swipe {
+    display: flex;
+    justify-content: space-between;
+    height: 20em;
+    width: 100%;
+}
+.section_image_swipe > figure {
+    align-content: center;
+    height: 100%;
+    margin: 0;
+}
+.section_image_swipe > button {
+    color: white;
+    font-size: 1em;
+    align-self: center;
+    border: none;
+    background-color: var(--primary-blue);
+    padding: 0.8em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 1em;
+    border-radius: 99em;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    -ms-border-radius: 99em;
+    -o-border-radius: 99em;
+}
+.section_image_swipe > button:hover {
+    background-color: var(--light-gray);
+}
+.section_image_swipe > button:active {
+    background-color: var(--primary-blue);
+}
+.section_image_swipe > figure > img {
+    height: 20em;
+    max-height: 20em;
+}
+@media (max-width: 600px) {
+    .section_image_swipe {
+        height: 15em;
+    }
+    .section_image_swipe > figure > img {
+        height: 15em;
+        max-height: 15em;
+    }
+}
