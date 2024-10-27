@@ -1,0 +1,111 @@
+.section__log_options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.logout_btn {
+    cursor: pointer;
+    color: var(--background-blue);
+    border: solid var(--background-blue) 0.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+.logout_btn:hover {
+    background-color: var(--primary-blue);
+    border-color: white;
+    color: white;
+}
+.logout_btn:active {
+    background-color: white;
+    border-color: var(--background-blue);
+    color: var(--background-blue);
+}
+.svg_center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.svg_center > img {
+    width: 2em;
+    height: auto;
+    cursor: pointer;
+}
+.options_btn {
+    width: 11em;
+    z-index: 99;
+}
+.drop_list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.options_btn:hover + .drop_down_opc,
+.drop_list:hover .drop_down_opc {
+    max-height: 10em;
+}
+.drop_down_opc {
+    position: absolute;
+    top: 2em;
+    width: 9em;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    -webkit-transition: max-height 0.3s ease;
+    -moz-transition: max-height 0.3s ease;
+    -ms-transition: max-height 0.3s ease;
+    -o-transition: max-height 0.3s ease;
+}
+.drop_down_opc > li {
+    cursor: pointer;
+    text-align: center;
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5em;
+}
+.drop_down_opc > li:hover {
+    text-decoration: underline;
+}
+#li_favlist{
+    display: none;
+}
+#li_cart{
+    display: none;
+}
+#li_user {
+    font-size: small;
+    cursor: default;
+}
+#li_user:hover {
+    text-decoration: none;
+}
+@media (max-width: 1024px) {
+    #favlist {
+        display: none;
+    }
+    #li_favlist {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    #cart {
+        display: none;
+    }
+    #li_cart{
+        display: block;
+    }
+}
+@media (max-width: 600px) {
+    #li_user {
+        font-size: 0.8em;
+        cursor: default;
+    }
+}

@@ -1,0 +1,25 @@
+.figure__image_mark {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 20%;
+    height: 10em;
+    background: var(--graiant-left-right);
+    border-top: solid var(--background-grey) 0.15em;
+    border-left: solid var(--background-grey) 0.15em;
+    padding: 0.7em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.figure__image_mark > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}

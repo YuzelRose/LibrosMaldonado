@@ -1,0 +1,11 @@
+.imgBtn {
+    border: none;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-left: 1em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
