@@ -127,10 +127,11 @@ header {
 
 @media (max-width: 425px) {
     #top_opc {
-        width: 80%;
+        width: 100%;
     }
-
+    
     #top_logo  {
+        position: fixed;
         width: 20%;
         padding-top: 3em;
     }

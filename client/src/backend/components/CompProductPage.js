@@ -40,6 +40,7 @@ const CompProductPage = ({ id }) => {
             Name={product.Nombre}
             Autor={product.Autores || "Autor desconocido"} 
             Costo={product.Costo}
+            Descuento={product.Descuento}
             Sinopsis={product.Sinopsis} 
             ImgURL={product.URLImagen}
         />

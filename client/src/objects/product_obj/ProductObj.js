@@ -22,7 +22,9 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
             </figure>
             <figcaption className="info">
                 {checkDiscount(descount) ? (
-                    <p className='price'>${newPrice}<sup>-{descount}%</sup></p>
+                    <p className='price'>
+                        <sub className='before_price'>${price}</sub> ${newPrice} <sup className='descount'>-{descount}%</sup>
+                    </p>
                 ) : (
                     <p className='price'>${price}</p>
                 )}
@@ -31,7 +33,9 @@ export default function ProductObj({imageLink,price,descount,name,fullInfo,produ
             <section className="full_info" onClick={() => toProductPage(productId)}>
                 <p>{name}</p>
                 {checkDiscount(descount) ? (
-                    <p>${newPrice}<sup>-{descount}%</sup></p>
+                    <p className='price'>
+                        <sub className='before_price'>${price}</sub> ${newPrice} <sup className='descount'>-{descount}%</sup>
+                    </p>
                 ) : (
                     <p>${price}</p>
                 )}

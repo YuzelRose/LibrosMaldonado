@@ -46,7 +46,7 @@
 .form_reg_log > sup {
     color: var(--primary-red);
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
 }

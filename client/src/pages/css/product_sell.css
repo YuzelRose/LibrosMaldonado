@@ -10,6 +10,7 @@
     flex-direction: column;
     padding-top: 1em;
     width: 100%;
+    color: white;
 }
 .section_recomendations > div {
     text-align: center;
@@ -27,4 +28,14 @@
 }
 .sale_wall_wrapper {
     width: 100%;
+}
+.before_price {
+    text-decoration: line-through;
+    color: grey;
+}
+.descount {
+    color: var(--primary-red);
+}
+#more_info {
+    color: var(--primary-red);
 }

@@ -83,9 +83,10 @@ const CompShopCart = () => {
                             <Link to={`/ProductSell/${book._id}`} className='dark_link list_link list_name'>
                                 {book.Nombre || 'Nombre no disponible'}
                             </Link> 
-                            <p className='list_price'>
-                                <span className='black_span'>Precio:</span> ${book.Costo || 'N/A'}
-                            </p>
+                            <div className='list_price'>
+                                <p><span className='remarc'>Precio:</span> ${book.Costo || 'N/A'} </p>
+                                <p><span className='remarc'>Total:</span> ${book.Costo * quantities[book._id] || 'N/A'} </p>
+                            </div>
                             <p>
                                 <button className='list_cant_btn' onClick={() => handleUpdate(book._id, -1, book.Costo)}>&lt;</button>
                                 <span className='list_cant_dis'>{quantities[book._id] || 1}</span>

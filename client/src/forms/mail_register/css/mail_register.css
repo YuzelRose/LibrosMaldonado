@@ -15,6 +15,7 @@
 }
 .section__contact > p {
     text-align: center;
+    font-size: 1.4rem;
 }
 #Mail_help {
     display: flex;

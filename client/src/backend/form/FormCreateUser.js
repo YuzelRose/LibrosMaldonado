@@ -38,7 +38,7 @@ const FormCreateUser = () => {
                 }
             } else {
                 console.error("Error creating user:", e);
-                alert('Error en la conexión. Por favor, verifica tu conexión a internet.');
+                alert('Error en la conexión. Intentelo más tarde.');
             }
         }
     };

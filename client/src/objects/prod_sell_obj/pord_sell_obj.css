@@ -109,14 +109,14 @@
     margin: 1em;
 }
 #see_true > h1 > sup {
-    color: var(--primary-blue);
+    color: var(--primary-red);
     cursor: pointer;
 }
 #see_true > h1 > sup:hover {
-    color: var(--primary-red);
+    color: var(--primary-blue);
 }
 #see_true > h1 > sup:active {
-    color: var(--primary-blue);
+    color: var(--primary-red);
 }
 #seeless {
     cursor: pointer;
@@ -164,13 +164,14 @@
 }
 .title > sup {
     font-size: 0.6em;
-    color: var(--primary-blue);
-}
-.title > sup:hover {
+    font-weight: bold;
     color: var(--primary-red);
 }
-.title > sup:active {
+.title > sup:hover {
     color: var(--primary-blue);
+}
+.title > sup:active {
+    color: var(--primary-red);
 }
 .secondary {
     font-size: 1.5em;

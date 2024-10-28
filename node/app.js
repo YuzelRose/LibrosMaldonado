@@ -4,13 +4,13 @@ import './database/MongoConex.js';
 import AutorRoutes from './routes/AutorRoutes.js';
 import UserRoutes from './routes/UserRoutes.js';
 import BookRoutes from './routes/BookRoutes.js';
-import { TRACT_ORIGIN, REQUEST_URL, BACK_POT } from './config.js';
+import { TRACT_ORIGIN, WWW_TRACT_ORIGIN, REQUEST_URL, BACK_POT } from './config.js';
 
 const app = express();
 
-
 app.use(cors({
-    origin: TRACT_ORIGIN 
+    origin: [TRACT_ORIGIN, WWW_TRACT_ORIGIN],
+    methods: ['GET', 'POST', 'PUT'] 
 }));
 app.use(express.json());
 

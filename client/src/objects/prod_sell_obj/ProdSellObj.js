@@ -6,10 +6,16 @@ import favlist from '../../img/svg/favlist.svg'
 import { useAuth } from '../../backend/utils/AuthContext';
 import { addToCart, addToList } from '../../backend/utils/JsonUtils.js';
 
-export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, ImgURL}) {
+export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, Descuento, ImgURL}) {
     const {isLogged} = useAuth()
     const [cant, setCant] = useState(1)
     const [see, setSee] = useState(false)
+
+    const newPrice = Costo - (Costo * Descuento / 100);
+
+    const checkDiscount = (Descuento) => {
+        return Descuento > 0;
+    };
 
     const handleQuantityChange = (val) => {
         setCant(prevCant => Math.max(prevCant + val, 1)); 
@@ -27,7 +33,13 @@ export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, ImgURL}) 
                 </figure>
                 <figcaption id='product_info'>
                     <p className='title'>{Name}</p>
-                    <p className='secondary'>${Costo}</p>
+                    {checkDiscount(Descuento) ? (
+                        <p className='price'>
+                            <sub className='before_price'>${Costo}</sub> ${newPrice} <sup className='descount'>-{Descuento}%</sup>
+                        </p>
+                    ) : (
+                        <p className='secondary'>${Costo}</p>
+                    )}
                     <p className='title'>Escritor/es:</p>
                     {
                         Autor.map((autor, index) => (
@@ -68,7 +80,7 @@ export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, ImgURL}) 
             {
                 see ? (
                     <section className='see' id='see_true'>
-                        <h1>Sinopsis: <sup onClick={showMore}>Mostrar menos</sup></h1>
+                        <h1>Sinopsis: <sup id='more_info' onClick={showMore}>Mostrar menos</sup></h1>
                         <h1 className='textstart'>Escritor/es:</h1>
                         {
                             Autor.map((autor, index) => (

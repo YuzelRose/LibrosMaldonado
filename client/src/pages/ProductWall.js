@@ -12,7 +12,6 @@ function ProductWall() {
     const changeState = () => {
         if (butonState === "Productos") {
             setButonState("Autores")
-
         } else {
             setButonState("Productos")
         }

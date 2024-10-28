@@ -46,6 +46,9 @@
     margin-bottom: 0;
 }
 .list_price {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     font-size: 1.5rem;
     margin-top: 0.5em;
     margin-top: 0;
@@ -110,9 +113,6 @@
     background-color: var(--background-blue);
     color: white;
     border: solid 0.2em var(--background-blue);
-}
-.black_span {
-    color: black;
 }
 .list_cant_btn {
     cursor: pointer;
