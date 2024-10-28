@@ -9,9 +9,9 @@ import { TRACT_ORIGIN, REQUEST_URL, BACK_POT } from './config.js';
 const app = express();
 
 
-app.use(cors(
-    { origin: TRACT_ORIGIN }
-));
+app.use(cors({
+    origin: TRACT_ORIGIN 
+}));
 app.use(express.json());
 
 app.post('/email',(req, res)=>{
@@ -22,6 +22,6 @@ app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 
-app.listen(BACK_POT, () => {
+app.listen(BACK_POT, '0.0.0.0', () => {
     console.log("Servidor en ejecución");
 });
