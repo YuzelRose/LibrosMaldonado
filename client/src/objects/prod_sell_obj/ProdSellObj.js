@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './pord_sell_obj.css'
 import addcart from '../../img/svg/cartadd.svg'
 import favlist from '../../img/svg/favlist.svg'
-import { useAuth } from '../../backend/utils/AuthContext';
+import { useAuth } from '../../backend/utils/AuthContext.js';
 import { addToCart, addToList } from '../../backend/utils/JsonUtils.js';
 
 export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, Descuento, ImgURL}) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PordSellObj } from '../../objects';
 
-const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop:3000'
+const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop:5000'
 const URI = `${URI_START}/LibMal/Libros/`;
 
 const CompProductPage = ({ id }) => {

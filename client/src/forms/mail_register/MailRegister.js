@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/mail_register.css'
-import { ImgButton } from '../'
+import { ImgButton } from '..'
 import { FormMailHelp } from '../../backend'
 
 export default function MailRegister({ Img, id, url, imgDesc }) {
