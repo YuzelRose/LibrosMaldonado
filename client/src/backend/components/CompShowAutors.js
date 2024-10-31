@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { AutorObj } from '../../objects';
 import { useNavigate } from 'react-router-dom';
 
-const URI_START = process.env.REACT_APP_BACK_URL || 'http://3.130.27.77:5000'
+const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop:5000'
 const URI = `${URI_START}/LibMal/Autores/`;
 
 const CompShowAutors = () => {

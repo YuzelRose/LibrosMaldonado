@@ -22,6 +22,6 @@ app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 
-app.listen(BACK_POT, '0.0.0.0', () => {
+app.listen(BACK_POT, () => {
     console.log("Servidor en ejecución");
 });
