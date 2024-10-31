@@ -16,13 +16,13 @@ const CompBestBooks = () => {
     };
 
     useEffect(() => {
+        console.log(`URI:${URI}`);
         getBestSellerBooks();
     }, []);
 
     const getBestSellerBooks = async () => {
         try {
             const res = await axios.get(URI);
-            console.log(`URI:${URI}`);
             const fetchedBooks = res.data;
 
             const booksWithSales = fetchedBooks

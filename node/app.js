@@ -9,10 +9,12 @@ import { REQUEST_URL, BACK_POT } from './config.js';
 const app = express();
 
 app.use(cors({
-    origin: ['https://librosmaldonado.shop', 'http://localhost:3000', '*'],
+    origin: ['https://librosmaldonado.shop', 'http://localhost:3000', 'http://localhost:5000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
 }));
+
 app.use(express.json());
 
 app.post('/email',(req, res)=>{
@@ -24,5 +26,5 @@ app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 
 app.listen(BACK_POT, '0.0.0.0', () => {
-    console.log(`Servidor en ejecución ${BACK_POT}`);
+    console.log(`Servidor en ejecución, puerto: ${BACK_POT}`);
 });
