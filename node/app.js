@@ -9,8 +9,9 @@ import { TRACT_ORIGIN, WWW_TRACT_ORIGIN, REQUEST_URL, BACK_POT } from './config.
 const app = express();
 
 app.use(cors({
-    origin: [TRACT_ORIGIN, WWW_TRACT_ORIGIN],
-    methods: ['GET', 'POST', 'PUT'] 
+    origin: 'https://librosmaldonado.shop',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 app.use(express.json());
 
@@ -22,6 +23,6 @@ app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 
-app.listen(BACK_POT, () => {
+app.listen(BACK_POT,() => {
     console.log("Servidor en ejecución");
 });
