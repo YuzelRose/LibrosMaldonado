@@ -29,7 +29,13 @@ const CompShowDesBooks = () => {
             setBooks(booksWithDiscounts);
             setHasDiscounts(hasDiscounts);
         } catch (error) {
-            console.error('Error:', error);
+            if (error.response) {
+                console.error('Error de respuesta:', error.response.data);
+            } else if (error.request) {
+                console.error('Error de solicitud:', error.request);
+            } else {
+                console.error('Error:', error.message);
+            }
         }
     };
 
