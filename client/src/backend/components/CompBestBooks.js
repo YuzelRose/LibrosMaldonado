@@ -22,6 +22,7 @@ const CompBestBooks = () => {
     const getBestSellerBooks = async () => {
         try {
             const res = await axios.get(URI);
+            console.log(`URI:${URI}`);
             const fetchedBooks = res.data;
 
             const booksWithSales = fetchedBooks
