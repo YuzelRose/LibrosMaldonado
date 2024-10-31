@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { ProductObj } from '../../objects';
 import { useNavigate } from 'react-router-dom';
 
-const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop:5000'
+const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
 const URI = `${URI_START}/LibMal/Libros/BestSellers`;
 
 const CompBestBooks = () => {
