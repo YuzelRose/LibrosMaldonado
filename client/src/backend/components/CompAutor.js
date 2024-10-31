@@ -20,11 +20,11 @@ const CompAutor = ({Name}) => {
             }
         } catch (error) {
             if (error.response) {
-                console.error('Error de respuesta:', error.response.data);
+                console.log('Error de respuesta:', error.response.data);
             } else if (error.request) {
-                console.error('Error de solicitud:', error.request);
+                console.log('Error de solicitud:', error.request);
             } else {
-                console.error('Error:', error.message);
+                console.log('Error:', error.message);
             }
         }
     };
