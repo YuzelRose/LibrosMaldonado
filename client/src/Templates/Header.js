@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import LogoSvg from './logo/LogoSvg';
+import faqs from '../img/svg/abaut.svg';
 import { LogOptions, RegisterLogButton } from './user_options'
 import { SerchBar } from '../forms';
 import { Navigation } from '../navigation';
@@ -8,6 +10,7 @@ import { useAuth } from '../backend/utils/AuthContext';
 import './css/header.css';
 
 export default function Header() {
+    const navigate = useNavigate();
     const {isLogged} = useAuth()
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [headerVisible, setHeaderVisible] = useState(true);
@@ -42,7 +45,7 @@ export default function Header() {
                     </p>
                     <nav id='top_nav'>
                         <a href="#contact_info" className="link underline">Contactos</a>
-                        <Link to='/Faq' className="link underline">Faqs</Link>
+                        <img onClick={() => navigate('/Faq')} src={faqs} title='Preguntas frecuentes'/>
                     </nav>
                 </div>
             </section>

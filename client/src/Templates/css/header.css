@@ -65,6 +65,10 @@ header {
     justify-content: space-around; 
     list-style-type: none;
 }
+
+#top_nav > img {
+    cursor: pointer;
+}
     
 #bottom_header {
     display: grid;
