@@ -9,7 +9,7 @@ import { TRACT_ORIGIN, WWW_TRACT_ORIGIN, REQUEST_URL, BACK_POT } from './config.
 const app = express();
 
 app.use(cors({
-    origin: 'https://librosmaldonado.shop',
+    origin: 'https://librosmaldonado.shop, http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
