@@ -9,7 +9,7 @@ import { REQUEST_URL, BACK_POT } from './config.js';
 const app = express();
 
 app.use(cors({
-    origin: ['https://librosmaldonado.shop', 'http://localhost:3000', 'http://localhost:5000'],
+    origin: ['https://librosmaldonado.shop', 'http://localhost:3000', '*'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
