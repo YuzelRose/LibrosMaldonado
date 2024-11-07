@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
-const URI = `${URI_START}/LibMal/Usuarios/create`;
+const URI = `${URI_START}/LibMal/NewUser/createNewUser`;
 
 const FormCreateUser = () => {
-    const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [nameError, setNameError] = useState(false);
@@ -20,27 +19,23 @@ const FormCreateUser = () => {
     const [agree, setAgree] = useState(false);
     const [agreeError, setAgreeError] = useState(false);
 
+
     const create = async () => {
         try {
-            const response = await axios.post(URI, { Name: name, Mail: mail, Pass: pass });
-            console.log("Usuario creado:", response.data); 
-            navigate('/Login'); 
-        } catch (e) {
-            if (e.response) {
-                console.error("Error creating user:", e.response.data.message);
-                if (e.response.status === 409) {
-                    setMailError(true);
-                    alert("El correo ya está en uso.");
-                } else if (e.response.status === 400) {
-                    alert(e.response.data.message); // Muestra el mensaje del backend
-                } else {
-                    alert('Ocurrió un error al crear el usuario. Inténtalo de nuevo.');
-                }
+            await axios.post(URI, {
+                Nombre: name,
+                Correo: mail,
+                Contrasena: pass,
+            });
+            alert('Correo enviado exitosamente, revise su bandeja para completar su registro.');
+        } catch (error) {
+            if (error.response) {
+                alert('Hubo un error, verifique si ya se le envio un correo con anterioridad o intentelo mas tarde.');
             } else {
-                console.error("Error creating user:", e);
-                alert('Error en la conexión. Intentelo más tarde.');
+                alert('Hubo un error al enviar la solicitud.');
             }
         }
+
     };
 
     const handleSubmit = (e) => {
@@ -126,4 +121,4 @@ const FormCreateUser = () => {
     )
 }
 
-export default FormCreateUser
+export default FormCreateUser;

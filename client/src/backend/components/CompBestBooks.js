@@ -16,7 +16,6 @@ const CompBestBooks = () => {
     };
 
     useEffect(() => {
-        console.log(`URI:${URI}`);
         getBestSellerBooks();
     }, []);
 
@@ -46,7 +45,7 @@ const CompBestBooks = () => {
         hasSells ? (
             <article className='descount_selection'>
                 <div className='section_name'>
-                    <h2>Mas vendido</h2>
+                    <h2 onClick={seeMore}>Mas vendido</h2>
                 </div>
                 <section className='sale_wall'>
                     {books.map((book) => (

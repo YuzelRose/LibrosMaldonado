@@ -5,7 +5,7 @@ import { FormMailHelp } from '../../backend'
 
 export default function MailRegister({ Img, id, url, imgDesc }) {
     return (
-        <section className="section__contact">
+        <section className="section_contact">
             <h2>Contáctenos:</h2>
             <section>
                 <FormMailHelp />

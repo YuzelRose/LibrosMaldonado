@@ -1,38 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'; 
-import {CompAllAutors, CompBookWall, FormBookFilter, FormAutorFilter} from '../backend'
+import { CompBookWall, FormBookFilter } from '../backend'
 import fond from '../img/fond/loginfondo.png';
 import './css/product_wall.css'
 
 function ProductWall() {
-    const [butonState, setButonState] = useState('Productos');
+    const navigate = useNavigate()
     const { name } = useParams(); 
-    
 
     const changeState = () => {
-        if (butonState === "Productos") {
-            setButonState("Autores")
-        } else {
-            setButonState("Productos")
-        }
+        navigate('/AutorWall');
     }
 
     return(
         <main id='product_wall' style={{ backgroundImage: `url(${fond})` }}>
             <aside className='aside_filter'>
-                    <h2>Filtro: <button onClick={changeState} className='serch_btn'>{butonState}</button></h2>
-                {
-                    butonState === "Productos"
-                    ? <FormBookFilter/>
-                    : <FormAutorFilter/>
-                }
+                <h2>Filtro: <button onClick={changeState} className='serch_btn'>Productos</button></h2>
+                <FormBookFilter/>
             </aside>
             <section className='section_wall'>
-                {
-                    butonState === "Productos" 
-                    ? <CompBookWall name={name} /> 
-                    : <CompAllAutors/>
-                }
+                <CompBookWall name={name} /> 
             </section>
         </main>
     )

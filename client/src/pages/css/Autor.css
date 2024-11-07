@@ -19,6 +19,7 @@
 #no_books {
     margin-top: 5em;
     text-align: center;
+    align-self: center;
     width: 65%;
     background-color: var(--argen);
     border: solid var(--primary-red);
@@ -30,6 +31,8 @@
 }
 #autor_book_wall {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 3em;
     margin-bottom: 3em;
     width: 100%;

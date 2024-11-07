@@ -9,13 +9,12 @@ const CompBookWall = ({ query }) => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        // Verifica si hay una consulta
         if (query) {
             searchBooks(query);
         } else {
             getAllBooks();
         }
-    }, [query]); // Dependiendo de la consulta
+    }, [query]); 
 
     const getAllBooks = async () => {
         try {

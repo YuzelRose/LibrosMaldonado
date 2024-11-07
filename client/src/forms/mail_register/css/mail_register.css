@@ -1,4 +1,4 @@
-.section__contact {
+.section_contact {
     justify-self: center;
     background-color: var(--light-gray-blue);
     border: solid white 0.2em;
@@ -10,52 +10,69 @@
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
 }
-.section__contact > section {
+.section_contact > section {
     display: flex;
 }
-.section__contact > p {
+.section_contact > p {
     text-align: center;
     font-size: 1.4rem;
 }
-#Mail_help {
+#mail_help {
+    width: 100%;
+    text-align: center;
+}
+#mail_help > div {
     display: flex;
     width: 100%;
 }
-#Mail_help > input {
+#mail_help > p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+}
+#in_from {
     border-right: none;
     width: 100%;
+    height: 1.5em;
     padding-left: 1em;
     border: solid 0.1em var(--orange);
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
 }
-.btn__mail {
+#btn_mail {
     color: white;
+    font-size: 1rem;
     border-left: none;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     background-color: var(--orange);
     border: solid 0.1 var(--orange);
 }
-.btn__mail:hover {
+#btn_mail:hover {
     background-color: var(--light-orange);
 }
-.btn__mail:active {
+#btn_mail:active {
     background-color: var(--orange);
 }
 @media (max-width: 700px){
     #Mail_help > input {
         font-size: 1.5em;
     }
-    .section__contact {
-        margin: 0em;
-        border-top-left-radius: 0em;
-        border-bottom-left-radius: 0em;
+    .section_contact {
+        width: 90%;
+        margin: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
         border-bottom: none;
         border-left: none;
-
     }
-    .section__contact {
-        width: fit-content;
+    #in_from {
+        height: 2em;
+    }
+    #btn_mail {
+        height: 3em;
+    }
+    #btn_mail > img {
+        height: 2em;
     }
 }

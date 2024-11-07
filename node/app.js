@@ -4,6 +4,8 @@ import './database/MongoConex.js';
 import AutorRoutes from './routes/AutorRoutes.js';
 import UserRoutes from './routes/UserRoutes.js';
 import BookRoutes from './routes/BookRoutes.js';
+import MailRoutes from './routes/MailRoutes.js';
+import NewUserRoutes from './routes/NewUserRoutes.js';
 import { REQUEST_URL, BACK_POT } from './config.js';
 
 const app = express();
@@ -17,10 +19,8 @@ app.use(cors({
 
 app.use(express.json());
 
-app.post('/email',(req, res)=>{
-
-})
-
+app.use(`${REQUEST_URL}/Mail`, MailRoutes)
+app.use(`${REQUEST_URL}/NewUser`, NewUserRoutes)
 app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);

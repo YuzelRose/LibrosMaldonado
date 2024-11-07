@@ -43,7 +43,7 @@ const CompShowDesBooks = () => {
         hasDiscounts ? (
             <article className='descount_selection'>
                 <div className='section_name'>
-                    <h2>Descuentos</h2>
+                    <h2 onClick={seeMore}>Descuentos</h2>
                 </div>
                 <section className='sale_wall'>
                     {books.map((book) => (

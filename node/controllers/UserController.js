@@ -20,9 +20,8 @@ export const postLogIn = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
-export const postCreateUser = async (req, res) => {
-    const { Name, Mail, Pass } = req.body;
+// estas en esto
+export const postCreateUser = async ({Name, Mail, Pass}) => {
     if (!Name || !Mail || !Pass) return res.status(400).json({ message: 'Datos vacios' });
 
     if (Pass.length < 8) return res.status(400).json({ message: 'La contraseña debe contener al menos 8 caracteres' });
@@ -39,9 +38,9 @@ export const postCreateUser = async (req, res) => {
             Contrasena: HashPass
         });
         const saveUser = await newUser.save();
-        res.status(201).json(saveUser);
+        console.log(saveUser);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.log({ message: error.message });
     }
 }
 

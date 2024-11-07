@@ -37,7 +37,7 @@ const CompShowAutors = () => {
         autors.length > 0 ? (
             <article id='autor_selection'>
                 <div className='section_name'>
-                    <h2>Autores</h2>
+                    <h2 onClick={seeMore}>Autores</h2>
                 </div>
                 <section className='autor_wall'>
                     {autors.slice(0, 8).map((autor) => (

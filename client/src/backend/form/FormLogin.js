@@ -106,7 +106,7 @@ const FormLogin = () => {
                 {passError && <sup>Error en el campo</sup>}
                 <p className='check_opc'>
                     <input className="checkbox" type="checkbox" checked={agree} onChange={handleCheckboxChange}/>
-                    Mantner sesion iniciada <sup><Link className="blue_link" to={'/faq'}>Terminos</Link></sup>
+                    Mantener sesion iniciada <sup><Link className="blue_link" to={'/faq'}>Terminos</Link></sup>
                 </p>
                 <button className='sub_button' id='log_btn' type="submit">Iniciar sesión </button>
                 {error && <p className='error'>{error}</p>}

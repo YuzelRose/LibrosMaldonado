@@ -1,4 +1,6 @@
 .imgBtn {
+    display: flex;
+    align-items: center;
     border: none;
     padding-top: 0.4em;
     padding-bottom: 0.4em;
@@ -8,4 +10,14 @@
     -moz-border-radius: 1em;
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
+}
+.imgBtn > img {
+    height: 2.5em;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    .imgBtn > img {
+        height: 2em;
+    }
 }

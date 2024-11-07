@@ -6,6 +6,8 @@ export { default as ProductSell } from './ProductSell';
 export { default as Register } from './Register';
 export { default as ShopCart } from './ShopCart';
 export { default as UserInfo } from './UserInfo';
-export { default as Autor } from './Autor'
-export { default as Faq } from './Faq'
+export { default as Autor } from './Autor';
+export { default as Faq } from './Faq';
+export { default as AutorWall } from './AutorWall';
+export { default as NewUser } from './NewUser';
 
