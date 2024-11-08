@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { initData } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
@@ -9,7 +9,6 @@ const URI = `${URI_START}/LibMal/Usuarios/login`;
 
 const FormLogin = () => {
     const { setAuthUser, setIsLogged } = useAuth();
-    const navigate = useNavigate();
 
     const [agree, setAgree] = useState(false);
 
@@ -25,10 +24,6 @@ const FormLogin = () => {
     const handleCheckboxChange = (e) => {
         setAgree(e.target.checked); 
     };
-
-    const changeForm = () => {
-        navigate('/Register')
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -69,7 +64,6 @@ const FormLogin = () => {
 
             setAuthUser(user.Correo);
             setIsLogged(true);
-            navigate('/');
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             if (error.response) {

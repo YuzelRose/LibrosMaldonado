@@ -10,7 +10,7 @@ export default function NewUser() {
 
     return(
         <main id='main_new_user' style={{ backgroundImage: `url(${fond})` }}>
-            <CompNewUser key={key}/>
+            <CompNewUser userKey={key}/>
         </main>
     )
 }

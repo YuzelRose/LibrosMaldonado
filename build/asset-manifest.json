@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5bb7552d.css",
-    "main.js": "/static/js/main.4cf55521.js",
+    "main.css": "/static/css/main.74db3581.css",
+    "main.js": "/static/js/main.9707eddb.js",
     "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
     "static/media/loginfondo.png": "/static/media/loginfondo.84607f592a06c2432dc7.png",
     "static/media/intagram.svg": "/static/media/intagram.1a13853d3001227d62b7237cee17b42c.svg",
@@ -14,12 +14,13 @@
     "static/media/cartadd.svg": "/static/media/cartadd.62ae44481a82c5dec3eaa3e082ac1a0a.svg",
     "static/media/facebook.svg": "/static/media/facebook.ce6acc09d42e32f544cec9f7ab825175.svg",
     "static/media/defaultmark.svg": "/static/media/defaultmark.45059adef2150722624a75d8a91a5c43.svg",
-    "main.5bb7552d.css.map": "/static/css/main.5bb7552d.css.map",
-    "main.4cf55521.js.map": "/static/js/main.4cf55521.js.map",
+    "static/media/send.svg": "/static/media/send.a78cfd6c2a00a60a93ff047cd8907d79.svg",
+    "main.74db3581.css.map": "/static/css/main.74db3581.css.map",
+    "main.9707eddb.js.map": "/static/js/main.9707eddb.js.map",
     "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bb7552d.css",
-    "static/js/main.4cf55521.js"
+    "static/css/main.74db3581.css",
+    "static/js/main.9707eddb.js"
   ]
 }

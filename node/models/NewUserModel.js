@@ -15,7 +15,13 @@ const NuevoUsuarioModel = new mongoose.Schema({
         type: String,
         required: true,
     },
+    createdAt: { 
+        type: Date, 
+        default: Date.now, 
+        required: true 
+    }
 }, { collection: 'nuevousuario' });
 
+NuevoUsuarioModel.index({ createdAt: 1 }, { expireAfterSeconds: 1800 });
 const NuevoUsuario = mongoose.model('NuevoUsuario', NuevoUsuarioModel);
 export default NuevoUsuario;

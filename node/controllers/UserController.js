@@ -20,30 +20,6 @@ export const postLogIn = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-// estas en esto
-export const postCreateUser = async ({Name, Mail, Pass}) => {
-    if (!Name || !Mail || !Pass) return res.status(400).json({ message: 'Datos vacios' });
-
-    if (Pass.length < 8) return res.status(400).json({ message: 'La contraseña debe contener al menos 8 caracteres' });
-
-    try {
-        const user = await Usuario.findOne({ Correo: Mail });
-        if (user) return res.status(409).json({ message: 'Usuario Existente' });
-
-        const salt = await bcrypt.genSalt(10);
-        const HashPass = await bcrypt.hash(Pass, salt);
-        const newUser = new Usuario({
-            Nombre: Name,
-            Correo: Mail,
-            Contrasena: HashPass
-        });
-        const saveUser = await newUser.save();
-        console.log(saveUser);
-    } catch (error) {
-        console.log({ message: error.message });
-    }
-}
-
 export const getUserById = async (req, res) => {
     try {
         const user = await Usuario.findById(req.params.id);

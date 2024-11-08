@@ -19,20 +19,22 @@ const FormCreateUser = () => {
     const [agree, setAgree] = useState(false);
     const [agreeError, setAgreeError] = useState(false);
 
+    const [result, setResul] = useState('');
 
     const create = async () => {
+        setResul('Espere, estamos procesando su solicitud.');
         try {
             await axios.post(URI, {
                 Nombre: name,
                 Correo: mail,
                 Contrasena: pass,
             });
-            alert('Correo enviado exitosamente, revise su bandeja para completar su registro.');
+            setResul('Correo enviado exitosamente, revise su correo para completar su registro.');
         } catch (error) {
             if (error.response) {
-                alert('Hubo un error, verifique si ya se le envio un correo con anterioridad o intentelo mas tarde.');
+                setResul('Hubo un error, verifique si ya se le envio un correo con anterioridad o intentelo mas tarde.');
             } else {
-                alert('Hubo un error al enviar la solicitud.');
+                setResul('Hubo un error al enviar la solicitud.');
             }
         }
 
@@ -86,6 +88,7 @@ const FormCreateUser = () => {
         <section className='section_reg_log'>
             <form className='form_reg_log' onSubmit={handleSubmit}>
                 <h1>Registro</h1>
+                <p>{result}</p>
                 <p>Nombre:</p>
                 <input
                     type="text"
