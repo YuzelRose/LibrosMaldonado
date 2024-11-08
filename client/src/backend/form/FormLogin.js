@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { initData } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
@@ -8,6 +8,7 @@ const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.sho
 const URI = `${URI_START}/LibMal/Usuarios/login`;
 
 const FormLogin = () => {
+    const navigate =  useAuth();
     const { setAuthUser, setIsLogged } = useAuth();
 
     const [agree, setAgree] = useState(false);
@@ -64,6 +65,7 @@ const FormLogin = () => {
 
             setAuthUser(user.Correo);
             setIsLogged(true);
+            navigate('/');
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             if (error.response) {
