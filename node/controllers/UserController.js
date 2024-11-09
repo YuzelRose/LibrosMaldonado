@@ -20,6 +20,7 @@ export const postLogIn = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
 export const getUserById = async (req, res) => {
     try {
         const user = await Usuario.findById(req.params.id);

@@ -37,6 +37,8 @@
 }
 .options_btn {
     width: 11em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
     z-index: 99;
 }
 .drop_list {
@@ -48,6 +50,7 @@
 .options_btn:hover + .drop_down_opc,
 .drop_list:hover .drop_down_opc {
     max-height: 10em;
+    font-size: 0.8em;
 }
 .drop_down_opc {
     position: absolute;
@@ -81,11 +84,7 @@
     display: none;
 }
 #li_user {
-    font-size: small;
-    cursor: default;
-}
-#li_user:hover {
-    text-decoration: none;
+    cursor: pointer;
 }
 @media (max-width: 1024px) {
     #favlist {

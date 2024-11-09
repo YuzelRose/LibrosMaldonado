@@ -8,7 +8,7 @@ const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.sho
 const URI = `${URI_START}/LibMal/Usuarios/login`;
 
 const FormLogin = () => {
-    const navigate =  useAuth();
+    const navigate =  useNavigate();
     const { setAuthUser, setIsLogged } = useAuth();
 
     const [agree, setAgree] = useState(false);

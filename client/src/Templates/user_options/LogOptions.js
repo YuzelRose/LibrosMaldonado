@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './css/log_options.css'
 import cart from '../../img/svg/cart.svg'
 import favlist from '../../img/svg/favlist.svg'
@@ -7,8 +7,16 @@ import { useAuth } from '../../backend/utils/AuthContext'
 import { deleteJSON } from '../../backend/utils/JsonUtils'
 
 export default function LogOptions() {
-    const {setAuthUser,setIsLogged, authUser} = useAuth()
+    const {setAuthUser,setIsLogged, authUser, isLogged} = useAuth();
+    const [userName, setUserName] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isLogged) {
+            setUserName(authUser.split("@")[0]);
+        }
+    }, []);
+
     const redirectFavList = () => {
         navigate('/FavList');
     }
@@ -26,6 +34,8 @@ export default function LogOptions() {
         alert('Sesión cerrada.')
         navigate('/')
     }
+
+
     return(
         <section className="section__log_options">
             <div id='favlist' className='svg_center'>
@@ -37,8 +47,7 @@ export default function LogOptions() {
             <section className='drop_list'>
                 <button className='options_btn logout_btn'>Opciones</button>
                 <ul className='drop_down_opc'> 
-                    <li id='li_user'>{authUser}</li>
-                    <li onClick={redirectUserInfo}>Perfil</li>
+                    <li id='li_user' onClick={redirectUserInfo}>{userName}</li>
                     <li id='li_cart' onClick={redirectShopCart}>Carro de compras</li>
                     <li id='li_favlist' onClick={redirectFavList}>Lista de favoritos</li>
                     <li onClick={(e)=>{handleLogOut(e)}}>Cerrar sesión</li>
