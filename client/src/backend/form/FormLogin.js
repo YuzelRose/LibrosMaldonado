@@ -9,7 +9,7 @@ const URI = `${URI_START}/LibMal/Usuarios/login`;
 
 const FormLogin = () => {
     const navigate =  useNavigate();
-    const { setAuthUser, setIsLogged } = useAuth();
+    const { setAuthUser, setIsLogged, setAuthUserName } = useAuth();
 
     const [agree, setAgree] = useState(false);
 
@@ -64,6 +64,7 @@ const FormLogin = () => {
             localStorage.setItem('userSession', initData());
 
             setAuthUser(user.Correo);
+            setAuthUserName(user.Nombre);
             setIsLogged(true);
             navigate('/');
         } catch (error) {

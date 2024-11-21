@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { HomePage, ProductSell, Login, FavList, ProductWall, Register, ShopCart, UserInfo, Autor, Faq, AutorWall, NewUser } from './pages';
+import { HomePage, ProductSell, Login, FavList, ProductWall, Register, ShopCart, UserInfo, Autor, Faq, AutorWall, NewUser, AlterUser } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Footer, Header } from './Templates';
 import { AuthProvider } from './backend/utils/AuthContext';
@@ -30,6 +30,7 @@ export default function App() {
           <Route path='/Faq/:sect' element={<Faq />} exact /> 
           
           <Route path='/NewUser/:key' element={<NewUser />} exact /> 
+          <Route path='/AlterUser/:key' element={<AlterUser />} exact />
           
         </Routes>
         <Footer /> 
@@ -45,7 +46,6 @@ faltan:
   ProductWall 50% funcionalidad del filtro
   UserInfo 0%
   Faq 70% Falta rellenar metodos de entrega
-  Footer 80% haz que el register mail funcione
 
 servicios:
   Filtro de libros/escritores

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const FormBookFilter = () => {
-    const navigate = useNavigate(); // Hook para redireccionar
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [author, setAuthor] = useState('');
     const [minPrice, setMinPrice] = useState('');

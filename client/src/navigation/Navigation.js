@@ -21,9 +21,6 @@ export default function Navigation() {
             <div className="highlight nav_opc" onClick={redirectProductWall}>
                 <p>Autores</p>
             </div>
-            <div className="highlight nav_opc" onClick={redirectProductWall}>
-                <p>Promos</p>
-            </div>
         </>
     )
 }

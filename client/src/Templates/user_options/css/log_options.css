@@ -50,12 +50,12 @@
 .options_btn:hover + .drop_down_opc,
 .drop_list:hover .drop_down_opc {
     max-height: 10em;
-    font-size: 0.8em;
 }
 .drop_down_opc {
     position: absolute;
     top: 2em;
     width: 9em;
+    font-size: 0.8em;
     padding: 0;
     margin: 0;
     overflow: hidden;

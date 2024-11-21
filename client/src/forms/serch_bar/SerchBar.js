@@ -27,7 +27,7 @@ export default function SerchBar() {
                 onChange={handleChange}
             />
             <button id="serch_submit" onClick={search}>
-                <img src={glass} title="Buscar"/>
+                <img src={glass} alt='Buscar' title="Buscar"/>
             </button>
         </>
     );

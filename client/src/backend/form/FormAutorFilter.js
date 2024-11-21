@@ -1,6 +1,4 @@
-import axios from "axios";
 
-const URI = 'http://localhost:5000/LibMal/Autores/search' 
 
 const handleSearch = () => {
 

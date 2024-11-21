@@ -6,6 +6,7 @@ import UserRoutes from './routes/UserRoutes.js';
 import BookRoutes from './routes/BookRoutes.js';
 import MailRoutes from './routes/MailRoutes.js';
 import NewUserRoutes from './routes/NewUserRoutes.js';
+import AlterUserRouter from './routes/AlterUserRouter.js';
 import PaypalRoutes from './routes/PaypalRoutes.js'
 import { REQUEST_URL, BACK_POT } from './config.js';
 
@@ -24,6 +25,7 @@ app.use(`${REQUEST_URL}/Mail`, MailRoutes)
 app.use(`${REQUEST_URL}/NewUser`, NewUserRoutes)
 app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
+app.use(`${REQUEST_URL}/AlterUser`, AlterUserRouter);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 app.use(`${REQUEST_URL}/Paypal`, PaypalRoutes);
 

@@ -7,12 +7,16 @@ export function useAuth() {
 }
 
 export function AuthProvider(props) {
-    const [authUser, setAuthUser] = useState(null); // o un valor inicial según tu caso
+    const [authUser, setAuthUser] = useState(null); 
+    const [authUserName, setAuthUserName] = useState(null); 
     const [isLogged, setIsLogged] = useState(false);
+
   
     const value = {
+      authUserName,
       authUser,
       isLogged,
+      setAuthUserName,
       setAuthUser,
       setIsLogged,
     }

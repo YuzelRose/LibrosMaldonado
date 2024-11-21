@@ -29,7 +29,7 @@ const FormMailHelp = () => {
             <div>
                 <input id='in_from' type="email" onChange={(e) => setEmail(e.target.value)} placeholder="example@gmail.com" required />
                 <button id="btn_mail">
-                    <img src={send} title="Enviar" />
+                    <img src={send} alt='Enviar' title="Enviar" />
                 </button>
             </div>
             <p>{message}</p>

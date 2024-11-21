@@ -45,7 +45,7 @@ export default function Header() {
                     </p>
                     <nav id='top_nav'>
                         <a href="#contact_info" className="link underline">Contactos</a>
-                        <img onClick={() => navigate('/Faq')} src={faqs} title='Preguntas frecuentes'/>
+                        <img onClick={() => navigate('/Faq')} src={faqs} alt='Preguntas frecuentes' title='Preguntas frecuentes'/>
                     </nav>
                 </div>
             </section>

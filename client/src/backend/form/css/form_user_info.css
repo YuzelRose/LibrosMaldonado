@@ -1,0 +1,117 @@
+#opc_edit_user {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 1em;
+}
+.message {
+    margin: 0.1em;
+    font-size: 1.9rem;
+}
+.message_ok {
+    color: green;
+}
+.message_error {
+    color: var(--primary-red);
+}
+#form_edit_user {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 1em;
+    border-bottom: solid var(--primary-red);
+}
+#form_edit_user > h1 {
+    color: var(--primary-red);
+    padding-bottom: 1em;
+    font-size: 2em;
+}
+#form_edit_user > p {
+    margin-top: 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#form_edit_user > p > input {
+    font-size: 1.3rem;
+}
+#edit_list_opc {
+    list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+}
+#edit_list_opc > li {
+    padding-bottom: 1em;
+}
+#edit_list_opc > li > a {
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+}
+#edit_list_opc > li > a:hover {
+    text-decoration: underline;
+}
+#edit_user_direcction_list {
+    list-style-type: none;
+}
+#edit_user_direcction_list > li {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+}
+#edit_user_direcction_list > li > input {
+    font-size: 1.3rem;
+}
+.input_edit_user {
+    font-size: 1rem;
+    width: 65%;
+    padding: 0.7em;
+    border: none;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+.input_edit_user::placeholder {
+    color: black;
+    opacity: 0.5; 
+}
+.input_edit_user:focus::placeholder {
+    color: black;
+    opacity: 0.8; 
+}
+.button_edit_user {
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: center;
+    width: 60%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: white;;
+    border: solid var(--primary-red);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+
+}
+.button_edit_user:hover {
+    background-color: red;
+    color: white;
+}
+.button_edit_user:active {
+    background-color: var(--primary-red);
+}
+#button_last_opc {
+    margin: 0;
+}
+
+@media (max-width: 425px) {
+    #opc_edit_user {
+        width: 85%;
+    }
+}
