@@ -30,7 +30,7 @@ export default function App() {
           <Route path='/Faq/:sect' element={<Faq />} exact /> 
           
           <Route path='/NewUser/:key' element={<NewUser />} exact /> 
-          <Route path='/AlterUser/:key' element={<AlterUser />} exact />
+          <Route path='/AlterUser/:url' element={<AlterUser />} exact />
           
         </Routes>
         <Footer /> 
@@ -44,11 +44,12 @@ export default function App() {
 faltan:
   HomePage 90% falta un componente
   ProductWall 50% funcionalidad del filtro
-  UserInfo 0%
+  UserInfo 90%
+  AlterUser 0%
   Faq 70% Falta rellenar metodos de entrega
 
 servicios:
   Filtro de libros/escritores
-  Cambio de datos del usuario
+  Cambio de datos del usuario 33%
   sistema de venta + costos en descuento
 */

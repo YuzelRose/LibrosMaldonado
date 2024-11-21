@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { updatePass } from './UserController.js';
 import ChangeUserData from '../models/AlterUserModel.js';
 
 export const AlterPass = async (req, res) => {
@@ -154,5 +155,23 @@ const MailDrop = async ({email, key}) => {
         await transporter.sendMail(mailOptions);
     } catch (error) {
         console.log({ message: "Error al enviar el correo", error });
+    }
+};
+
+export const getdata = async (req, res) => {
+    const Pass = req.body.Pass; 
+    const ID = req.params.id
+    try {
+        const data = await ChangeUserData.findById(ID);
+        if (!data) return res.status(404).json({ message: 'Solicitud no encontrada' });
+        if (!Pass) {
+            return res.status(400).json({ message: 'Contraseña no disponible en los datos del usuario' });
+        }
+        await updatePass({ correo: data.Correo, contrasena: Pass });  
+        await ChangeUserData.findByIdAndDelete(ID); 
+        res.json({ message: 'Proceso completado' });
+    } catch (error) {
+        console.error("Error en getdata:", error);
+        res.status(500).json({ message: error.message });
     }
 };

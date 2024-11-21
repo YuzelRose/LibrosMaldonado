@@ -45,53 +45,21 @@ export const getUserByMail = async (req, res) => {
     }
 };
 
-
-export const updateUser = async (req, res) => {
-    const { id } = req.params;
-    const { Nombre, Mail, Pass, Tel, Direc } = req.body;
-    if (Pass.length < 8) return res.status(400).json({ message: 'La contraseña debe contener al menos 8 caracteres' });
-    try {
-        const user = await Usuario.findById(id);
-        if (!user) return res.status(404).json({ message: 'Usuario no encontrado' });
-
-        if (Pass) {
-            const salt = await bcrypt.genSalt(10);
-            user.Contrasena = await bcrypt.hash(Pass, salt);
-        }
-        if (Nombre) user.Nombre = Nombre;
-        if (Mail) user.Correo = Mail;
-        if (Tel) user.Telefono = Tel;
-        if (Direc)  user.Direccion = Direc;
-        const updatedUser = await user.save();
-        return res.json(updatedUser);
-    } catch (error) {
-        return res.status(500).json({ message: error.message });
-    }
-};
-
-export const actualizarContrasena = async (req, res) => {
-    const { correo } = req.params; // Correo proporcionado en los parámetros
-    const { contrasena } = req.body;
-
-    if (contrasena.length < 8) {
-        return res.status(400).json({ message: 'La contraseña debe contener al menos 8 caracteres' });
-    }
-
+export const updatePass = async ({correo, contrasena}) => {
     try {
         const usuario = await Usuario.findOne({ Correo: correo });
-        if (!usuario) return res.status(404).json({ message: 'Usuario no encontrado' });
-
+        if (!usuario) return console.log('Usuario no encontrado');
         const salt = await bcrypt.genSalt(10);
         usuario.Contrasena = await bcrypt.hash(contrasena, salt);
-
-        const usuarioActualizado = await usuario.save();
-        res.json({ message: 'Contraseña actualizada con éxito', usuario: usuarioActualizado });
+        await usuario.save();
+        console.log('Contraseña actualizada con éxito');
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.log("Error en updatePass:", error.message);
     }
 };
 
-export const actualizarDatosUsuario = async (req, res) => {
+
+export const updateUser = async (req, res) => {
     const { correo } = req.params; 
     const { nombre, telefono, direccion } = req.body;
     try {

@@ -44,6 +44,7 @@
     padding: 0.2em;
 }
 .form_reg_log > sup {
+    text-align: center;
     color: var(--primary-red);
     width: 100%;
     font-size: 1.5rem;

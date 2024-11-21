@@ -30,7 +30,7 @@ export default function UserInfo() {
                             </ul>
                         </nav>
                         <section id="user_info_opc"> 
-                            <h1>compras</h1>
+                            <h1>compras</h1> 
                             <FormAlterUser mail={authUser} />
                         </section>
                     </section>

@@ -27,7 +27,7 @@ const CompUserdata = ({ mail }) => {
     }, [mail]);
 
     return (
-        <ul className='user_conteiner user_info_list'>
+        <ul id="user_data_display" className='user_conteiner user_info_list'>
             <li><h1>Nombre:</h1><h1>{nombre}</h1></li>
             <li className='line' />
             <li><h1>Correo:</h1><h1>{correo}</h1></li>
