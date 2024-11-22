@@ -45,11 +45,11 @@ faltan:
   HomePage 90% falta un componente
   ProductWall 50% funcionalidad del filtro
   UserInfo 90%
-  AlterUser 0%
+  AlterUser 90%
   Faq 70% Falta rellenar metodos de entrega
 
 servicios:
   Filtro de libros/escritores
-  Cambio de datos del usuario 33%
+  Cambio de datos del usuario 66%
   sistema de venta + costos en descuento
 */
