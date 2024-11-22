@@ -3,9 +3,11 @@ import { useState } from "react";
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
 const URI = `${URI_START}/LibMal/Usuarios/login`;
+const URI_DROP = `${URI_START}/LibMal/Usuarios/Drop`;
+
 
 const FromConfimIdentity = () => {
-
+    const [state, setState] = useState(true);
 
     const [mail, setMail] = useState("");
     const [mailError, setMailError] = useState(false);
@@ -50,6 +52,11 @@ const FromConfimIdentity = () => {
             
             const user = response.data;
             
+            if(user.Correo === mail) {
+                await axios.post(`${URI_DROP}/${user.Correo}`);
+                alert('Lamentamos su partida.');
+                setState(false);
+            }
 
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
@@ -67,27 +74,33 @@ const FromConfimIdentity = () => {
 
     return (
         <section className="section_reg_log">
-            <form className="form_reg_log" onSubmit={handleSubmit}>
-                <h1>Confirme que decea eliminar su cuenta</h1>
-                <p>Correo:</p>
-                <input
-                    type="email"
-                    value={mail}
-                    onChange={handleMailChange}
-                    onBlur={() => { if (mail === "") setMailError(true); }}
-                />
-                {mailError && <sup>Error en el campo</sup>}
-                <p>Contraseña:</p>
-                <input
-                    type="password"
-                    value={pass}
-                    onChange={handlePassChange}
-                    onBlur={() => { if (pass === "") setPassError(true); }}
-                />
-                {passError && <sup>Error en el campo</sup>}
-                <button className='sub_button' id='log_btn' type="submit">Eliminar cuenta</button>
-                {error && <p className='error'>{error}</p>}
-            </form>
+            {   state ? (
+                <form className="form_reg_log" onSubmit={handleSubmit}>
+                    <h1>Confirme que decea eliminar su cuenta</h1>
+                    <p>Correo:</p>
+                    <input
+                        type="email"
+                        value={mail}
+                        onChange={handleMailChange}
+                        onBlur={() => { if (mail === "") setMailError(true); }}
+                    />
+                    {mailError && <sup>Rellene el campo</sup>}
+                    <p>Contraseña:</p>
+                    <input
+                        type="password"
+                        value={pass}
+                        onChange={handlePassChange}
+                        onBlur={() => { if (pass === "") setPassError(true); }}
+                    />
+                    {passError && <sup>Rellene el campo</sup>}
+                    <p/>
+                    <button className='sub_button' id='log_btn' type="submit">Eliminar cuenta</button>
+                    {error && <p className='error'>{error}</p>}
+                </form>
+                ) : (
+                    <h1>Puede cerrar esta pagina</h1>
+                )
+            }
         </section>
     );
 };

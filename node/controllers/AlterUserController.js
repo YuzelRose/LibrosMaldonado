@@ -123,7 +123,7 @@ const MailDrop = async ({email, key}) => {
             address: 'librosmaldonado68@gmail.com',
         },
         to: email,
-        subject: `Sistema de registro Libros Maldonado`,
+        subject: `Eliminación de su cuenta: Libros Maldonado`,
         html: `
         <article style="display: flex; flex-direction: column; align-items: center; font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
             <div style="border: solid #000; padding: 0.5em;">

@@ -141,6 +141,15 @@ main {
   html {
       font-size: 0.6rem;
   }
+  .checkbox {
+    padding: 1em;
+    margin-right: 0.5em;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
 }
 @media (max-width: 1600px) {
   main {

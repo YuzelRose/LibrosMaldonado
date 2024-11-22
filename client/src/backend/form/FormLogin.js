@@ -6,6 +6,7 @@ import { useAuth } from "../utils/AuthContext";
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
 const URI = `${URI_START}/LibMal/Usuarios/login`;
+const URI_UPDATE = `${URI_START}/LibMal/AlterUser`;
 
 const FormLogin = () => {
     const navigate =  useNavigate();
@@ -21,6 +22,7 @@ const FormLogin = () => {
     const [passError, setPassError] = useState(false);
 
     const [error, setError] = useState("");
+
 
     const handleCheckboxChange = (e) => {
         setAgree(e.target.checked); 
@@ -38,6 +40,26 @@ const FormLogin = () => {
             setMailError(false);
             setPassError(false);
             handleLog();
+        }
+    };
+
+    const handleChange = async() => {
+        setError("");
+        if (mail === "") {
+            setMailError(true);
+            setError("Rellene el campo del correo");
+        } else {
+            setMailError(false);
+            try {
+                await axios.post(`${URI_UPDATE}/Pass`, {
+                    Correo: mail
+                });
+                setError("");
+                alert('Revise su correo para terminar la acción');
+            } catch(error) {
+                setError('Error al enviar el correo.');
+                alert('Hubo un error al enviar el correo, compruebe si ya a resivido un correo o intentelo mas tarde.');
+            }
         }
     };
 
@@ -108,6 +130,7 @@ const FormLogin = () => {
                 <button className='sub_button' id='log_btn' type="submit">Iniciar sesión </button>
                 {error && <p className='error'>{error}</p>}
             </form>
+            <p id="new_pass_log" onClick={handleChange}>¿Olvido su contraseña?</p>
             <p>¿No tiene cuenta? <Link className='blue_link' to={'/Register'}>Registrarse</Link></p>
         </section>
     );

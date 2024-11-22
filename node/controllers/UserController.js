@@ -58,7 +58,6 @@ export const updatePass = async ({correo, contrasena}) => {
     }
 };
 
-
 export const updateUser = async (req, res) => {
     const { correo } = req.params; 
     const { nombre, telefono, direccion } = req.body;
@@ -129,4 +128,16 @@ const ChangeMail = async ({email}) => {
         console.log(`Error al enviar el correo: ${error}`);
     }
 
+};
+
+export const DropCount = async (req, res) => {
+    const { correo } = req.params; 
+    try {
+        const usuario = await Usuario.findOne({ Correo: correo });
+        if (!usuario) return res.status(404).json({ message: 'Usuario no encontrado' });
+        await Usuario.deleteOne({ Correo: correo });
+        res.status(200).json({ message: 'Usuario eliminado exitosamente' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 };
