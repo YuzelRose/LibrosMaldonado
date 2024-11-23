@@ -20,5 +20,6 @@
     --graiant-right-left: linear-gradient(to bottom left, #bbc3ce, #44556f);
     --graiant-left-right: linear-gradient(to bottom right, #bbc3ce, #44556f);
     --graiant-last: linear-gradient(#045aaf, #042479);
+    --gradiant-admin:linear-gradient(to bottom right, #0A0E27, #1A237E);
     --button-background: rgba(0, 0, 0, 0.2);
 }

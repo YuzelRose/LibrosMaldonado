@@ -13,18 +13,21 @@
     color: white;
 }
 .section_recomendations > div {
+    width: 70%;
     text-align: center;
     background: var(--header-gradiant);
     border: var(--primary-red) solid 0.2em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     margin-bottom: 1em;
-    width: 70%;
     border-radius: 5em;
     -webkit-border-radius: 5em;
     -moz-border-radius: 5em;
     -ms-border-radius: 5em;
     -o-border-radius: 5em;
+}
+.section_recomendations > div > h2 {
+    margin: 0;
 }
 .sale_wall_wrapper {
     width: 100%;

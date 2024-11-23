@@ -37,7 +37,11 @@
     -ms-border-radius: 3em;
     -o-border-radius: 3em;
 }
-
+#autor_info > h1 {
+    color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
 #autor_description {
     width: 100%;
     background-color: var(--argen);

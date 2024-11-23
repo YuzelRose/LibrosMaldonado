@@ -5,7 +5,7 @@ import { CompBookWall, FormBookFilter } from '../backend'
 import fond from '../img/fond/loginfondo.png';
 import './css/product_wall.css'
 
-function ProductWall() {
+export default function ProductWall() {
     const navigate = useNavigate()
     const { name } = useParams(); 
 
@@ -25,4 +25,3 @@ function ProductWall() {
         </main>
     )
 }
-export default ProductWall

@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+#user_data_display {
+    width: 90%;
+}
+
 #user_info_display {
     width: 100%;
     display: grid;

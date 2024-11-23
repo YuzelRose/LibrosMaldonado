@@ -7,9 +7,11 @@
 }
 #result_section {
     width: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
     text-align: center;
-    background-color: var(--light-gray-blue);
-    border: var(--argen) solid;
+    background-color: var(--argen);
+    border: var(--primary-red) solid;
     color: var(--argen);
     border-radius: 1em;
     -webkit-border-radius: 1em;

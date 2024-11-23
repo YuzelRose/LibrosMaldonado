@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { downloadJSON, updateCartItem, deleteCartItem, getCartItemIds, getCartItemCants, changeCartToList } from '../utils/JsonUtils';
+import { updateCartItem, deleteCartItem, getCartItemIds, getCartItemCants, changeCartToList } from '../utils/JsonUtils';
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
 const URI = `${URI_START}/LibMal/Libros`;
@@ -79,6 +79,10 @@ const CompShopCart = () => {
         loadCartItems();
     }, [change]);
 
+    const handlePay = () => {
+
+    }
+
     return (
         <ul className='item_list'>
             <li><h1>Carrito de Compras</h1></li>
@@ -107,7 +111,7 @@ const CompShopCart = () => {
                     <div id='list_pay_opc'>
                         <h2 id='final_cost'>Total: ${finalCost}</h2>
                         <p><input className='checkbox'  type="checkbox" checked={agree} onChange={handleCheckboxChange}/>Acepto los <Link className='blue_link' to={'/Faq/TSDV'}>terminos y condiciones de venta</Link></p>
-                        <button id='button_pay' onClick={downloadJSON}>Pagar</button>
+                        <button id='button_pay' onClick={handlePay}>Pagar</button>
                     </div>
                 </>
             ) : (

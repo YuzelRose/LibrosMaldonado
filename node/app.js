@@ -6,8 +6,9 @@ import UserRoutes from './routes/UserRoutes.js';
 import BookRoutes from './routes/BookRoutes.js';
 import MailRoutes from './routes/MailRoutes.js';
 import NewUserRoutes from './routes/NewUserRoutes.js';
-import AlterUserRouter from './routes/AlterUserRouter.js';
+import AlterUserRoutes from './routes/AlterUserRouter.js';
 import PaypalRoutes from './routes/PaypalRoutes.js'
+import TokenRoutes from './routes/TokenRoutes.js'
 import { REQUEST_URL, BACK_POT } from './config.js';
 
 const app = express();
@@ -25,9 +26,10 @@ app.use(`${REQUEST_URL}/Mail`, MailRoutes)
 app.use(`${REQUEST_URL}/NewUser`, NewUserRoutes)
 app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
-app.use(`${REQUEST_URL}/AlterUser`, AlterUserRouter);
+app.use(`${REQUEST_URL}/AlterUser`, AlterUserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 app.use(`${REQUEST_URL}/Paypal`, PaypalRoutes);
+app.use(`${REQUEST_URL}/Access`, TokenRoutes);
 
 app.listen(BACK_POT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución, puerto: ${BACK_POT}`);
