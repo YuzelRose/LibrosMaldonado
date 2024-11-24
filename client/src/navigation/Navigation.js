@@ -10,6 +10,9 @@ export default function Navigation() {
     const redirectProductWall = () => {
         navigate('/ProductWall');
     };
+    const redirectAutorWall = () => {
+        navigate('/AutorWall');
+    };
     return(
         <>
             <div className='highlight nav_opc' onClick={redirectHome}>
@@ -18,7 +21,7 @@ export default function Navigation() {
             <div className="highlight nav_opc" onClick={redirectProductWall}>
                 <p>Libros</p>
             </div>
-            <div className="highlight nav_opc" onClick={redirectProductWall}>
+            <div className="highlight nav_opc" onClick={redirectAutorWall}>
                 <p>Autores</p>
             </div>
         </>

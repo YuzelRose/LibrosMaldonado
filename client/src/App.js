@@ -62,5 +62,4 @@ faltan:
 servicios:
   Filtro de libros/escritores
   sistema de venta + costos en descuento
-  Sistema de control
 */

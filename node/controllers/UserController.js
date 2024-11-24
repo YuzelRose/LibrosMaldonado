@@ -6,6 +6,15 @@ export const comparePasswords = async (plainPassword, hashedPassword) => {
     return await bcrypt.compare(plainPassword, hashedPassword);
 };
 
+export const allUsers = async (req, res) => {
+    try {
+        const users = await Usuario.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: error.message})
+    }
+};
+
 export const postLogIn = async (req, res) => {
     try {
         const { Mail, Pass } = req.body;
@@ -131,13 +140,28 @@ const ChangeMail = async ({email}) => {
 };
 
 export const DropCount = async (req, res) => {
-    const { correo } = req.params; 
     try {
-        const usuario = await Usuario.findOne({ Correo: correo });
+        const usuario = await Usuario.findById(req.params.id);
         if (!usuario) return res.status(404).json({ message: 'Usuario no encontrado' });
-        await Usuario.deleteOne({ Correo: correo });
+        await Usuario.findByIdAndDelete(req.params.id);
         res.status(200).json({ message: 'Usuario eliminado exitosamente' });
     } catch (error) {
         res.status(500).json({ message: error.message });
+    }
+};
+
+export const ChangeCount = async (req, res) => {
+    const { nombre, correo, telefono, direccion } = req.body; 
+    try {
+        const usuario = await Usuario.findById(req.params.id);
+        if (!usuario) return res.status(404).json({ message: 'Usuario no encontrado' });
+        if (nombre) usuario.Nombre = nombre;
+        if (correo) usuario.Correo = correo;
+        if (telefono) usuario.Telefono = telefono;
+        if (direccion) usuario.Direccion = direccion;
+        await usuario.save(); 
+        res.json({ message: 'Datos actualizados con éxito' });
+    } catch (error) {
+        res.status(500).json({ message: error.message }); 
     }
 };

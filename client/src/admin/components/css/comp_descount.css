@@ -1,0 +1,56 @@
+#form_set_descount_on_mass {
+    padding: 1em;
+    background-color: var(--argen);
+    border: solid var(--primary-red);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+#set_descount_on_mass {
+    display: flex;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0.5em;
+    border-bottom: solid var(--primary-red);
+}
+#set_descount_on_mass > input {
+    width: 7%;
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+#set_descount_on_mass > button {
+    cursor: pointer;
+    margin-left: 1em;
+    font-size: 0.9em;
+    border: none;
+    background-color: transparent;
+}
+#set_descount_on_mass > button:hover {
+    text-decoration: underline;
+}
+.descount_book_list {
+    font-size: 1.5em;    
+}
+.descount_book_list > input {
+    cursor: pointer;
+    padding: 1em;
+    margin-right: 0.5em;
+    transform: scale(1.6);
+    -webkit-transform: scale(1.6);
+    -moz-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    -o-transform: scale(1.6);
+}
+@media (max-width: 600px) {
+    .descount_book_list > input {
+        padding: 1em;
+        margin-right: 0.5em;
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+}
+}

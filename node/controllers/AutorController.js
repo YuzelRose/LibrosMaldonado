@@ -53,3 +53,29 @@ export const getExactAutorByName = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const DropAutor = async (req, res) => {
+    try {
+        const autor = await Autor.findById(req.params.id);
+        if (!autor) return res.status(404).json({ message: 'Autor no encontrado' });
+        await Autor.findByIdAndDelete(req.params.id);
+        res.status(200).json({ message: 'Autor eliminado exitosamente' });
+    } catch(error) {
+        res.status(500).json({ message: error.message });   
+    }
+};
+
+export const ChangeAutor = async (req, res) => {
+    try {
+        const { nombre, resumen, image } = req.body;
+        const autor = await Autor.findById(req.params.id); 
+        if (!autor) return res.status(404).json({ message: "Autor no encontrado" });
+        if (nombre) autor.Nombre = nombre;
+        if (resumen) autor.Resumen = resumen;
+        if (image) autor.URLImage = image;
+        await autor.save();
+        res.status(200).json({ message: "Autor actualizado correctamente", autor });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};

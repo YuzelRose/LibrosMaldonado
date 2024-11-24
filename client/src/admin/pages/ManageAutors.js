@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SideNav from "../components/SideNav";
-import CompAlterAutor from '../components/CompAlterBook.js'
+import { Link } from "react-router-dom";
+import CompAlterAutor from '../components/CompAlterAutor.js'
 
-export default function ManageBooks() {
+export default function ManageAutors() {
     return(
         <>
             <main className="admin_main" id="dashboard">
@@ -13,7 +13,7 @@ export default function ManageBooks() {
                 </section>
             </main>
             <footer id="footer_nav">
-                <p><Link to={'/admin/DashBord'} className="link">DashBord</Link> \ <Link to={'/admin/DashBord/books'} className="link">Libros</Link></p>
+                <p><Link to={'/admin/DashBord'} className="link">DashBord</Link> \ <Link to={'/admin/DashBord/autors'} className="link">Autores</Link></p>
             </footer>
         </>
     );
