@@ -64,5 +64,5 @@ faltan:
 
 servicios:
   Filtro de libros/escritores
-  sistema de venta 50%
+  sistema de venta 90%
 */

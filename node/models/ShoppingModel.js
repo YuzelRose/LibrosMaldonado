@@ -1,23 +1,17 @@
 import mongoose from 'mongoose';
 
 const CompraModels = new mongoose.Schema({
-    IDUsuario: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario', 
+    UserMail: {
+        type: String,
         required: true,
     },
-    IDLibro: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Libro', 
+    IDRef: {
+        type: String,
         required: true,
     },
-    FechaCompra: {
+    Date: {
         type: Date,
         default: Date.now,
-    },
-    Cantidad: {
-        type: Number,
-        required: true,
     },
 }, { collection: 'compras' });
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom' 
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import axios from "axios";
 import { useAuth } from "../utils/AuthContext";
@@ -7,6 +8,7 @@ const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.sho
 const URI = `${URI_START}/LibMal/Mail/Purchance`;
 
 export default function PayPalButton() {
+  const navigate = useNavigate();
   const {authUser} = useAuth();
   const paypalJson = JSON.parse(localStorage.getItem('paypalJson'));
   console.log(paypalJson);
@@ -19,7 +21,7 @@ export default function PayPalButton() {
     try {
       await axios.post(URI, { email: authUser, paymentData: paypalJson });
       alert(`gracias por su compra, se envio un comprobante a su correo.`);
-
+      navigate('/');
     } catch (error) {
       if (error.response) {
         console.log('Error en la respuesta del servidor:', error.response.data);
