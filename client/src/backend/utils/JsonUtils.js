@@ -122,3 +122,53 @@ export const getCartItemCants = () => {
 export const deleteJSON = () => {
     localStorage.removeItem(LOCAL_STORAGE_KEY); 
 };
+
+
+export const generatePayPalJson = (cartItems, quantities, finalCost) => {
+    const currency = 'MXN'; 
+    const generateUniqueReferenceId = () => {
+        return `ref-${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
+    };
+    if (cartItems.length === 0) {
+        return null;  
+    }
+    const itemTotal = cartItems.reduce((total, item) => {
+        const quantity = quantities[item._id] || 1; 
+        return total + item.Costo * quantity;  
+    }, 0);
+    if (parseFloat(itemTotal.toFixed(2)) !== parseFloat(finalCost.toFixed(2))) {
+        console.error('Los valores de item_total y finalCost no coinciden');
+        return null;  
+    }
+    const paypalData = {
+        intent: 'CAPTURE', 
+        purchase_units: [
+            {
+                reference_id: generateUniqueReferenceId(),  
+                amount: {
+                    currency_code: currency,
+                    value: finalCost.toFixed(2),  
+                    breakdown: {
+                        item_total: {
+                            currency_code: currency,
+                            value: itemTotal.toFixed(2) 
+                        }
+                    }
+                },
+                items: cartItems.map(item => {
+                    const quantity = quantities[item._id];
+                    return {
+                        name: item.Nombre || 'Nombre no disponible', 
+                        unit_amount: {
+                            currency_code: currency,
+                            value: item.Costo.toFixed(2)   
+                        },
+                        quantity: quantity
+                    };
+                })
+            }
+        ]
+    };
+    localStorage.setItem('paypalJson', JSON.stringify(paypalData));
+    return paypalData;
+};

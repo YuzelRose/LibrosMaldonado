@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { updateCartItem, deleteCartItem, getCartItemIds, getCartItemCants, changeCartToList } from '../utils/JsonUtils';
+import { Link, useNavigate } from 'react-router-dom';
+import { updateCartItem, deleteCartItem, getCartItemIds, getCartItemCants, changeCartToList, generatePayPalJson } from '../utils/JsonUtils';
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
 const URI = `${URI_START}/LibMal/Libros`;
 
 const CompShopCart = () => {
+    const navigate = useNavigate();
     const [change, setChange] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [quantities, setQuantities] = useState({});  
@@ -78,10 +79,26 @@ const CompShopCart = () => {
     useEffect(() => {
         loadCartItems();
     }, [change]);
-
-    const handlePay = () => {
-
+    
+    const handlePay = async () => {
+        if (agree) {
+            try {
+                const paypalJson = await generatePayPalJson(cartItems, quantities, finalCost);
+                if (paypalJson) {
+                    alert("Informacion de su compra almacenada");
+                    navigate('/ShopCart/PayRequirements');
+                } else {
+                    alert("No se pudo generar el JSON de PayPal.");
+                }
+            } catch (error) {
+                alert(error)
+            }
+            
+        } else {
+            alert('Debe aceptar los terminos y condiciones para realizar compras.')
+        }
     }
+    
 
     return (
         <ul className='item_list'>

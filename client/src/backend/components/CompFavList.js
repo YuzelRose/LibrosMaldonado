@@ -45,7 +45,7 @@ const CompFavList = () => {
     
     return (
         <ul className='item_list'>
-            <li><h1>Carrito de Compras</h1></li>
+            <li><h1>Lista de favoritos</h1></li>
             {favItems.length > 0 ? (
                 favItems.map(book => (
                     <li key={book._id}>

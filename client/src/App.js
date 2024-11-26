@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
-import { HomePage, ProductSell, Login, FavList, ProductWall, Register, ShopCart, UserInfo, Autor, Faq, AutorWall, NewUser, AlterUser } from "./pages";
+import { HomePage, ProductSell, Login, FavList, ProductWall, Register, ShopCart, UserInfo, Autor, Faq, AutorWall, NewUser, AlterUser, PayRequirements } from "./pages";
 import AdminRoutes from "./admin/AdminRoutes.js";
 import { Footer, Header } from "./Templates";
 import { AuthProvider } from "./backend/utils/AuthContext";
@@ -19,6 +19,9 @@ function AppContent() {
         <Route path="/Login" element={<Login />} exact />
         <Route path="/Register" element={<Register />} exact />
         <Route path="/ShopCart" element={<ShopCart />} exact />
+
+        <Route path="/ShopCart/PayRequirements" element={<PayRequirements />} exact />
+
         <Route path="/FavList" element={<FavList />} exact />
         <Route path="/ProductWall" element={<ProductWall />} exact />
         <Route path="/ProductWall/:data" element={<ProductWall />} exact />
@@ -61,5 +64,5 @@ faltan:
 
 servicios:
   Filtro de libros/escritores
-  sistema de venta + costos en descuento
+  sistema de venta 50%
 */

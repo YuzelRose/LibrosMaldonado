@@ -41,10 +41,15 @@
     overflow: hidden;
 }
 .product {
+    overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
     text-align: center;
+    align-items: center;
+    justify-items: center;
     width: 100%;
+    height: 25em;
+    grid-row-gap: 3em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-radius: 0.3em;
@@ -53,3 +58,9 @@
     -ms-border-radius: 0.3em;
     -o-border-radius: 0.3em;
 } 
+
+@media (max-width: 768px) {
+    .product {
+        height: 22em;
+    }
+}

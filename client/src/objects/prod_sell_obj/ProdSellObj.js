@@ -27,7 +27,7 @@ export default function PordSellObj({id, Name, Autor, Sinopsis, Costo, Descuento
 
     return(
         <>
-            <article id='product'>
+            <article key={id} id='product'>
                 <figure className='product_image'>
                     <img src={ImgURL} alt={Name} />
                 </figure>

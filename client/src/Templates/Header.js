@@ -11,7 +11,7 @@ import './css/header.css';
 
 export default function Header() {
     const navigate = useNavigate();
-    const {isLogged} = useAuth()
+    const {isLogged} = useAuth();
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [headerVisible, setHeaderVisible] = useState(true);
 

@@ -31,11 +31,13 @@ export default function Footer() {
             <section className='section_bottom'>
                 <h3>©2024 Libros medicos Maldonado, a su sevicio desde 1968. Todos los derechos reservados.</h3>
                 <p><Link to="/faq#privacidad" className='link_low'>Política de privacidad</Link> | <Link to="/faq#terminos_condiciones" className='link_low'>Términos y condiciones </Link></p>
+                <p>Metodos de pago aceptados:</p>
+                <p><img src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/grey_btn-356x42.png" alt="PayPal Credit" /></p>
                 <p>
-                    Los productos presentados en este sitio se encuentran disponibles en todo MÉXICO, cualquier compra externa a este pais sera cancelada, segun nuestras <Link to="/faq#terminos_condiciones" className='link_low'>politicas de envios</Link>, este fragmento fue actualizado por ultima vez, 21 de agosto de 2024. </p>
-                    <p>Diseño realizado por <Link to="https://github.com/YuzelRose" className='link_low'>@Yuzel Rose</Link> y <Link to="" className='link_low'>@Miguel Navarro </Link>. 
+                    Los productos presentados en este sitio se encuentran disponibles para todo MÉXICO, cualquier compra externa a este pais sera cancelada, segun nuestras <Link to="/faq#terminos_condiciones" className='link_low'>politicas de envios</Link>, en caso de dudas puede contactarnos mediante nuestro sistema de ayuda al cliente, este fragmento fue actualizado por ultima vez el 25 de Noviembre de 2024. 
                 </p>
             </section>
+            
         </footer>
     )
 }

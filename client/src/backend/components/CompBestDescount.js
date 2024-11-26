@@ -45,7 +45,7 @@ const CompShowDesBooks = () => {
                 <div className='section_name'>
                     <h2 onClick={seeMore}>Descuentos</h2>
                 </div>
-                <section className='sale_wall'>
+                <section className='product'>
                     {books.map((book) => (
                         <ProductObj
                             key={book._id}

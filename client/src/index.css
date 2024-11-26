@@ -8,6 +8,7 @@ html, body {
   flex-direction: column;
 }
 pre {
+  font-family: 'Andale Mono, monospace, Courier New, Courier, FreeMono';
   text-align: start;
   white-space: pre-wrap; 
   word-wrap: break-word;

@@ -7,14 +7,18 @@ import BookRoutes from './routes/BookRoutes.js';
 import MailRoutes from './routes/MailRoutes.js';
 import NewUserRoutes from './routes/NewUserRoutes.js';
 import AlterUserRoutes from './routes/AlterUserRouter.js';
-import PaypalRoutes from './routes/PaypalRoutes.js'
 import TokenRoutes from './routes/TokenRoutes.js'
 import { REQUEST_URL, BACK_POT } from './config.js';
 
 const app = express();
 
 app.use(cors({
-    origin: ['https://librosmaldonado.shop', 'http://localhost:5000', 'https://www.librosmaldonado.shop'],
+    origin: [
+        'https://librosmaldonado.shop', 
+        'http://localhost:5000', 
+        'http://localhost:3000', 
+        'https://www.librosmaldonado.shop',
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
@@ -28,7 +32,6 @@ app.use(`${REQUEST_URL}/Autores`, AutorRoutes);
 app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/AlterUser`, AlterUserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
-app.use(`${REQUEST_URL}/Paypal`, PaypalRoutes);
 app.use(`${REQUEST_URL}/Access`, TokenRoutes);
 
 app.listen(BACK_POT, '0.0.0.0', () => {

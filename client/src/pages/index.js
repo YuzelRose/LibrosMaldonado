@@ -11,3 +11,4 @@ export { default as Faq } from './Faq';
 export { default as AutorWall } from './AutorWall';
 export { default as NewUser } from './NewUser';
 export { default as AlterUser } from './AlterUser';
+export { default as PayRequirements } from './PayRequirements'

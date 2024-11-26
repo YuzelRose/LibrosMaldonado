@@ -47,7 +47,7 @@ const CompBestBooks = () => {
                 <div className='section_name'>
                     <h2 onClick={seeMore}>Mas vendido</h2>
                 </div>
-                <section className='sale_wall'>
+                <section className='product'>
                     {books.map((book) => (
                         <ProductObj
                             key={book._id}

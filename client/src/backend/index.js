@@ -13,6 +13,7 @@ export { default as CompAutor } from './components/CompAutor.js'
 export { default as AutorBooks } from './components/AutorBooks.js'
 export { default as CompNewUser } from './components/CompNewUser.js'
 export { default as CompUserdata } from './components/CompUserdata.js'
+export { default as CompUserRequirements } from './components/CompUserRequirements.js'
 
 export { default as FormCreateUser } from './form/FormCreateUser.js'
 export { default as FormLogin } from './form/FormLogin.js'
