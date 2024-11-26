@@ -12,24 +12,15 @@ export const getAllBooks = async (req, res) => {
 }
 export const getSearchBooks = async (req, res) => {
     try {
-        const { name, costo, descuento, autor } = req.query; 
+        const { name, descuento, maxPrice, minPrice, autor } = req.body; 
         const filters = { Existencias: { $gt: 0 } }; 
-        if (name) {
-            filters.Nombre = { $regex: name, $options: 'i' }; 
-        }
-        if (costo) {
-            filters.Costo = { $gte: minPrice, $lte: maxPrice }
-        }
-        if (descuento) {
-            filters.Descuento = { $gte: Number(descuento) }; 
-        }
-        if (autor) {
-            filters.Autor = { $regex: autor, $options: 'i' }; 
-        }
+        if (name) filters.Nombre = { $regex: name, $options: 'i' }; 
+        if (maxPrice) filters.Costo = { $lte: maxPrice }
+        if (maxPrice && !isNaN(maxPrice)) filters.Costo = { ...filters.Costo, $lte: Number(maxPrice) };
+        if (minPrice && !isNaN(minPrice)) filters.Costo = { ...filters.Costo, $gte: Number(minPrice) };
+        if (autor) filters.Autores = { $regex: autor, $options: 'i' };
         const libros = await Libro.find(filters);
-        if (libros.length === 0) {
-            return res.status(404).json({ message: 'No se encontraron libros' });
-        }
+        if (libros.length === 0) return res.status(404).json({ message: 'No se encontraron libros' });
         res.json(libros);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -60,6 +51,17 @@ export const getBestSellerBooks = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+export const getBookByName = async (req, res) => {
+    const name = req.params.name
+    try {
+        const libro = await Libro.find({ Nombre: name});
+        if (!libro) return res.status(404).json({ message: 'Libro no encontrado' });
+        res.json(libro); 
+    } catch(error) {
+        res.status(500).json({ message: error.message });
+    }
+};
 
 export const getBookById = async (req, res) => {
     try {

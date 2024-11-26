@@ -14,6 +14,7 @@ export default function AutorWall() {
     return(
         <main id='product_wall' style={{ backgroundImage: `url(${fond})` }}>
             <aside className='aside_filter'>
+                 
                 <h2>Filtro: <button onClick={changeState} className='serch_btn'>Autores</button></h2>
                 <FormAutorFilter/>
             </aside>

@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { HomePage, ProductSell, Login, FavList, ProductWall, Register, ShopCart, UserInfo, Autor, Faq, AutorWall, NewUser, AlterUser, PayRequirements } from "./pages";
 import AdminRoutes from "./admin/AdminRoutes.js";
 import { Footer, Header } from "./Templates";
-import { AuthProvider } from "./backend/utils/AuthContext";
+import { AuthProvider, useAuth } from "./backend/utils/AuthContext";
 import ScrollToTop from "./backend/utils/scrollTop";
 
 function AppContent() {
   const location = useLocation();
+  const { setAuthUser, setIsLogged, setAuthUserName } = useAuth();
+
+  useEffect(() => {
+    const session = JSON.parse(localStorage.getItem('LibMal/keep'));
+    if (session) {
+      setAuthUser(session.AuthUser);
+      setIsLogged(session.IsLogged);
+      setAuthUserName(session.AuthUserName);
+    }
+}, []);
 
   const isAdminRoute = location.pathname.startsWith("/admin");
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { initData } from "../utils/JsonUtils";
+import { initData, keepSession } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
@@ -88,6 +88,9 @@ const FormLogin = () => {
             setAuthUser(user.Correo);
             setAuthUserName(user.Nombre);
             setIsLogged(true);
+            if (agree) {
+                keepSession({AuthUserName: user.Nombre, AuthUser: user.Correo})
+            }
             navigate('/');
         } catch (error) {
             console.error("Error al iniciar sesión:", error);

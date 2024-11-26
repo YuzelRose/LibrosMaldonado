@@ -1,4 +1,6 @@
 const LOCAL_STORAGE_KEY = 'LibMal';
+const LOCAL_STORAGE_KEY_KEEP = 'LibMal/keep';
+
 const generateJSON = () => {
     return `
     {
@@ -7,6 +9,16 @@ const generateJSON = () => {
     }
     `;
 }
+
+export const keepSession = ({ AuthUserName, AuthUser }) => {
+    const sessionData = {
+        AuthUserName: AuthUserName,
+        IsLogged: true,
+        AuthUser: AuthUser
+    };
+    localStorage.setItem(LOCAL_STORAGE_KEY_KEEP, JSON.stringify(sessionData));
+};
+
 
 export const initData = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, generateJSON());
