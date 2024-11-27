@@ -9,6 +9,13 @@ const generateJSON = () => {
     }
     `;
 }
+// Limpiar el carrito de compras
+export const clearCart = () => {
+    const currentData = getData();
+    currentData.cart = []; 
+    saveData(currentData); 
+};
+
 
 export const keepSession = ({ AuthUserName, AuthUser }) => {
     const sessionData = {
@@ -133,6 +140,7 @@ export const getCartItemCants = () => {
 
 export const deleteJSON = () => {
     localStorage.removeItem(LOCAL_STORAGE_KEY); 
+    localStorage.removeItem(LOCAL_STORAGE_KEY_KEEP); 
 };
 
 

@@ -14,18 +14,42 @@ export const getSearchBooks = async (req, res) => {
     try {
         const { name, descuento, maxPrice, minPrice, autor } = req.body; 
         const filters = { Existencias: { $gt: 0 } }; 
+        
         if (name) filters.Nombre = { $regex: name, $options: 'i' }; 
-        if (maxPrice) filters.Costo = { $lte: maxPrice }
-        if (maxPrice && !isNaN(maxPrice)) filters.Costo = { ...filters.Costo, $lte: Number(maxPrice) };
-        if (minPrice && !isNaN(minPrice)) filters.Costo = { ...filters.Costo, $gte: Number(minPrice) };
         if (autor) filters.Autores = { $regex: autor, $options: 'i' };
+
+        if ((minPrice && !isNaN(minPrice)) || (maxPrice && !isNaN(maxPrice))) {
+            filters.$expr = {
+                $and: []
+            };
+            if (minPrice) {
+                filters.$expr.$and.push({
+                    $gte: [
+                        { $multiply: ["$Costo", { $subtract: [1, { $divide: ["$Descuento", 100] }] }] },
+                        Number(minPrice)
+                    ]
+                });
+            }
+            if (maxPrice) {
+                filters.$expr.$and.push({
+                    $lte: [
+                        { $multiply: ["$Costo", { $subtract: [1, { $divide: ["$Descuento", 100] }] }] },
+                        Number(maxPrice)
+                    ]
+                });
+            }
+        }
+
+        if (descuento) filters.Descuento = { $gt: 0 }; 
+        
         const libros = await Libro.find(filters);
-        if (libros.length === 0) return res.status(404).json({ message: 'No se encontraron libros' });
+        if (libros.length === 0) return res.status(404).json({ message: 'Libro no encontrado' });
         res.json(libros);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};
+
 
 
 export const getDescountBooks = async (req, res) => {

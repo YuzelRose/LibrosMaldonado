@@ -1,3 +1,24 @@
+#main_home_page {
+    margin: 0;
+}
+#main_home_page > figure {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#banner_img {
+    border: solid white;
+    padding: 1em;
+    width: 70%;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
 .section_name {
     align-self: center;
     text-align: center;

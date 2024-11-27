@@ -1,5 +1,5 @@
 import express from 'express';
-import { DropAutor, ChangeAutor ,getAutores, getAutorById, getAutorByName, getExactAutorByName } from '../controllers/AutorController.js';
+import { DropAutor, ChangeAutor ,getAutores, getAutorById, getAutorByName, getExactAutorByName, getSearchAutors } from '../controllers/AutorController.js';
 
 const router = express.Router();
 
@@ -11,5 +11,6 @@ router.get('/Exact/Name/:Name', getExactAutorByName);
 
 router.put('/Update/:id', ChangeAutor);
 router.post('/Drop/:id', DropAutor);
+router.post('/search',getSearchAutors);
 
 export default router;

@@ -69,10 +69,8 @@ export default function App() {
 /*
 faltan:
   HomePage 90% falta un componente
-  ProductWall/AutorWall 50% funcionalidad del filtro
   Faq 70% Falta rellenar metodos de entrega
 
 servicios:
-  Filtro de libros/escritores
-  sistema de venta 90%
+  sistema de venta 90% solo falta conexion a base
 */

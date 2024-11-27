@@ -2,10 +2,12 @@ import React from "react";
 import { useNavigate } from 'react-router-dom' 
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import axios from "axios";
+import { clearCart } from "../utils/JsonUtils";
 import { useAuth } from "../utils/AuthContext";
 
 const URI_START = process.env.REACT_APP_BACK_URL || 'https://librosmaldonado.shop'
-const URI = `${URI_START}/LibMal/Mail/Purchance`;
+const URI = `${URI_START}/LibMal/Shop/Set`;
+
 
 export default function PayPalButton() {
   const navigate = useNavigate();
@@ -19,7 +21,10 @@ export default function PayPalButton() {
 
   const onSuccess = async () => {
     try {
-      await axios.post(URI, { email: authUser, paymentData: paypalJson });
+      const reference_id = paypalJson.purchase_units[0].reference_id;
+
+      await axios.post(URI, {Mail: authUser, IDRef: reference_id, paymentData: paypalJson});
+      clearCart();
       alert(`gracias por su compra, se envio un comprobante a su correo.`);
       navigate('/');
     } catch (error) {

@@ -8,6 +8,8 @@ import MailRoutes from './routes/MailRoutes.js';
 import NewUserRoutes from './routes/NewUserRoutes.js';
 import AlterUserRoutes from './routes/AlterUserRouter.js';
 import TokenRoutes from './routes/TokenRoutes.js'
+import ShopRoutes from './routes/ShopRouter.js'
+
 import { REQUEST_URL, BACK_POT } from './config.js';
 
 const app = express();
@@ -33,6 +35,7 @@ app.use(`${REQUEST_URL}/Usuarios`, UserRoutes);
 app.use(`${REQUEST_URL}/AlterUser`, AlterUserRoutes);
 app.use(`${REQUEST_URL}/Libros`, BookRoutes);
 app.use(`${REQUEST_URL}/Access`, TokenRoutes);
+app.use(`${REQUEST_URL}/Shop`, ShopRoutes);
 
 app.listen(BACK_POT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución, puerto: ${BACK_POT}`);

@@ -79,3 +79,19 @@ export const ChangeAutor = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const getSearchAutors = async (req, res) => {
+    try {
+        const { name } = req.body;
+        const filters = {}; 
+        if (name) filters.Nombre = { $regex: name, $options: 'i' }; 
+
+        const autores = await Autor.find(filters);
+        if (autores.length === 0) return res.status(404).json({ message: 'Autor no encontrado' });
+
+        res.json(autores);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+

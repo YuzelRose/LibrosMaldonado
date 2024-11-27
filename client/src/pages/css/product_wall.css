@@ -19,7 +19,7 @@
     justify-content: center;
     background: var(--header-gradiant);
     color: white;
-    width: 10em;
+    width: 11em;
     height: fit-content;
     font-size: 1.3rem;
     margin-top: 6em;
@@ -60,6 +60,11 @@
     margin: 0 ; 
     justify-items: center;
     align-items: center;
+
+    max-height: 60vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+
 }
 .product_obj {
     align-self: center;
